@@ -25,20 +25,26 @@ JAVASCRIPT
 CONOCIMIENTOS MEDIOS:
 HTML, CSS
 
-- [@MATI NUÑEZ](https://www.github.com/):
+- [@MATI NUÑEZ](https://www.github.com/MaTuTe248):
 APTITUDES:
 
 CONOCIMIENTOS BASICOS DE PROGRAMACION:
 JAVASCRIPT, PYTHON, EXCEL
 
-- [@GABRIEL RODRIGUEZ](https://www.github.com/):
+- [@GABRIEL RODRIGUEZ](https://www.github.com/GabrielRod03):
 APTITUDES:
 
 CONOCIMIENTOS BASICOS DE PROGRAMACION:
 Java, C++, JAVASCRIPT
 
-- [@CAROLINA GEOLTAN](https://www.github.com/):
+- [@CAROLINA GEOLTAN](https://www.github.com/CaroGeoltan):
 APTITUDES:
+
+CONOCIMIENTOS BASICOS DE PROGRAMACION:
+JAVASCRIPT
+CONOCIMIENTOS DE DISEÑO:
+FIGMA, PHOTOSHOP, COREL, ILLUSTRATOR
+
 ## Sitios de Referencia
 
 Estos sitios nos sirvieron de referencia:
