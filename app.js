@@ -11,5 +11,5 @@ app.listen(3000, () => console.log("listening on port 3000"));
 
 //Ruta Carrito
 app.get('/', (req,res) => {
-    res.sendFile(path.join('views/productCart.html'));
+    res.sendFile(path.join(__dirname, 'views/productCart.html'));
 });
