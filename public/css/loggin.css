@@ -1,0 +1,107 @@
+*{
+    box-sizing: border-box;
+}
+
+/* El cuerpo de la página tiene un fondo de color blanco. */
+body{
+    margin: 0px;
+    background-color: #FFF9F0;
+}
+
+/* La cabecera de la página tiene un fondo de color verde. */
+header{
+    padding-left:  20px;
+    height: 25vh;
+    background-color: #00BF63;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* La imagen en la cabecera tiene un ancho del 15% de la vista del navegador. */
+ img{
+    width: 15%;
+ }
+
+/* Los campos de entrada del formulario de inicio de sesión tienen un ancho del 30% de la vista del navegador y una altura de 5vh. Tienen un borde doble de 3 píxeles de color #7ed557. */
+input{
+    display: inline-block;
+    width: 50%;
+    height: 5vh;
+    border-width: 3px;
+    border-radius: 15px;
+    border-style: double;
+    border-color: #7ed557;
+ }
+
+/* El formulario de inicio de sesión está centrado en la página. */
+center{
+    width: 50vw;
+}
+
+/* Los elementos del menú tienen un ancho del 50% de la vista del navegador y una altura de 20px. Se envuelven en varias líneas. */
+.menu p{
+    width: 50vw;
+    height: 20px;
+    flex-wrap:wrap;
+    display: inline;
+    align-items: stretch;
+}
+
+/* El botón de inicio de sesión tiene un radio de borde de 30 píxeles, un borde doble y un tamaño de fuente de 2vw. Tiene un color #058789 y un color de fondo #fcff59. */
+button{
+    
+    border-radius: 30px;
+    border-style: double;
+    font-size: 2vw;    
+    color: #058789;
+    background-color: #fcff59;
+    border-color: #7ed557;
+}
+
+/* El título de inicio de sesión tiene un tamaño de fuente de 5vw y un relleno de 20 píxeles a la derecha. */
+div.loghead{
+    font-size: 5vw;
+    padding-right: 20px;
+}
+
+/* El área de contenido principal tiene un relleno de 5vw en la parte superior e inferior y un relleno de 10vw en la izquierda y la derecha. */
+main{
+    padding: 5vw 10vw
+}
+
+.login-title{
+    display: inline-block;
+}
+
+.footer {
+    background-color: #00BF63;
+    color: #FFF;
+    padding: 20px;
+  }
+  
+/* Las filas del pie de página se dividen en 3 columnas. */
+  .row {
+    column-count: 3;
+  }
+  .footer td {
+    width: 25%;
+  }
+  .footer .col-2 {
+    width: 20%;
+  }
+  button {
+    background-color: #fcff59;
+    border-radius: 30px;
+    border-style: double;
+    font-size: 2vw;
+    color: #058789;
+  
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  
+    &:hover {
+      background-color: #00BF63;
+      transform: scale(1.1);
+    }
+  }

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/loggin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+    <title>PAGINA DE LOGGIN</title>
+</head>
+<body>
+
+  <!-- Encabezado de la página -->
+
+    <header>
+        <img src="img/logo.png" alt="image-logo"> 
+
+        <section class="center">
+            <div class="input">
+                <input placeholder = " Buscar productos y más..." width="50px"></imput>
+            </div>
+            <br>
+            <div class="menu">
+                <p>
+                    <button type="submit">INICIO</button>
+                    <button type="submit">CELULARES</button>
+                    <button type="submit">ACCESORIOS</button>
+                    <button type="submit">NOVEDADES</button>
+                    <button type="submit">OFERTAS</button>
+                    <button type="submit">AYUDA</button>
+                </p>
+            </div>
+        </section>
+
+        <!-- Iconos en la esquina superior derecha del encabezado -->
+
+        <div class="loghead">
+          <i class="fa-solid fa-circle-user" style="color: #fcff59;"></i>
+          <i class="fa-solid fa-cart-plus" style="color: #fcff59;"></i>
+        </div>
+    </header>
+
+        <!-- Contenido principal de la página -->
+    <main>
+
+       <!-- Sección del título de inicio de sesión -->
+        <section class=".login-title">
+        
+            <p>
+                <strong>
+                    Inicia sesion en tu cuenta
+                </strong>
+            </p>
+        </section>
+
+
+      <!-- Formulario de inicio de sesión -->
+        <form action="/login.php" method="post">
+            <p>
+      <input type="text" name="usuario" placeholder="Usuario">
+      <input type="password" name="contraseña" placeholder="Contraseña">
+      <input type="submit" value="Iniciar sesión">
+            </p>
+
+              <!-- Botones dentro del formulario -->
+                <p>
+                
+                    <button type="submit" value=>Crear cuenta</button>
+                    <button type="submit" value=>Recuperar contraseña</button>
+                  </p>
+        </form>
+    </main>
+
+    <!-- Pie de página -->
+
+    <footer class="footer">
+        <table>
+          <tr>
+
+          <!-- Columna 1 del pie de página con logo y nombre de la empresa -->
+            <td class="col-1">
+              <img src="/img/logo.png" alt="Logotipo de la empresa">
+              <br>
+              <strong>Cell's Paradise</strong>
+            </td>
+
+            <!-- Columna 2 del pie de página con información de contacto -->
+            <td class="col-2">
+              <h4>Contactanos</h4>
+              <ul class="social-icons">
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+              </ul>
+            </td>
+
+            <!-- Columna 3 del pie de página con enlaces de ayuda -->
+            <td class="col-3">
+              <h4>Ayuda</h4>
+              <ul>
+                <li><a href="#">Preguntas Frecuentes</a></li>
+                <li><a href="#">Centro de Ayuda</a></li>
+                <li><a href="#">Terminos y Condiciones</a></li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </footer>
+</body>
+</html>
