@@ -13,7 +13,7 @@ header {
 }
 
 #logo {
-  width: 30%;
+  width: 7%;
   border-radius: 50%;
 }
 
@@ -23,25 +23,35 @@ main {
 
 .header-main {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .header-navBar ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   list-style: none;
+  padding: 15px;
+  border-top: solid 3px #d8d8d8;
+  background-color: #d8d8d8;
 }
 
 .header-navBar a {
   text-decoration: none;
+  color: #000000;
 }
 
 .main-products {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.individualProduct {
+  width: 10%;
+  background-color: #ffffff;
 }
 
 .individualProduct img {
@@ -64,9 +74,14 @@ footer {
 }
 
 .footer-lists ul {
-    list-style: none;
+  list-style: none;
 }
 
 .footer-lists li {
-    padding: 10px;
+  padding: 10px;
+}
+
+.footer-lists a {
+  text-decoration: none;
+  color: #000000;
 }
