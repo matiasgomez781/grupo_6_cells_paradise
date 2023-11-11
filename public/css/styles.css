@@ -10,22 +10,45 @@ body {
 
 header {
   background-color: #028886;
+  position: fixed;
+  width: 100vw;
+  top: 0;
 }
 
 #logo {
-  width: 7%;
+  width: 8%;
   border-radius: 50%;
-}
-
-main {
-  text-align: center;
 }
 
 .header-main {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.searchBar {
+  width: 45%;
+}
+
+.searchBar input {
+  width: 95%;
+  padding: 15px;
+  border-radius: 30px;
+}
+
+.fa-magnifying-glass {
+  font-size: 20px;
+}
+
+.account-cart {
+  width: 13%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.fa-cart-shopping {
+  font-size: 25px;
 }
 
 .header-navBar ul {
@@ -33,13 +56,17 @@ main {
   justify-content: space-around;
   list-style: none;
   padding: 15px;
-  border-top: solid 3px #d8d8d8;
   background-color: #d8d8d8;
 }
 
 .header-navBar a {
   text-decoration: none;
   color: #000000;
+}
+
+main {
+  text-align: center;
+  margin-top: 170px;
 }
 
 .main-products {
@@ -68,7 +95,7 @@ main {
 }
 
 footer {
-  background-color: #d8d8d8;
+  background-color: #736f6f;
   display: flex;
   justify-content: space-around;
 }
@@ -83,5 +110,5 @@ footer {
 
 .footer-lists a {
   text-decoration: none;
-  color: #000000;
+  color: #ece5e5;
 }
