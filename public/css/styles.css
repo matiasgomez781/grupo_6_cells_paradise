@@ -76,6 +76,17 @@ main {
   flex-wrap: wrap;
 }
 
+.arrowButton {
+  padding: 20px;
+  border-radius: 50%;
+  border-color: #00bf63;
+  background-color: #00bf63;
+}
+
+.fa-angle-left, .fa-angle-right {
+  color: #ffffff;
+}
+
 .individualProduct {
   width: 10%;
   background-color: #ffffff;
