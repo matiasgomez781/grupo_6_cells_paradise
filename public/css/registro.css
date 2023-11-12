@@ -10,72 +10,13 @@ body{
 
 }
 
-
-header{
-    padding-left:  20px;
-    height: 25vh;
-    background-color: #00BF63;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-img{
-    width: 12vw;
-    max-width: 130px; 
- }
-
-.input input{
-    display: inline-block;
-    width: 50vw;
-    height: 6vh;
-    border-width: 3px;
-    border-radius: 15px;
-    border-style: double;
-    border-color: #7ed557;
-    font-size: 1.5vw;
-    color: #FFF9F0;
- }
-
-
-center{
-    width: 50vw;
-    max-width: 10px;
-    align-items: center;
-}
-
-.menu p{
-    width: 50vw;
-    height: 20px;
-    flex-wrap:wrap;
-    display: inline;
-}
-
-button{
-    
-    border-radius: 30px;
-    border-style: double;
-    font-size: 2vw;    
-    color: #058789;
-    background-color: #fcff59;
-    border-color: #7ed557;
-}
-
-div.icons{
-    font-size: 5vw;
-    padding-right: 4vw;
-
-}
-
-.fa-circle-user, .fa-cart-plus{
-    justify-content: space-around;
-}
-
-
 main{
     padding: 5vw 10vw;
+}
+
+.top{
+    font-size: 2vw;
+    color: #058789;
 }
 
 hr{
@@ -87,9 +28,11 @@ hr{
 form{
     margin: 0px;
     font-size: 2vw;
+    color:#058789;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    
     
 }
 
@@ -99,12 +42,15 @@ p{
     
 }
 
+label{
+    font-size: 1.5vw;
+}
 input{
     width: 100%;
-    height: 2em;
+    height: 1.5em;
     max-height: 50px;
     border-width: 3px;
-    border-radius: 15px;
+    border-radius: 30px;
     border-style: double;
     border-color: #7ed557;
     font-size: 2.75vw;
@@ -116,14 +62,29 @@ input{
 }
 
 button{
-    font-size: 6vw;
+    display: block;
+    font-size: 2vw;
     width: 100%;
     border-width: 3px;
     border-radius: 15px;
     border-style: double;
     border-color: #7ed557;
-    font-size: 2.75vw;   
+    background-color:#fcff59;
+    color: #058789;
+    transition: 
+        border-color,
+        background-color,
+        color;
 }
+
+button:hover{
+    border-color: #058789 ;
+    background-color:#7ed557 ;
+    color:#fcff59;
+
+}
+
+
 
 @media (max-width:450px) {
     form{
@@ -138,9 +99,17 @@ button{
     }
     .top{
         font-size: 4vw;
-        
+        color: #058789;
         display: flex;
         justify-content: center;
+    }
+
+    label{
+        font-size: 2vw;
+    }
+
+    imput{
+        font-size: 10vw;
     }
 
     .button{
