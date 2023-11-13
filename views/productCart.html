@@ -1,105 +1,87 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/cart.css">
-    <title>Carrito</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css\cart.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <title>Carrito</title>
 </head>
 <body>
-    <header>
-        <article>
-          <img src="#" alt="Logo" />
-        </article>
-  
-        <section>
-          <input type="text" placeholder="Buscar..." />
-          <nav>
-            <ul>
-              <li><a href="#">sasd</a></li>
-              <li><a href="#">dasdsa</a></li>
-              <li><a href="#">asdsad</a></li>
-            </ul>
-          </nav>
-        </section>
-  
-        <section>
-          <img src="#" alt="Perfil" />
-          <img src="#" alt="Carrito" />
-        </section>
-      </header>
+  <main>
 
-      <main class="contenedor">
-        <h1 class="tituloCarrito">Mi carrito</h1>
+    <section class="main__container">
 
-        <section class="carrito">
+    <section class="cart">
+      <h1>Mi Carrito</h1>
+      <div class="cart-lista">
+        <div class="div-prod">Producto</div>
+        <div class="div-cant">Cantidad</div>
+        <div class="div-envio">Envio</div>
+        <div class="div-precio">Precio</div>
+      </div>
 
-            <article class="producto">
-                <img src="https://via.placeholder.com/200x150" alt="Producto 1" class="product__image">
-                <p class="producto-cantidad">Cantidad</p>
-                <p class="producto-envio">Envio</p>
-                <p class="producto-precio">Precio</p>
-              </article>
+      <article class="cart-product">
+        <div class="img-desc-box">
+        <img src="https://www.mgmstore.com.ar/1709-large_default/Apple-iPhone-15-Pro-Max-1TB.jpg" alt="Producto 1" class="product-image">
+        <div class="descripcion-producto">Apple IPhone 15 Pro Max 1TB</div>
+      </div>
+      <div class="cant-box">
+        <input type="number" value="1">
+      </div>
+        <div class="envio-box">Gratis</div>
+        <div class="precio-box">$ 2.099.999,00</div>
+        <span class="item-remove">
+          <button id="trash"><i class="fa-solid fa-trash"></button></i>
+          </span>
+      </article>
 
-              <article class="producto">
-                <img src="https://via.placeholder.com/200x150" alt="Producto 1" class="product__image">
-                <p class="producto-cantidad">Cantidad</p>
-                <p class="producto-envio">Envio</p>
-                <p class="producto-precio">Precio</p>
-              </article>
-              <article class="producto">
-                <img src="https://via.placeholder.com/200x150" alt="Producto 1" class="product__image">
-                <p class="producto-cantidad">Cantidad</p>
-                <p class="producto-envio">Envio</p>
-                <p class="producto-precio">Precio</p>
-              </article>
-              <article class="producto">
-                <img src="https://via.placeholder.com/200x150" alt="Producto 1" class="product__image">
-                <p class="producto-cantidad">Cantidad</p>
-                <p class="producto-envio">Envio</p>
-                <p class="producto-precio">Precio</p>
-              </article>
-
-        <div class="sumario">Resumen de compra
-            <div class="sumario-descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci dolores nobis quasi illo! Nobis aspernatur sequi possimus totam at aperiam consectetur incidunt similique qui. Corporis commodi nihil architecto maxime laboriosam.</div>
-            <div class="sumario-finalizar">Finalizar Compra</div>
+      <article class="cart-product">
+        <div class="img-desc-box">
+        <img src="https://www.mgmstore.com.ar/1413-large_default/Apple-AirPods-3-Generacion.jpg" alt="Producto 2" class="product-image">
+        <div class="descripcion-producto">Auriculares Bluetooth Apple AirPods 3 Generacion</div>
         </div>
+        <div class="cant-box">
+          <input type="number" value="1">
+        </div>
+        <div class="envio-box">Gratis</div>
+        <div class="precio-box">$ 179.999,00</div>
+        <span class="item-remove">
+          <button id="trash"><i class="fa-solid fa-trash"></button></i>
+          </span>
+      </article>
+
+      <article class="cart-product">
+        <div class="img-desc-box">
+        <img src="https://www.mgmstore.com.ar/809-large_default/Apple-USB-Power-Adapter-20W.jpg" alt="Producto 3" class="product-image">
+        <div class="descripcion-producto">Apple Adaptador Carga Rápida USB-C 20W</div>
+        </div>
+        <div class="cant-box">
+          <input type="number" value="1">
+        </div>
+        <div class="envio-box">Gratis</div>
+        <div class="precio-box">$ 19.999,00</div>
+        <span class="item-remove">
+          <button id="trash"><i class="fa-solid fa-trash"></button></i>
+          </span>
+      </article>
 
     </section>
 
-    </main>
+    <section class="checkout">
+      <div class="resumen"><h2>Resumen de la compra</h2></div>
+      <article class="contenido">
+        Apple IPhone 15 Pro Max 1TB + Auriculares Bluetooth Apple AirPods 3 Generacion + Apple Adaptador Carga Rápida USB-C 20W
+      </article>
+      <div class="total">Total 2.299.997,00</div>
+      <div class="chk-pago">
+        <button id="botonPago">Proceder al pago</button>
+      </div>
+    </section>
 
-      <footer>
-        <section>
-            <ul>
-                <li><a href="#">Preguntas frecuentes</a></li>
-                <li><a href="#">dsaada</a></li>
-                <li><a href="#">Sobre Nosotros</a></li>
-                <li><a href="#">dasdasd</a></li>
-                <li><a href="#">dasdasd</a></li>
-            </ul>
-        </section>
-        
-        <section>
-            <ul>
-                <li><a href="#">asdasdasdas</a></li>
-                <li><a href="#">dsaada</a></li>
-                <li><a href="#">asdasdas</a></li>
-                <li><a href="#">dasdasd</a></li>
-                <li><a href="#">dasdasd</a></li>
-            </ul>
-        </section>
-        
-        <section>
-            <ul>
-                <li><a href="#">asdasda</a></li>
-                <li><a href="#">dsaada</a></li>
-                <li><a href="#">sasdasda</a></li>
-                <li><a href="#">dasdasd</a></li>
-                <li><a href="#">dasdasd</a></li>
-            </ul>
-        </section>
-    </footer>
-    
+  </section>
+
+  </main>
+  
 </body>
-</html>
+</html></html>

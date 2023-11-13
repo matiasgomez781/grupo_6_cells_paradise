@@ -1,3 +1,88 @@
-.contenedor{
-    background-color: blue;
+*{
+    box-sizing: border-box;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.main__container{
+    display: flex;
+    border: 1px solid red;
+}
+.cart{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    width: 70%;
+}
+.checkout{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    width: 30%;
+    justify-content: space-between;
+}
+.cart-lista{
+    display: flex;
+    border: 1px solid red;
+
+}
+.cart-product{
+    display: flex;
+    border: 1px solid red;
+    background-color: #f8f8f8;;
+}
+.product-image{
+    width: 50%;
+}
+.resumen{
+    border: 1px solid red;
+}
+.total{
+    border: 1px solid red;
+    font-weight: bold;
+}
+.chk-pago{
+    border: 1px solid red;
+    color:white;
+    text-align: center;
+}
+#botonPago{
+    padding: 14px 10px;
+    background-color: #ff554d;
+    color:white;
+    font-weight: 500;
+    font-size: 14px;
+}
+/*th*/
+
+.div-prod{
+    width: 40%;
+}
+.div-cant{
+    width: 18%;
+}
+.div-envio{
+    width: 18%;
+}
+.div-precio{
+    width: 18%;
+}
+
+.img-desc-box{
+    border: 1px solid red;
+    width: 40%;
+}
+.cant-box{
+    width: 18%;
+    border: 1px solid red;
+}
+.envio-box{
+    width: 18%;
+    border: 1px solid red;
+}
+.precio-box{
+    width: 18%;
+    border: 1px solid red;
+}
+.item-remove{
+    width: 6%;
+    border: 1px solid red;
 }
