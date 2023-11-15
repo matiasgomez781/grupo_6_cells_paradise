@@ -48,10 +48,6 @@ header {
   right: 20px;
 }
 
-.account {
-  color: #fff9f0;
-}
-
 .account-cart {
   width: 13%;
   display: flex;
@@ -60,13 +56,11 @@ header {
 }
 
 .fa-user {
-  color: #d8d8d8;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .fa-cart-shopping {
   font-size: 25px;
-  color: #d8d8d8;
 }
 
 .header-navBar ul {
