@@ -79,6 +79,9 @@ header {
 main {
   margin-top: 11.5vw;
   padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .banner {
@@ -97,12 +100,6 @@ main {
   border-radius: 50%;
   color: #ffffff;
   background-color: #7c7979;
-}
-
-main {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 }
 
 .main-categorie {
