@@ -50,6 +50,11 @@ main p{
     color: #058789;
 }
 
+.encabezado{
+    display: flex;
+    justify-content: space-between;
+}
+
 hr{
     
     border-width: 1px;
@@ -80,7 +85,6 @@ label{
 input{
     width: 100%;
     height: 1.5em;
-    max-height: 50px;
     border-width: 3px;
     border-radius: 30px;
     border-style: double;
@@ -89,13 +93,16 @@ input{
     
 }
 
-.email, .about{
+.email{
     width: 75%;
-    align-self: center;
+}
+.about{
+    width: 100%;
 }
 
 .trato{
     border-color: #7ed557;
+    font-size: 1.5vw;
     border-width: 3px;
     border-radius: 30px;
     border-style: double;
@@ -109,8 +116,8 @@ button{
     border-radius: 15px;
     border-style: double;
     border-color: #7ed557;
-    background-color:#fcff59;
-    color: #058789;
+    background-color:#058789;
+    color: white;
     transition: 
         border-color,
         background-color,
@@ -130,10 +137,10 @@ main footer{
 }
 
 footer {
-    border-top: 2px solid #028886;
+    border-top: 2px solid #058789;
     padding: 2.5vw;
     background-color: #fff9f0;
-    font-size: 2vw;
+    font-size: 1.5vw;
     display: flex;
     flex-wrap: nowrap;
     align-items:flex-start;
@@ -145,8 +152,13 @@ footer {
   list-style: none;
 }
 
+ul{
+    padding: 0px;
+    margin: 0px;
+}
+
 .footer-lists li {
-  padding: 1.5vw;
+  padding: 1vw;
 }
 
 .footer-lists h4 {
@@ -158,6 +170,9 @@ footer {
   color: #000000;
 }
 
+.title{
+    margin: 0px;
+}
 
 
 @media (max-width:450px) {
@@ -184,6 +199,10 @@ footer {
 
     imput{
         font-size: 10vw;
+    }
+
+    .trato{
+        font-size: 2vw;
     }
 
     .button{
