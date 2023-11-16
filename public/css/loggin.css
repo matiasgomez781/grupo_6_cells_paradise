@@ -1,139 +1,155 @@
-*{
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* El cuerpo de la página tiene un fondo de color blanco. */
-body{
-  margin: 0px;
-  background-color: #FFF9F0;
+body {
+  font-family: "Poppins", sans-serif;
 }
 
-/* La cabecera de la página tiene un fondo de color verde. */
-header{
-  padding-left:  20px;
-  height: 25vh;
-  background-color: #00BF63;
+/* Estilos del encabezado */
+header {
+  background-color: #028886;
+  color: white;
+  padding: 10px 0;
+}
+
+.header-main {
   display: flex;
-  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
+  padding: 0 10px;
 }
 
-/* La imagen en la cabecera tiene un ancho del 15% de la vista del navegador. */
-img{
-  width: 15%;
-  min-width: 100px;
+#logo {
+  width: 60px;
 }
 
-/* Los campos de entrada del formulario de inicio de sesión tienen un ancho del 30% de la vista del navegador y una altura de 5vh. Tienen un borde doble de 3 píxeles de color #7ed557. */
-input{
-  display: inline-block;
-  width: 50%;
-  height: 5vh;
-  border-width: 3px;
-  border-radius: 15px;
-  border-style: double;
-  border-color: #7ed557;
+.searchBar {
+  position: relative;
 }
 
-/* El formulario de inicio de sesión está centrado en la página. */
-center{
-  width: 50vw;
+.searchBar input {
+  width: 100%; /* Modifiqué el ancho de la barra de búsqueda */
+  padding: 8px 30px 8px 8px; /* Ajusté el padding para el ícono */
+  border-radius: 20px;
+  border: none;
+  outline: none;
 }
 
-/* Los elementos del menú tienen un ancho del 50% de la vista del navegador y una altura de 20px. Se envuelven en varias líneas. */
-.menu p{
-  width: 50vw;
-  height: 20px;
-  flex-wrap:wrap;
-  display: inline;
-  align-items: stretch;
+.fa-magnifying-glass {
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
 }
 
-/* El botón de inicio de sesión tiene un radio de borde de 30 píxeles, un borde doble y un tamaño de fuente de 2vw. Tiene un color #058789 y un color de fondo #fcff59. */
-button{
-  
-  border-radius: 30px;
-  border-style: double;
-  font-size: 2vw;    
-  color: #058789;
-  background-color: #fcff59;
-  border-color: #7ed557;
+.account-cart a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
 }
 
-/* El título de inicio de sesión tiene un tamaño de fuente de 5vw y un relleno de 20 píxeles a la derecha. */
-div.loghead{
-  font-size: 5vw;
-  padding-right: 20px;
+/* Estilos de navegación */
+.header-navBar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 10px;
+  background-color: #d8d8d8;
 }
 
-/* El área de contenido principal tiene un relleno de 5vw en la parte superior e inferior y un relleno de 10vw en la izquierda y la derecha. */
-main{
-  padding: 5vw 10vw
+.header-navBar a {
+  text-decoration: none;
+  color: black;
+  padding: 0 50px;
 }
 
-.login-title{
-  display: inline-block;
-}
-
-.footer {
-  background-color: #00BF63;
-  color: #FFF;
+/* Estilos del área de inicio de sesión */
+.login-section {
+  text-align: center;
+  margin: 50px auto;
+  width: 100%; /* Reduje el ancho de la sección de inicio de sesión */
+  background-color: #f2f2f2;
   padding: 20px;
+  border-radius: 10px;
 }
 
-/* Las filas del pie de página se dividen en 3 columnas. */
-.row {
-  column-count: 3;
-}
-.footer td {
-  width: 25%;
-}
-.footer .col-2 {
-  width: 20%;
-}
-button {
-  background-color: #fcff59;
-  border-radius: 30px;
-  border-style: double;
-  font-size: 2vw;
-  color: #058789;
-
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-
-  &:hover {
-    background-color: #00BF63;
-    transform: scale(1.1);
-  }
+.login-section-title {
+  margin-bottom: 20px;
 }
 
-/* Los elementos del formulario de inicio de sesión se organizan en una sola columna en dispositivos móviles. */
-@media (max-width: 576px) {
-.main {
+.login-inputs {
   display: flex;
   flex-direction: column;
-}
+  margin-bottom: 20px;
 }
 
-/* La imagen en la cabecera se centra en dispositivos móviles. */
-@media (max-width: 576px) {
-header img {
+.login-input {
+  margin-bottom: 15px;
+}
+
+.login-input label {
   display: block;
-  margin: 0 auto;
-}
-}
-
-/* El formulario de inicio de sesión tiene un ancho máximo de 500px en dispositivos móviles. */
-@media (max-width: 576px) {
-form {
-  max-width: 500px;
-}
+  margin-bottom: 5px;
 }
 
-/* Los elementos del pie de página se organizan en una sola columna en dispositivos móviles. */
-@media (max-width: 576px) {
-.footer {
+.login-input input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  padding: 5px 10px; /* Reduje el padding del botón */
+  border: none;
+  border-radius: 5px;
+  background-color: #028886;
+  color: white;
+  cursor: pointer;
+}
+
+.login-links {
+  font-size: 0.8em;
+}
+
+.login-links a {
+  text-decoration: none;
+  color: #028886;
+  margin-left: 5px;
+}
+
+/* Estilos del pie de página */
+footer {
+  background-color: #f2f2f2;
+  padding: 20px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
 }
+
+.footer-lists {
+  margin-bottom: 20px;
+}
+
+.footer-lists ul {
+  list-style: none;
+}
+
+.footer-lists a {
+  text-decoration: none;
+  color: #028886;
+}
+
+@media (max-width: 768px) {
+  .header-navBar {
+    display: none;
+  }
+
+  .login-section {
+    width: 100%;
+  }
 }

@@ -1,109 +1,95 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/loggin.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
-    <title>PAGINA DE LOGGIN</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de inicio de sesión</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/loggin.css">
 </head>
 <body>
 
-  <!-- Encabezado de la página -->
+   <!-- Encabezado de la página -->
+  <header>
+    <section class="header-main">
+      <img src="img/logo.png" alt="Logo" id="logo" />
+      <div class="header-main searchBar">
+        <input type="text" placeholder="Buscar artículos">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <div class="header-main account-cart">
+        <a href="#">
+          <i class="fa-solid fa-user"></i> Mi cuenta
+        </a>
+        <a href="#">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+      </div>
+    </section>
+    <nav class="header-navBar">
+      <ul>
+        <li><a href="#">SAMSUNG</a></li>
+        <li><a href="#">SMARTWATCH</a></li>
+        <li><a href="#">MOTOROLA</a></li>
+        <li><a href="#">ACCESORIOS</a></li>
+        <li><a href="#">IPHONE</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <header>
-        <img src="img/logo.png" alt="image-logo"> 
+  <!-- Contenido principal de la página -->
 
-        <section class="center">
-            <div class="input">
-                <input placeholder = " Buscar productos y más..." width="50px"></imput>
-            </div>
-            <br>
-            <div class="menu">
-                <p>
-                    <button type="submit">INICIO</button>
-                    <button type="submit">CELULARES</button>
-                    <button type="submit">ACCESORIOS</button>
-                    <button type="submit">NOVEDADES</button>
-                    <button type="submit">OFERTAS</button>
-                    <button type="submit">AYUDA</button>
-                </p>
-            </div>
-        </section>
+  <main>
+    <section class="login-section">
 
-        <!-- Iconos en la esquina superior derecha del encabezado -->
+      <h2 class="login-section-title">Ingresá a Cell's Paradise</h2>
+      <form action="/login.php" method="post">
+        <div class="login-inputs">
+          <div class="login-input email-input">
+            <label for="email">Correo electrónico</label>
+            <input type="email" name="email" id="email" placeholder="Introduce tu correo electrónico" required>
+          </div>
 
-        <div class="loghead">
-          <i class="fa-solid fa-circle-user" style="color: #fcff59;"></i>
-          <i class="fa-solid fa-cart-plus" style="color: #fcff59;"></i>
+          <div class="login-input password-input">
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" id="password" placeholder="Introduce tu contraseña" required>
+          </div>
         </div>
-    </header>
 
-        <!-- Contenido principal de la página -->
-    <main>
+        <button type="submit">Iniciar sesión</button>
+      </form>
+      <p class="login-links">
+        <br>
+        ¿No tienes cuenta? <a href="#">Crear cuenta</a> | ¿Olvidaste tu contraseña? <a href="#">Recuperar contraseña</a>
+      </p>
+    </section>
+  </main>
 
-       <!-- Sección del título de inicio de sesión -->
-        <section class=".login-title">
-        
-            <p>
-                <strong>
-                    Inicia sesion en tu cuenta
-                </strong>
-            </p>
-        </section>
-
-
-      <!-- Formulario de inicio de sesión -->
-        <form action="/login.php" method="post">
-            <p>
-      <input type="text" name="usuario" placeholder="Usuario">
-      <input type="password" name="contraseña" placeholder="Contraseña">
-      <input type="submit" value="Iniciar sesión">
-            </p>
-
-              <!-- Botones dentro del formulario -->
-                <p>
-                
-                    <button type="submit" value=>Crear cuenta</button>
-                    <button type="submit" value=>Recuperar contraseña</button>
-                  </p>
-        </form>
-    </main>
-
-    <!-- Pie de página -->
-
-    <footer class="footer">
-        <table>
-          <tr>
-
-          <!-- Columna 1 del pie de página con logo y nombre de la empresa -->
-            <td class="col-1">
-              <img src="/img/logo.png" alt="Logotipo de la empresa">
-              <br>
-              <strong>Cell's Paradise</strong>
-            </td>
-
-            <!-- Columna 2 del pie de página con información de contacto -->
-            <td class="col-2">
-              <h4>Contactanos</h4>
-              <ul class="social-icons">
-                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-              </ul>
-            </td>
-
-            <!-- Columna 3 del pie de página con enlaces de ayuda -->
-            <td class="col-3">
-              <h4>Ayuda</h4>
-              <ul>
-                <li><a href="#">Preguntas Frecuentes</a></li>
-                <li><a href="#">Centro de Ayuda</a></li>
-                <li><a href="#">Terminos y Condiciones</a></li>
-              </ul>
-            </td>
-          </tr>
-        </table>
-      </footer>
+  <footer>
+    <section class="footer-lists footer-questions">
+      <h4 class="title">Preguntas frecuentes</h4>
+      <ul>
+        <li><a href="#">Cómo comprar</a></li>
+        <li><a href="#">Cómo se envía</a></li>
+        <li><a href="#">Tiempo de envío</a></li>
+        <li><a href="#">Métodos de pago</a></li>
+      </ul>
+    </section>
+    <section class="footer-lists">
+      <h4 class="title">Sobre nosotros</h4>
+      <ul>
+        <li><a href="#">Quiénes somos</a></li>
+        <li><a href="#">Trabajá con nosotros</a></li>
+      </ul>
+    </section>
+    <section class="footer-lists footer-contact">
+      <h4 class="title">Contacto</h4>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Whatsapp</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </section>
+  </footer>
 </body>
 </html>
