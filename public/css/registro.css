@@ -40,6 +40,11 @@ main{
     padding: 2vw 10vw;
 }
 
+main p{
+    font-size: 1.5vw;
+    color:#058789;
+}
+
 .top{
     font-size: 2vw;
     color: #058789;
@@ -80,12 +85,20 @@ input{
     border-radius: 30px;
     border-style: double;
     border-color: #7ed557;
-    font-size: 2.75vw;
+    font-size: 2.5vw;
     
 }
 
 .email, .about{
     width: 75%;
+    align-self: center;
+}
+
+.trato{
+    border-color: #7ed557;
+    border-width: 3px;
+    border-radius: 30px;
+    border-style: double;
 }
 
 button{
@@ -133,7 +146,7 @@ footer {
 }
 
 .footer-lists li {
-  padding: 2vw;
+  padding: 1.5vw;
 }
 
 .footer-lists h4 {
