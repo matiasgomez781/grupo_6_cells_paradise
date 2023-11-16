@@ -99,6 +99,12 @@ main {
   background-color: #7c7979;
 }
 
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .main-categorie {
   padding: 30px;
 }
@@ -107,14 +113,13 @@ main {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .arrowButton {
   padding: 20px;
+  background-color: #00bf63;
   border-radius: 50%;
   border-color: #00bf63;
-  background-color: #00bf63;
 }
 
 .fa-angle-left,
@@ -123,7 +128,13 @@ main {
 }
 
 .individualProduct {
+  display: flex;
+  flex-direction: column;
   width: 10%;
+  min-height: 44vh;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
   background-color: #ffffff;
 }
 
@@ -132,12 +143,20 @@ main {
 }
 
 .descriptionProduct {
-  padding: 15px;
-  flex-direction: column;
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  justify-content:center;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .descriptionProduct p {
-  margin: 10px 0;
+  margin: auto;
+}
+
+.title {
+  margin-top: 5px;
 }
 
 .btn-Add {
