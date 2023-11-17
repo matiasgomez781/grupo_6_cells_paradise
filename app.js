@@ -8,6 +8,6 @@ app.use(express.static(publicPath));
 
 app.listen(3000, () => console.log("listening on port 3000"));
 
-app.get("/", (req, res) => {
+app.get("/loggin", (req, res) => {
     res.sendFile(path.resolve("./views/loggin.html"));
 });
