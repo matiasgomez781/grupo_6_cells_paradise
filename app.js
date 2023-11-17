@@ -25,3 +25,8 @@ app.get ('/registro', (req,res) =>{
 app.get("/loggin", (req, res) => {
     res.sendFile(path.resolve("./views/loggin.html"));
 });
+
+//Ruta Product detail
+app.get('/detail', (req,res) => {
+    res.sendFile(path.join(__dirname, 'views/productDetail.html'));
+});
