@@ -162,6 +162,25 @@ main {
   flex-wrap: wrap;
 }
 
+.priceProduct {
+  font-size: 1.3em;
+}
+
+.priceDiscount {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.9em;
+}
+
+.oldPrice {
+  text-decoration:line-through;
+  padding-right: 5px;
+}
+
+.discount {
+  color: #0ddd78;
+}
+
 .descriptionProduct p {
   margin: auto;
 }
