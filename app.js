@@ -8,11 +8,14 @@ app.use(express.static(publicPath));
 
 app.listen(3000, () => console.log("listening on port 3000"));
 
-
-app.get("/loggin", (req, res) => {
-    res.sendFile(path.resolve("./views/loggin.html"));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "views/index.html"));
 });
 
-app.get ('/registro', (req,res) =>{
-    res.sendFile ( path.resolve(__dirname, './views/registro.html'))
-})
+app.get("/loggin", (req, res) => {
+  res.sendFile(path.resolve("./views/loggin.html"));
+});
+
+app.get("/registro", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./views/registro.html"));
+});
