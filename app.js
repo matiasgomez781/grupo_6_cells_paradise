@@ -10,6 +10,6 @@ app.use(express.static(publicPath));
 app.listen(3000, () => console.log("listening on port 3000"));
 
 //Ruta Carrito
-app.get('/', (req,res) => {
+app.get('/productCart', (req,res) => {
     res.sendFile(path.join(__dirname, 'views/productCart.html'));
 });
