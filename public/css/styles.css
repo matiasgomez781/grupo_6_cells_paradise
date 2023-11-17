@@ -173,7 +173,7 @@ main {
 }
 
 .oldPrice {
-  text-decoration:line-through;
+  text-decoration: line-through;
   padding-right: 5px;
 }
 
@@ -221,18 +221,6 @@ footer {
   justify-content: space-around;
 }
 
-/* .footer-lists {
-  padding: 0 15px;
-}
-
-.footer-questions {
-  border-right: solid #222222 3px;
-}
-
-.footer-contact {
-  border-left: solid #222222 3px;
-} */
-
 .footer-lists ul {
   list-style: none;
 }
@@ -247,5 +235,56 @@ footer {
 
 .footer-lists a {
   text-decoration: none;
-  color: #000000;
+  color: #028886;
+}
+
+@media (360px <= width <= 767px) {
+  .header-main {
+    width: 100vw;
+  }
+
+  #logo-container {
+    width: 25%;
+  }
+
+  .searchBar {
+    width: 60%;
+  }
+
+  .account-cart {
+    justify-content: space-evenly;
+  }
+
+  .fa-magnifying-glass {
+    right: 12%;
+  }
+
+  .header-navBar {
+    display: none;
+  }
+
+  main {
+    margin-top: 30%;
+  }
+
+  .banner-container {
+    width: 100%;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .individualProduct {
+    width: 40%;
+  }
+
+  .main-productsOnSale div {
+    width: 50%;
+    margin-top: 10%;
+  }
+
+  .hideProduct {
+    display: none;
+  }
 }
