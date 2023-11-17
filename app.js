@@ -13,3 +13,6 @@ app.listen(3000, () => console.log("listening on port 3000"));
 app.get('/productCart', (req,res) => {
     res.sendFile(path.join(__dirname, 'views/productCart.html'));
 });
+app.get ('/registro', (req,res) =>{
+    res.sendFile ( path.resolve(__dirname, './views/registro.html'))
+})
