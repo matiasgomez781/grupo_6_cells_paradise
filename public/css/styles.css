@@ -18,8 +18,13 @@ header {
   top: 0;
 }
 
-#logo {
+#logo-container {
   width: 8%;
+  border-radius: 50%;
+}
+
+#logo {
+  width: 100%;
   border-radius: 50%;
 }
 
@@ -53,6 +58,11 @@ header {
   display: flex;
   justify-content: space-between;
   margin-right: 15px;
+}
+
+.account-cart a {
+  text-decoration: none;
+  color: #000000;
 }
 
 .fa-user {
@@ -90,8 +100,12 @@ main {
   justify-content: space-between;
 }
 
-.banner img {
+.banner-container {
   width: 90%;
+}
+
+.banner-container img {
+  width: 100%;
 }
 
 .leftArrow,
