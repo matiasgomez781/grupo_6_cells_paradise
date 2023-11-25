@@ -10,63 +10,7 @@ body {
 }
 
 /* Estilos del encabezado */
-header {
-  background-color: #028886;
-  color: white;
-  padding: 10px 0;
-}
 
-.header-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10px;
-}
-
-#logo {
-  width: 60px;
-}
-
-.searchBar {
-  position: relative;
-}
-
-.searchBar input {
-  width: 100%; /* Modifiqué el ancho de la barra de búsqueda */
-  padding: 8px 30px 8px 8px; /* Ajusté el padding para el ícono */
-  border-radius: 20px;
-  border: none;
-  outline: none;
-}
-
-.fa-magnifying-glass {
-  position: absolute;
-  right: 25px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #888;
-}
-
-.account-cart a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-}
-
-/* Estilos de navegación */
-.header-navBar ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 10px;
-  background-color: #d8d8d8;
-}
-
-.header-navBar a {
-  text-decoration: none;
-  color: black;
-  padding: 0 50px;
-}
 
 /* Estilos del área de inicio de sesión */
 .login-section {
