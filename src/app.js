@@ -20,7 +20,7 @@ app.get ('/registro', (req,res) =>{
 });
 
 app.get("/loggin", (req, res) => {
-    res.sendFile(path.resolve("./views/loggin.html"));
+    res.sendFile(path.resolve(__dirname, "./views/loggin.html"));
 });
 
 //Ruta Product detail
