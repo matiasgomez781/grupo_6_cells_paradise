@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de inicio de sesión</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/loggin.css">
+</head>
+<body>
+
+   <!-- Encabezado de la página -->
+   <header>
+    <section class="header-main">
+      <a href="/" id="logo-container"
+        ><img src="images/logo.jpeg" alt="Logo" id="logo"
+      /></a>
+
+      <div class="header-main searchBar">
+        <input type="text" placeholder="Buscar Artículos" />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+
+      <div class="header-main account-cart">
+        <a href="/registro"> <i class="fa-solid fa-user"></i> MI CUENTA </a>
+        <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+    </section>
+
+    <nav class="header-navBar">
+      <ul>
+        <li><a href="#">SAMSUNG</a></li>
+        <li><a href="#">SMARTWATCH</a></li>
+        <li><a href="#">MOTOROLA</a></li>
+        <li><a href="#">ACCESORIOS</a></li>
+        <li><a href="#">IPHONE</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido principal de la página -->
+
+  <main>
+    <section class="login-section">
+
+      <h2 class="login-section-title">Ingresá a Cell's Paradise</h2>
+      <form action="/login.php" method="post">
+        <div class="login-inputs">
+          <div class="login-input email-input">
+            <label for="email">Correo electrónico</label>
+            <input type="email" name="email" id="email" placeholder="Introduce tu correo electrónico" required>
+          </div>
+
+          <div class="login-input password-input">
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" id="password" placeholder="Introduce tu contraseña" required>
+          </div>
+        </div>
+
+        <div class="login-input remember-me">
+          <input type="checkbox" name="remember" id="remember" />
+          <label for="remember">Mantenerme Conectado</label>
+        </div>
+
+        <button type="submit">Iniciar sesión</button>
+      </form>
+      <p class="login-links">
+        <br>
+        ¿No tienes cuenta? <a href="/registro">Crear cuenta</a> | ¿Olvidaste tu contraseña? <a href="#">Recuperar contraseña</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <section class="footer-lists footer-questions">
+      <h4 class="title">Preguntas frecuentes</h4>
+      <ul>
+        <li><a href="#">Cómo comprar</a></li>
+        <li><a href="#">Cómo se envía</a></li>
+        <li><a href="#">Tiempo de envío</a></li>
+        <li><a href="#">Métodos de pago</a></li>
+      </ul>
+    </section>
+    <section class="footer-lists">
+      <h4 class="title">Sobre nosotros</h4>
+      <ul>
+        <li><a href="#">Quiénes somos</a></li>
+        <li><a href="#">Trabajá con nosotros</a></li>
+      </ul>
+    </section>
+    <section class="footer-lists footer-contact">
+      <h4 class="title">Contacto</h4>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Whatsapp</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </section>
+  </footer>
+</body>
+</html>
