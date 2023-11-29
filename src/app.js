@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const routerloggin = require("./routes/users.routes");
+const routerlogin = require("./routes/users.routes");
 
 const app = express();
 
@@ -20,7 +20,7 @@ app.get ('/registro', (req,res) =>{
     res.sendFile ( path.resolve(__dirname, './views/registro.html'))
 });
 
-app.use("/loggin",routerloggin);
+app.use("/login",routerlogin);
 
 //Ruta Product detail
 app.get('/detail', (req,res) => {
