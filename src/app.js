@@ -1,7 +1,8 @@
+
 const express = require("express");
 const path = require("path");
 const app = express();
-const indexRouter = require ('./routes/index.routes')
+const userRouter = require ('./routes/users.routes')
 
 
 const publicPath = path.join(__dirname, "public");
@@ -15,4 +16,4 @@ app.set ('views', path.join(__dirname, '/views/users'))
 
 app.use(express.static('public'))
 
-app.use('/', indexRouter)
+app.use('/users', userRouter)
