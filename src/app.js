@@ -1,4 +1,8 @@
 const express = require("express");
+const path = require("path");
+const routerlogin = require("./routes/users.routes");
+
+
 const app = express();
 
 const mainRouter = require("./routes/main.routes");
@@ -18,9 +22,8 @@ app.get("/registro", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./views/registro.html"));
 });
 
-app.get("/loggin", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/loggin.html"));
-});
+app.use("/login",routerlogin);
+
 
 //Ruta Product detail
 app.use("/detail", porductsRouter);
