@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 
 const mainRouter = require("./routes/main.routes");
+const porductsRouter = require("./routes/products.routes");
 
 app.use(express.static("public"));
 
@@ -22,6 +23,4 @@ app.get("/loggin", (req, res) => {
 });
 
 //Ruta Product detail
-app.get("/detail", (req, res) => {
-  res.sendFile(path.join(__dirname, "views/productDetail.html"));
-});
+app.use("/detail", porductsRouter);
