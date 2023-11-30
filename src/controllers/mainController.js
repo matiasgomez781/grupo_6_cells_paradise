@@ -2,8 +2,12 @@ const path = require("path");
 
 const mainController = {
   index: (req, res) => {
-    res.sendFile(path.join(__dirname, "../views/index.html"));
+    res.render("./main/index");
   },
+
+  cart: (req, res) => {
+    res.render("./main/productCart");
+  }
 };
 
 module.exports = mainController;
