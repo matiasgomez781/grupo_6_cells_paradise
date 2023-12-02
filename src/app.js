@@ -1,19 +1,19 @@
-
 const express = require("express");
 const path = require("path");
+
 const app = express();
-const userRouter = require ('./routes/users.routes')
 
+const routerlogin = require("./routes/users.routes");
+const mainRouter = require("./routes/main.routes");
+const productsRouter = require("./routes/products.routes");
 
-const publicPath = path.join(__dirname, "public");
-app.use(express.static(publicPath));
+app.use(express.static("public"));
 
 app.listen(3000, () => console.log("listening on port 3000"));
 
-app.set ('view engine', 'ejs');
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
-app.set ('views', path.join(__dirname, '/views/users'))
-
-app.use(express.static('public'))
-
-app.use('/users', userRouter)
+app.use("/", mainRouter);
+app.use("/users", routerlogin);
+app.use("/products", productsRouter);

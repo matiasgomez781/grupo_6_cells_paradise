@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const path = require ('path');
 const product =require('../model/product')
 
@@ -22,5 +23,18 @@ let usersController = {
     
 
 }
+=======
+const path = require("path");
+
+const usersController = {
+  login: (req, res) => {
+    res.render(("./users/login"));
+  },
+
+  register: (req, res) => {
+    res.render(("./users/registro"));
+  },
+};
+>>>>>>> 10bbbab13731c6299bf19fa4327f8302b6fd734d
 
 module.exports = usersController;

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include("../partials/head.ejs") %>
+  </head>
+  <body>
+    <header>
+      <%- include("../partials/header.ejs") %>
+    </header>
+
+    <main>
+      <article class="banner">
+        <button type="button" class="leftArrow hide">
+          <i class="fa-solid fa-angle-left"></i>
+        </button>
+        <a href="#" class="banner-container"
+          ><img src="/images/Banner-Accesorios.jpg" alt="Banner"
+        /></a>
+        <button type="button" class="rightArrow hide">
+          <i class="fa-solid fa-angle-right"></i>
+        </button>
+      </article>
+
+      <h3 class="main-categorie">CELULARES</h3>
+
+      <section class="main-products">
+        <button type="button" class="arrowButton">
+          <i class="fa-solid fa-angle-left"></i>
+        </button>
+
+        <section class="individualProduct hide">
+          <a href="/products/detalle"
+            ><img src="/images/Motorola E22.png" alt="Motorola E22"
+          /></a>
+
+          <article class="descriptionProduct">
+            <button type="button" class="btn-Add">AGREGAR</button>
+
+            <p class="priceProduct">$85.000</p>
+            <div class="priceDiscount">
+              <p class="oldPrice">$94.445</p>
+              <p class="discount">10% Off</p>
+            </div>
+            <h4 class="title">MOTOROLA E22</h4>
+          </article>
+        </section>
+
+        <section class="individualProduct hide">
+          <a href="/products/detalle"
+            ><img src="/images/Samsung S21.png" alt="Samsung S21"
+          /></a>
+
+          <article class="descriptionProduct">
+            <button type="button" class="btn-Add">AGREGAR</button>
+
+            <p class="priceProduct">$342.000</p>
+
+            <div class="priceDiscount hide">
+              <p class="oldPrice">$360.000</p>
+              <p class="discount">5% Off</p>
+            </div>
+
+            <h4 class="title">SAMSUNG S21</h4>
+          </article>
+        </section>
+
+        <section class="individualProduct hide">
+          <a href="/products/detalle"
+            ><img src="/images/Moto EDGE 30 NEO.png" alt="Moto EDGE 30 NEO"
+          /></a>
+
+          <article class="descriptionProduct">
+            <button type="button" class="btn-Add">AGREGAR</button>
+
+            <p class="priceProduct">$155.400</p>
+
+            <div class="priceDiscount">
+              <p class="oldPrice">$222.000</p>
+              <p class="discount">30% Off</p>
+            </div>
+
+            <h4 class="title">MOTO EDGE 30 NEO</h4>
+          </article>
+        </section>
+
+        <section class="individualProduct">
+          <a href="/products/detalle"
+            ><img src="/images/iPhone 11 PRO.png" alt="iPhone 11 PRO"
+          /></a>
+
+          <article class="descriptionProduct">
+            <button type="button" class="btn-Add">AGREGAR</button>
+
+            <p class="priceProduct">$1.070.000</p>
+            <p class="discount" hidden>10% Off</p>
+            <h4 class="title">IPHONE 11 PRO</h4>
+          </article>
+        </section>
+
+        <section class="individualProduct hide">
+          <a href="/products/detalle"
+            ><img src="/images/Samsung A54.png" alt="Samsung A54"
+          /></a>
+
+          <article class="descriptionProduct">
+            <button type="button" class="btn-Add">AGREGAR</button>
+
+            <p class="priceProduct">$340.000</p>
+            <p class="discount" hidden>10% OFF</p>
+            <h4 class="title">SAMSUNG A54</h4>
+          </article>
+        </section>
+
+        <section class="individualProduct hide">
+          <a href="/products/detalle"
+            ><img src="/images/iPhone SE.png" alt="iPhone SE"
+          /></a>
+
+          <article class="descriptionProduct">
+            <button type="button" class="btn-Add">AGREGAR</button>
+
+            <p class="priceProduct">$676.000</p>
+
+            <div class="priceDiscount">
+              <p class="oldPrice">$750.000</p>
+              <p class="discount">10% OFF</p>
+            </div>
+
+            <h4 class="title">IPHONE SE</h4>
+          </article>
+        </section>
+
+        <button type="button" class="arrowButton">
+          <i class="fa-solid fa-angle-right"></i>
+        </button>
+      </section>
+
+      <section class="main-productsOnSale">
+        <div>
+          <a href="#"
+            ><img src="/images/Oferta-BlackFriday.jpg" alt="Oferta"
+          /></a>
+        </div>
+        <div>
+          <a href="#"
+            ><img src="/images/Oferta-Accesorios.jpg" alt="Oferta"
+          /></a>
+        </div>
+      </section>
+
+      <h3 class="main-categorie">ACCESORIOS</h3>
+
+      <section class="main-products">
+        <!-- <button type="button" class="arrowButton"><i class="fa-solid fa-angle-left"></i></button> -->
+
+        <section class="individualProduct">
+          <a href="/products/detalle"
+            ><img
+              src="/images/Apple Watch Series 8.png"
+              alt="Apple Watch Series 8"
+          /></a>
+
+          <article class="descriptionProduct">
+            <button type="button" class="btn-Add">AGREGAR</button>
+
+            <p class="priceProduct">$18.000</p>
+
+            <div class="priceDiscount">
+              <p class="oldPrice">$20.000</p>
+              <p class="discount">10% OFF</p>
+            </div>
+
+            <h4 class="title">APPLE WATCH SERIES 8</h4>
+          </article>
+        </section>
+
+        <section class="individualProduct hideProduct">
+          <a href="/products/detalle"
+            ><img
+              src="/images/Sandisk 128GB.png"
+              alt="Memoria SD SanDisk 128GB Ultra"
+          /></a>
+
+          <article class="descriptionProduct">
+            <button type="button" class="btn-Add">AGREGAR</button>
+
+            <p class="priceProduct">$4.700</p>
+            <p class="discount" hidden>40% OFF</p>
+            <h4 class="title">MEMORIA SD SANDISK 128GB ULTRA</h4>
+          </article>
+        </section>
+
+        <section class="individualProduct hideProduct">
+          <a href="/products/detalle"
+            ><img src="/images/Cargador Samsung.png" alt="Cargador Samsung"
+          /></a>
+
+          <article class="descriptionProduct">
+            <button type="button" class="btn-Add">AGREGAR</button>
+
+            <p class="priceProduct">$11.000</p>
+            <p class="discount" hidden>40% OFF</p>
+            <h4 class="title">CARGADOR SAMSUNG</h4>
+          </article>
+        </section>
+
+        <!-- <button type="button" class="arrowButton"><i class="fa-solid fa-angle-right"></i></button> -->
+      </section>
+    </main>
+
+    <footer>
+      <%- include("../partials/footer.ejs") %>
+    </footer>
+  </body>
+</html>

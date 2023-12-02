@@ -3,7 +3,7 @@
 }
 
 
-header {
+/* header {
   background-color: #028886;
   width: 100vw;
   top: 0;
@@ -21,7 +21,7 @@ header {
   align-items: center;
   flex-wrap: wrap;
   padding: 0 10px;
-}
+} */
 
 #logo-container {
     width: 8%;
