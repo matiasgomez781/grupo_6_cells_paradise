@@ -1,20 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
   <%- include('../partials/head.ejs') %>
   <link rel="stylesheet" href="/css/login.css">
 
 </head>
 <body>
 
-
-   <!--Encabezado de la página-->
+   <Encabezado de la página>
   <header>
     
-    <%- include('../partials/header.ejs') %>
+  <section class="header-main">
+    <a href="/" id="logo-container"
+      ><img src="/images/logo.jpeg" alt="Logo" id="logo"
+    /></a>
+
+    <div class="header-main searchBar">
+      <input type="text" placeholder="Buscar Artículos" />
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <div class="header-main account-cart">
+      <a href="/register"> <i class="fa-solid fa-user"></i> MI CUENTA </a>
+      <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
   
+    </div>
+  </section>
+
+  <nav class="header-navBar">
+    <ul>
+      <li><a href="#">SAMSUNG</a></li>
+      <li><a href="#">SMARTWATCH</a></li>
+      <li><a href="#">MOTOROLA</a></li>
+      <li><a href="#">ACCESORIOS</a></li>
+      <li><a href="#">IPHONE</a></li>
+    </ul>
+  </nav>
 </header>
+
+
+
   
   <!-- Contenido principal de la página -->
 
@@ -52,7 +77,6 @@
   <footer>
 
     <%- include('../partials/footer.ejs') %>
-    
   </footer>
 </body>
 </html>

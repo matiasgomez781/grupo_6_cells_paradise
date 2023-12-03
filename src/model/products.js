@@ -8,7 +8,7 @@ const productsModel = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolor sit amet",
       price: 94445,
-      discount: "10%",
+      discount: 10,
       image: "/images/Motorola E22.png",
       category: "celular",
     },
@@ -18,7 +18,7 @@ const productsModel = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolor sit amet",
       price: 360000,
-      discount: "5%",
+      discount: 5,
       image: "/images/Samsung S21.png",
       category: "celular",
     },
@@ -28,7 +28,7 @@ const productsModel = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolor sit amet",
       price: 222000,
-      discount: "30%",
+      discount: 30,
       image: "/images/Moto EDGE 30 NEO.png",
       category: "celular",
     },
@@ -58,7 +58,7 @@ const productsModel = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolor sit amet",
       price: 750000,
-      discount: "10%",
+      discount: 10,
       image: "/images/iPhone SE.png",
       category: "celular",
     },
@@ -68,7 +68,7 @@ const productsModel = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolor sit amet",
       price: 20000,
-      discount: "10%",
+      discount: 10,
       image: "/images/Apple Watch Series 8.png",
       category: "accesorio",
     },
@@ -98,11 +98,8 @@ const productsModel = {
     return this.products;
   },
   getById: function (id) {
-    return this.products.find(product => product.id == id);
+    return this.products.find((product) => product.id == id);
   },
-  getByCategory: function (category) {
-    return this.products.find(product => product.category == category);
-  }
 };
 
 module.exports = productsModel;
