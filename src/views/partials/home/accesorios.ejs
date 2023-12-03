@@ -5,20 +5,26 @@
   /></a>
 
   <article class="descriptionProduct">
-    <button type="button" class="btn-Add">AGREGAR</button>
-
     <% if(product.discount) { %>
-    <p class="priceProduct">
-      $<%= Math.floor(product.price - (product.price * (product.discount/100)))
-      %>
-    </p>
+    <div class="btn-price">
+      <button type="button" class="btn-Add">AGREGAR</button>
+
+      <p class="priceProduct">
+        $<%= Math.floor(product.price - (product.price *
+        (product.discount/100))) %>
+      </p>
+    </div>
 
     <div class="priceDiscount">
       <p class="oldPrice">$<%= product.price %></p>
       <p class="discount"><%= product.discount %>% Off</p>
     </div>
     <% } else { %>
-    <p class="priceProduct">$<%= product.price %></p>
+    <div class="btn-price">
+      <button type="button" class="btn-Add">AGREGAR</button>
+
+      <p class="priceProduct">$<%= product.price %></p>
+    </div>
     <% } %>
 
     <h4 class="title"><%= product.name %></h4>
