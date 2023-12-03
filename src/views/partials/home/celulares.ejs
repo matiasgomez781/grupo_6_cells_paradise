@@ -1,0 +1,27 @@
+<% products.forEach(product => { if(product.category == "celular") { %>
+<section class="individualProduct">
+  <a href="/products/detail/<%= product.id %>"
+    ><img src="<%= product.image %>" alt="<%= product.name %>"
+  /></a>
+
+  <article class="descriptionProduct">
+    <button type="button" class="btn-Add">AGREGAR</button>
+
+    <% if(product.discount) { %>
+    <p class="priceProduct">
+      $<%= Math.floor(product.price - (product.price * (product.discount/100)))
+      %>
+    </p>
+
+    <div class="priceDiscount">
+      <p class="oldPrice">$<%= product.price %></p>
+      <p class="discount"><%= product.discount %>% Off</p>
+    </div>
+    <% } else { %>
+    <p class="priceProduct">$<%= product.price %></p>
+    <% } %>
+
+    <h4 class="title"><%= product.name %></h4>
+  </article>
+</section>
+<% }}) %>
