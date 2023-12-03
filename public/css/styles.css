@@ -127,7 +127,7 @@ main {
 }
 
 .arrowButton {
-  padding: 20px;
+  padding: 1rem;
   background-color: #00bf63;
   border-radius: 50%;
   border-color: #00bf63;
@@ -145,7 +145,6 @@ main {
   min-height: 44vh;
   border: 1px solid #ccc;
   border-radius: 5px;
-  overflow: hidden;
   background-color: #ffffff;
 }
 
@@ -154,22 +153,25 @@ main {
 }
 
 .descriptionProduct {
-  flex: 1;
-  padding: 10px;
+  overflow: hidden;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content:center;
+  text-align: center;
   flex-wrap: wrap;
 }
 
 .priceProduct {
   font-size: 1.3em;
+  margin: auto;
 }
 
 .priceDiscount {
   display: flex;
   flex-direction: row;
   font-size: 0.9em;
+  margin-bottom: 5px;
+  margin: auto;
 }
 
 .oldPrice {
@@ -181,16 +183,18 @@ main {
   color: #0ddd78;
 }
 
-.descriptionProduct p {
-  margin: auto;
+.descriptionProduct p, .descriptionProduct h4 {
+  display: block;
+  margin: 0;
 }
 
-.title {
-  margin-top: 5px;
+.btn-price p{
+  margin-top: 10px;
 }
 
 .btn-Add {
-  padding: 10px;
+  margin-top: 0.8%;
+  padding: 15px;
   border-radius: 18px;
   border-color: #00bf63;
   color: #ffffff;
@@ -238,7 +242,7 @@ footer {
   color: #028886;
 }
 
-@media (360px <= width <= 767px) {
+@media (320px <= width < 768px) {
   .header-main {
     width: 100vw;
   }
@@ -276,7 +280,8 @@ footer {
   }
 
   .individualProduct {
-    width: 40%;
+    width: 60%;
+    height: 100%;
   }
 
   .main-productsOnSale div {
