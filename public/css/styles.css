@@ -263,7 +263,7 @@ main {
 }
 
 .priceProduct {
-  font-size: 1.3em;
+  font-size: 1.4em;
   margin: auto;
 }
 
@@ -273,6 +273,10 @@ main {
   font-size: 0.9em;
   margin-bottom: 5px;
   margin: auto;
+}
+
+.title {
+  font-size: 1.2em;
 }
 
 .oldPrice {
