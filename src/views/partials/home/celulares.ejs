@@ -1,33 +1,35 @@
 <% products.forEach(product => { if(product.category == "celular") { %>
-<section class="individualProduct">
-  <a href="/products/detail/<%= product.id %>"
-    ><img src="<%= product.image %>" alt="<%= product.name %>"
-  /></a>
+<div class="product-slide">
+  <section class="individualProduct">
+    <a href="/products/detail/<%= product.id %>"
+      ><img src="<%= product.image %>" alt="<%= product.name %>"
+    /></a>
 
-  <article class="descriptionProduct">
-    <% if(product.discount) { %>
-    <div class="btn-price">
-      <button type="button" class="btn-Add">AGREGAR</button>
+    <article class="descriptionProduct">
+      <% if(product.discount) { %>
+      <div class="btn-price">
+        <button type="button" class="btn-Add">AGREGAR</button>
 
-      <p class="priceProduct">
-        $<%= Math.floor(product.price - (product.price *
-        (product.discount/100))) %>
-      </p>
-    </div>
+        <p class="priceProduct">
+          $<%= Math.floor(product.price - (product.price *
+          (product.discount/100))) %>
+        </p>
+      </div>
 
-    <div class="priceDiscount">
-      <p class="oldPrice">$<%= product.price %></p>
-      <p class="discount"><%= product.discount %>% Off</p>
-    </div>
-    <% } else { %>
-    <div class="btn-price">
-      <button type="button" class="btn-Add">AGREGAR</button>
+      <div class="priceDiscount">
+        <p class="oldPrice">$<%= product.price %></p>
+        <p class="discount"><%= product.discount %>% Off</p>
+      </div>
+      <% } else { %>
+      <div class="btn-price">
+        <button type="button" class="btn-Add">AGREGAR</button>
 
-      <p class="priceProduct">$<%= product.price %></p>
-    </div>
-    <% } %>
+        <p class="priceProduct">$<%= product.price %></p>
+      </div>
+      <% } %>
 
-    <h4 class="title"><%= product.name %></h4>
-  </article>
-</section>
+      <h4 class="title"><%= product.name %></h4>
+    </article>
+  </section>
+</div>
 <% }}) %>
