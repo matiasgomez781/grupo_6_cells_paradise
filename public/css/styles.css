@@ -13,7 +13,6 @@ body {
 
 header {
   background-color: #028886;
-  position: fixed;
   width: 100vw;
   top: 0;
 }
@@ -87,7 +86,6 @@ header {
 }
 
 main {
-  margin-top: 11.5vw;
   padding-bottom: 20px;
   display: flex;
   align-items: center;
@@ -214,23 +212,18 @@ main {
 }
 
 footer {
-  border-top: 2px solid #028886;
+  background-color: #f2f2f2;
   padding: 20px;
-  background-color: #fff9f0;
   display: flex;
   justify-content: space-around;
 }
 
+.footer-lists {
+  margin-bottom: 20px;
+}
+
 .footer-lists ul {
   list-style: none;
-}
-
-.footer-lists li {
-  padding: 10px;
-}
-
-.footer-lists h4 {
-  color: #000000;
 }
 
 .footer-lists a {
