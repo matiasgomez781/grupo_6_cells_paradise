@@ -229,7 +229,7 @@ main {
 
 .product-slide {
   flex: 0 1 auto;
-  width: 300px;
+  width: 200px;
   margin: 0 10px;
   scroll-snap-align: start;
 }
