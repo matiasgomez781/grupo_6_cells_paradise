@@ -95,7 +95,6 @@ main {
 .slide {
   position: relative;
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
-  margin-top: 10px;
 }
 .slide-inner {
   position: relative;
