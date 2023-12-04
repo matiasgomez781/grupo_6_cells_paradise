@@ -229,7 +229,7 @@ main {
 
 .product-slide {
   flex: 0 1 auto;
-  width: 300px;
+  width: 200px;
   margin: 0 10px;
   scroll-snap-align: start;
 }
@@ -263,7 +263,7 @@ main {
 }
 
 .priceProduct {
-  font-size: 1.3em;
+  font-size: 1.4em;
   margin: auto;
 }
 
@@ -273,6 +273,10 @@ main {
   font-size: 0.9em;
   margin-bottom: 5px;
   margin: auto;
+}
+
+.title {
+  font-size: 1.2em;
 }
 
 .oldPrice {
