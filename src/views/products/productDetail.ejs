@@ -1,93 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Detalle de producto</title>
-  <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <head>
+    <title>Detalle de producto</title>
+    <%- include("../partials/head.ejs") %>
     <link rel="stylesheet" href="/css/styles.css" />
-</head>
+  </head>
 
-<body>
-  <header>
-    <section class="header-main">
-      <a href="/" id="logo-container"
-        ><img src="/images/logo.jpeg" alt="Logo" id="logo"
-      /></a>
+  <body>
+    <header><%- include("../partials/header.ejs") %></header>
 
-      <div class="header-main searchBar">
-        <input type="text" placeholder="Buscar Artículos" />
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </div>
+    <main>
+      <section class="product">
+        <section class="images-container">
+          <article class="more-images">
+            <div>
+              <img src="<%= product.image %>" alt="<%= product.name %>" />
+            </div>
+            <div>
+              <img src="<%= product.image %>" alt="<%= product.name %>" />
+            </div>
+            <div>
+              <img src="<%= product.image %>" alt="<%= product.name %>" />
+            </div>
+            <div>
+              <img src="<%= product.image %>" alt="<%= product.name %>" />
+            </div>
+          </article>
 
-      <div class="header-main account-cart">
-        <a href="/registro"> <i class="fa-solid fa-user"></i> MI CUENTA </a>
-        <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
-      </div>
-    </section>
+          <article class="main-image">
+            <img src="<%= product.image %>" alt="<%= product.name %>" />
+          </article>
+        </section>
 
-    <nav class="header-navBar">
-      <ul>
-        <li><a href="#">SAMSUNG</a></li>
-        <li><a href="#">SMARTWATCH</a></li>
-        <li><a href="#">MOTOROLA</a></li>
-        <li><a href="#">ACCESORIOS</a></li>
-        <li><a href="#">IPHONE</a></li>
-      </ul>
-    </nav>
-  </header>
+        <section class="description-container">
+          <h3><%= product.name %></h3>
+          <p class="description"><%= product.description %></p>
+        </section>
+      </section>
 
-  <main>
-    <section class="imagen">
-      <img src="imagen.jpg" alt="Imagen del producto">
-    </section>
-    <section class="informacion">
-      <h2>Nombre del producto</h2>
-      <p>Descripción del producto</p>
-      <ul>
-        <li>Precio: $100</li>
-        <li>Stock: 10 unidades</li>
-      </ul>
-    </section>
-    <section class="botones">
-      <a href="carrito.html" class="boton-comprar">Agregar al carrito</a>
-      <a href="lista-productos.html" class="boton-volver">Volver a la lista de productos</a>
-    </section>
-  </main>
-  
-  <footer>
-    <section class="footer-lists">
-      <h4 class="title">Sobre nosotros</h4>
-      <ul>
-        <li><a href="#">Quiénes somos</a></li>
-        <li><a href="#">Trabajá con nosotros</a></li>
-      </ul>
-    </section>
+      <section class="buttons">
+        <button class="btn-buy">Comprar</button>
+        <button class="btn-addToCart">Agregar al carrito</button>
+      </section>
 
-    <section class="footer-lists">
-      <h4 class="title">Preguntas Frecuentes</h4>
-      <ul>
-        <li><a href="#">Cómo comprar</a></li>
-        <li><a href="#">Como se envía</a></li>
-        <li><a href="#">Tiempo de envío</a></li>
-        <li><a href="#">Métodos de pago</a></li>
-      </ul>
-    </section>
+      <h4>Productos similares</h4>
 
-    <section class="footer-lists">
-      <h4 class="title">Contacto</h4>
-      <ul>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Whatsapp</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Correo</a></li>
-      </ul>
-    </section>
-  </footer>
-</body>
+      <section class="similarProducts-container">
+        <button type="button" class="arrowButton">
+          <i class="fa-solid fa-angle-left"></i>
+        </button>
+
+        <article class="similarProducts">
+          <% products.forEach(product => { %>
+          <div class="productCard">
+            <a href="/products/detail/<%= product.id %>"
+              ><img src="<%= product.image %>" alt="<%= product.name %>"
+            /></a>
+
+            <button type="button" class="btn-Add">AGREGAR</button>
+          </div>
+          <% }) %>
+        </article>
+
+        <button type="button" class="arrowButton">
+          <i class="fa-solid fa-angle-right"></i>
+        </button>
+      </section>
+    </main>
+
+    <footer><%- include("../partials/footer.ejs") %></footer>
+  </body>
 </html>
