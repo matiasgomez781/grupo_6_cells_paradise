@@ -4,6 +4,7 @@
     <title>Detalle de producto</title>
     <%- include("../partials/head.ejs") %>
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/detail.css" />
   </head>
 
   <body>
@@ -13,16 +14,16 @@
       <section class="product">
         <section class="images-container">
           <article class="more-images">
-            <div>
+            <div class="min-image">
               <img src="<%= product.image %>" alt="<%= product.name %>" />
             </div>
-            <div>
+            <div class="min-image">
               <img src="<%= product.image %>" alt="<%= product.name %>" />
             </div>
-            <div>
+            <div class="min-image">
               <img src="<%= product.image %>" alt="<%= product.name %>" />
             </div>
-            <div>
+            <div class="min-image">
               <img src="<%= product.image %>" alt="<%= product.name %>" />
             </div>
           </article>
@@ -39,28 +40,34 @@
       </section>
 
       <section class="buttons">
-        <button class="btn-buy">Comprar</button>
         <button class="btn-addToCart">Agregar al carrito</button>
+        <button class="btn-buy">Comprar</button>
       </section>
 
-      <h4>Productos similares</h4>
+      <h4 class="main-categorie">Productos similares</h4>
 
-      <section class="similarProducts-container">
+      <section class="similarProducts-container main-products">
         <button type="button" class="arrowButton">
           <i class="fa-solid fa-angle-left"></i>
         </button>
 
-        <article class="similarProducts">
-          <% products.forEach(product => { %>
-          <div class="productCard">
-            <a href="/products/detail/<%= product.id %>"
-              ><img src="<%= product.image %>" alt="<%= product.name %>"
-            /></a>
+        <section class="products-slider">
+          <article class="similarProducts product-slide">
+            <% products.forEach(product => { %>
+            <div class="individualProduct">
+              <a href="/products/detail/<%= product.id %>"
+                ><img src="<%= product.image %>" alt="<%= product.name %>"
+              /></a>
 
-            <button type="button" class="btn-Add">AGREGAR</button>
-          </div>
-          <% }) %>
-        </article>
+              <div class="descriptionProduct">
+                <button type="button" class="btn-Add">AGREGAR</button>
+
+                <h4 class="title"><%= product.name %></h4>
+              </div>
+            </div>
+            <% }) %>
+          </article>
+        </section>
 
         <button type="button" class="arrowButton">
           <i class="fa-solid fa-angle-right"></i>
