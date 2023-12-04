@@ -7,6 +7,10 @@ const productsController = {
 
   createProduct: (req,res) => {
     res.render("./products/createProduct")
+  },
+
+  editProduct: (req,res) => {
+    res.render("./products/editProduct")
   }
 };
 
