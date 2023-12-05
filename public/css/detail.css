@@ -39,25 +39,43 @@ main {
   background-color: #ffffff;
 }
 
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.buttons a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.buttons button {
+  margin: 0 30px;
+}
+
 .btn-buy,
-.btn-addToCart {
+.btn-addToCart,
+.btn-admin {
   padding: 20px;
   border-radius: 25px;
   cursor: pointer;
+}
+
+.btn-admin {
+  border-color: #d8d8d8;
+  background-color: #d8d8d8;
 }
 
 .btn-buy {
   color: #ffffff;
   background-color: #00bf63;
   border-color: #00bf63;
-  border-bottom: #00bf63;
 }
 
 .btn-addToCart {
   color: #000000;
   background-color: #d8d8d8;
   border-color: #d8d8d8;
-  border-bottom: #d8d8d8;
 }
 
 .similarProducts {
