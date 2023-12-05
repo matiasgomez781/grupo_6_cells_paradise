@@ -30,3 +30,35 @@ En resumen, queremos destacar que si bien existen aspectos a mejorar (algunos de
 Confiamos en tres caracteristicas fundamentales: compromiso ,solidaridad y responsabilidad.
  
 Sabiendo que todos somos partes importantes dentro del equipo y que debemos funcionar como tal.
+
+## Retrospectiva del Segundo Sprint
+
+*) Consideramos que para el primer sprint pudimos llegar en un tiempo razonable y sin sobresaltos respecto a la fecha de presentacion, sin embargo, en esta segunda etapa tuvimos varios inconvenientes, algunos propios y otros ajenos,que afectaron considerablemente los tiempos de entrega del proyecto.
+## Comenzar a Hacer
+
+*)Profundizar conocimientos sobre el manejo del git y el github, familiarizarnos con los comandos, de manera que nos permita trabajar mas eficientemente.
+
+)Solicitar ayuda cuando surja algun inconviente y no dejar pasar varios dias para hacerlo, ya que son horas que se pierden.
+
+*)Establecer como mínimo 2 reuniones semanales, una a mitad de semana para hablar acerca de las tareas a realizar, coordinar trabajo, etc  y la otra durante el fin de semana para mostrar los avances del trabajo.
+## Hacer Mas
+
+*) Mejorar la organizacion y el reparto de las tareas.
+
+*)Profundizar en el uso de metodologias ágiles y demás herramientas que nos permitan maximizar el tiempo y los recursos.
+
+*)Utilizar con mayor frecuencia los canales de contacto con los profesores.
+## Continuar Haciendo
+
+
+
+*) Mantener la buena comunicacion entre los integrantes del grupo.
+
+*) Siempre estar predispuesto para brindar ayuda al compañero que lo necesite.
+
+*) Seguir tomando con mucha responsabilidad el cumplimiento de las tareas delegadas.
+
+
+## Dejar de Hacer
+
+*) Respetar horarios de reuniones establecidos.
