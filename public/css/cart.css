@@ -188,9 +188,9 @@ button#trash:hover {
       text-align: center;
       margin-top: 10px;
     }
-    header, footer{
+    /*header, footer{
         display: none;
-    }
+    }*/
     .checkout{
         width: 100vw;
     }

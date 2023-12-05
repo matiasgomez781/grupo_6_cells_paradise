@@ -7,6 +7,14 @@ const productsController = {
       products: productsModel.getAll(),
     });
   },
+
+  createProduct: (req,res) => {
+    res.render("./products/createProduct")
+  },
+
+  editProduct: (req,res) => {
+    res.render("./products/editProduct")
+  }
 };
 
 module.exports = productsController;

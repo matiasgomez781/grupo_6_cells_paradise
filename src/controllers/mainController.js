@@ -8,6 +8,14 @@ const mainController = {
   cart: (req, res) => {
     res.render("./main/productCart");
   },
+
+  about: (req, res) => {
+    res.render("./main/about");
+  },
+
+  trabaja: (req, res) => {
+    res.render("./main/trabaja");
+  },
 };
 
 module.exports = mainController;
