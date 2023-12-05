@@ -97,7 +97,7 @@ const productsModel = {
   getAll: function () {
     return this.products;
   },
-  getBy: function (id) {
+  getById: function (id) {
     return this.products.find(product => product.id == id);
   },
   getBy: function (category) {
