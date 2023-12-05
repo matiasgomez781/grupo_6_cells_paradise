@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Editar producto</title>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/registro.css">    
+</head>
+<body>
+  
+  <header>
+    <%- include('../partials/header.ejs') %>
+  </header>    
+
+  <main>
+    <section class="register-section">
+      <h2 class="login-section-title">Editar Producto</h2>
+
+      <form action="/editProduct" method="post">
+        <section class="first">
+            <p class="id">
+                <label for="id">Id</label>
+                <input type="number" name="id" id="id" placeholder="Id" required>
+            </p>
+            <p class="email">
+                <label for="name">Name</label>
+                <input type="name" name="name" id="name" placeholder="Nombre del producto" required>
+            </p>
+            <p class="clave">
+                <label for="price">Precio</label>
+                <input type="number"  name="price" id="price" placeholder="Precio del producto" required>
+            </p>
+            <p class="clave2">
+                <label for="discount">Descuento</label>
+                <input type="number" name="discount" id="discount" placeholder="Porcentaje de descuento" required>
+            </p>
+            
+        </section>
+        <section class="second">
+            <p class="telefono">
+                <label for="image">Imagen </label>
+                <input type="url" name="image" id="image" placeholder="Carpeta de imagenes">
+            </p>
+            <p> <label>Categoria</label>
+                <select class="trato" name="category" id="category" >
+                    <option value="celular" >Celular</option>
+                    <option value="accesorio" >Accesorio</option>
+                </select>
+            </p>
+            <p class="about">
+                <label for="description">Descripción</label>
+                <textarea name="description" id="description" style="height: 10vw; width: 100%;" class="textarea">Descripcion del producto</textarea>
+            </p>
+        </section>
+        
+        
+    </form>
+    <p class="button">
+        <button type="submit"> Guardar Cambios </button>
+    </p>
+    <p class="login-links">
+        <br>
+        <a href="/products/createProduct">Crear</a> un producto nuevo
+    </p>
+    
+  </main>
+  
+  <footer>
+    <%- include('../partials/footer.ejs') %>
+  </footer>
+  
+
+</body>
+</html>

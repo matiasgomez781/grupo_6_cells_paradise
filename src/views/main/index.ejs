@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Cells Paradise</title>
+    <%- include("../partials/head.ejs") %>
+  </head>
+  <body>
+    <header><%- include("../partials/header.ejs") %></header>
+
+    <main>
+      <section class="slide">
+        <article class="slide-inner">
+          <input
+            class="slide-open"
+            type="radio"
+            id="slide-1"
+            name="slide"
+            aria-hidden="true"
+            hidden=""
+            checked="checked"
+          />
+          <div class="slide-item">
+            <img src="/images/Banner.jpg" />
+          </div>
+          <input
+            class="slide-open"
+            type="radio"
+            id="slide-2"
+            name="slide"
+            aria-hidden="true"
+            hidden=""
+          />
+          <div class="slide-item">
+            <img src="/images/Banner-CyberMonday.jpg" />
+          </div>
+          <input
+            class="slide-open"
+            type="radio"
+            id="slide-3"
+            name="slide"
+            aria-hidden="true"
+            hidden=""
+          />
+          <div class="slide-item">
+            <img src="/images/Banner-Accesorios.jpg" />
+          </div>
+          <label for="slide-3" class="slide-control prev control-1">‹</label>
+          <label for="slide-2" class="slide-control next control-1">›</label>
+          <label for="slide-1" class="slide-control prev control-2">‹</label>
+          <label for="slide-3" class="slide-control next control-2">›</label>
+          <label for="slide-2" class="slide-control prev control-3">‹</label>
+          <label for="slide-1" class="slide-control next control-3">›</label>
+          <ol class="slide-indicador">
+            <li>
+              <label for="slide-1" class="slide-circulo">•</label>
+            </li>
+            <li>
+              <label for="slide-2" class="slide-circulo">•</label>
+            </li>
+            <li>
+              <label for="slide-3" class="slide-circulo">•</label>
+            </li>
+          </ol>
+        </article>
+      </section>
+
+      <h3 class="main-categorie">CELULARES</h3>
+
+      <section class="main-products">
+        <button type="button" class="arrowButton">
+          <i class="fa-solid fa-angle-left"></i>
+        </button>
+
+        <section class="products-slider">
+          <%- include("../partials/home/category.ejs", {products: celulares}) %>
+        </section>
+
+        <button type="button" class="arrowButton">
+          <i class="fa-solid fa-angle-right"></i>
+        </button>
+      </section>
+
+      <section class="main-productsOnSale">
+        <div>
+          <a href="#"
+            ><img src="/images/Oferta-BlackFriday.jpg" alt="Oferta"
+          /></a>
+        </div>
+        <div>
+          <a href="#"
+            ><img src="/images/Oferta-Accesorios.jpg" alt="Oferta"
+          /></a>
+        </div>
+      </section>
+
+      <h3 class="main-categorie">ACCESORIOS</h3>
+
+      <section class="main-products">
+        <button type="button" class="arrowButton">
+          <i class="fa-solid fa-angle-left"></i>
+        </button>
+
+        <section class="products-slider">
+          <%- include("../partials/home/category.ejs", {products: accesorios}) %>
+        </section>
+
+        <button type="button" class="arrowButton">
+          <i class="fa-solid fa-angle-right"></i>
+        </button>
+      </section>
+    </main>
+
+    <footer><%- include("../partials/footer.ejs") %></footer>
+  </body>
+</html>

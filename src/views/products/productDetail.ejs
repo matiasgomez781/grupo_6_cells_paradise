@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Detalle de producto</title>
+    <%- include("../partials/head.ejs") %>
+    <link rel="stylesheet" href="/css/detail.css" />
+  </head>
+
+  <body>
+    <header><%- include("../partials/header.ejs") %></header>
+
+    <main>
+      <section class="product">
+        <section class="images-container">
+          <article class="more-images">
+            <div class="min-image">
+              <img src="<%= product.image %>" alt="<%= product.name %>" />
+            </div>
+            <div class="min-image">
+              <img src="<%= product.image %>" alt="<%= product.name %>" />
+            </div>
+            <div class="min-image">
+              <img src="<%= product.image %>" alt="<%= product.name %>" />
+            </div>
+            <div class="min-image">
+              <img src="<%= product.image %>" alt="<%= product.name %>" />
+            </div>
+          </article>
+
+          <article class="main-image">
+            <img src="<%= product.image %>" alt="<%= product.name %>" />
+          </article>
+        </section>
+
+        <section class="description-container">
+          <h3><%= product.name %></h3>
+          <p class="description"><%= product.description %></p>
+        </section>
+      </section>
+
+      <section class="buttons">
+        <button class="btn-addToCart">Agregar al carrito</button>
+        <button class="btn-buy">Comprar</button>
+      </section>
+
+      <h4 class="main-categorie">Productos similares</h4>
+
+      <section class="similarProducts-container main-products">
+        <button type="button" class="arrowButton">
+          <i class="fa-solid fa-angle-left"></i>
+        </button>
+
+        <section class="products-slider">
+          <article class="similarProducts product-slide">
+            <% products.forEach(product => { %>
+            <div class="individualProduct">
+              <a href="/products/detail/<%= product.id %>"
+                ><img src="<%= product.image %>" alt="<%= product.name %>"
+              /></a>
+
+              <div class="descriptionProduct">
+                <button type="button" class="btn-Add">AGREGAR</button>
+
+                <h4 class="title"><%= product.name %></h4>
+              </div>
+            </div>
+            <% }) %>
+          </article>
+        </section>
+
+        <button type="button" class="arrowButton">
+          <i class="fa-solid fa-angle-right"></i>
+        </button>
+      </section>
+    </main>
+
+    <footer><%- include("../partials/footer.ejs") %></footer>
+  </body>
+</html>
