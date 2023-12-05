@@ -2,7 +2,7 @@ const productsModel = require("../model/products");
 
 const mainController = {
   index: (req, res) => {
-    res.render("./main/index", { products: productsModel.getAll() });
+    res.render("./main/index", { celulares: productsModel.getBy("celular"), accesorios: productsModel.getBy("accesorio") });
   },
 
   cart: (req, res) => {

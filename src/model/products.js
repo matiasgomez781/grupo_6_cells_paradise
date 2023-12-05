@@ -97,8 +97,11 @@ const productsModel = {
   getAll: function () {
     return this.products;
   },
-  getById: function (id) {
+  getBy: function (id) {
     return this.products.find(product => product.id == id);
+  },
+  getBy: function (category) {
+    return this.products.filter(product => product.category == category);
   },
 };
 
