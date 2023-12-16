@@ -1,6 +1,6 @@
+/* Estilos generales */
 @import url("https://fonts.googleapis.com/css2?family=Nosifer&family=Poppins:wght@300&family=Roboto:wght@100;400;700&display=swap");
 
-/* Estilos generales */
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +19,6 @@ header {
   top: 0;
 } 
 
-
 .header-main {
   display: flex;
   justify-content: space-between;
@@ -28,7 +27,7 @@ header {
 }
 
 #logo-container {
-  width: 8%;
+  width: 10%;
   border-radius: 50%;
 }
 
@@ -38,20 +37,15 @@ header {
 }
 
 .searchBar {
-  width: 45%;
+  width: 55%;
   position: relative;
 }
 
-
-
-
 .searchBar input {
-  width: 100%; /* Modifiqué el ancho de la barra de búsqueda */
-  padding: 15px; /* Ajusté el padding para el ícono */
+  width: 100%;
+  padding: 15px;
   border-radius: 30px;
-  
 }
-
 
 .fa-magnifying-glass {
   font-size: 20px;
@@ -59,20 +53,9 @@ header {
   right: 4%;
 }
 
-.account-cart a {
-  color: black;
-  text-decoration: none;
-  margin-left: 10px;
-}
-
-.fa-user {
-  font-size: 20px;
-}
-
-.fa-cart-shopping {
-  font-size: 25px;
-}
-
+.account-cart a,
+.fa-user,
+.fa-cart-shopping,
 .home-link i {
   font-size: 1.5em;
   color: black;
@@ -93,98 +76,73 @@ header {
   padding: 0 50px;
 }
 
-  /* Estilos del área de inicio de sesión */
-  .login-section {
-    text-align: center;
-    margin: 50px auto;
-    width: 50%; /* Reduje el ancho de la sección de inicio de sesión */
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  .login-section-title {
-    margin-bottom: 20px;
-  }
-  
-  .login-inputs {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-  
-  .login-input {
-    margin-bottom: 15px;
-  }
-  
-  .login-input label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .login-input input {
-    width: 100%;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
+/* Estilos del área de inicio de sesión */
+.login-section {
+  text-align: center;
+  margin: 50px auto;
+  width: 60%; /* Ajuste del ancho de la sección de inicio de sesión */
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+}
 
-  
-  
-  button[type="submit"] {
-    padding: 5px 10px; /* Reduje el padding del botón */
-    border: none;
-    border-radius: 5px;
-    background-color: #028886;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .login-links {
-    font-size: 0.8em;
-  }
-  
-  .login-links a {
-    text-decoration: none;
-    color: #028886;
-    margin-left: 5px;
-  }
-  
-  /* Estilos del pie de página */
+.login-input input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #028886;
+  color: white;
+  cursor: pointer;
+}
+
+.login-links {
+  font-size: 0.8em;
+}
+
+.login-links a {
+  text-decoration: none;
+  color: #028886;
+  margin-left: 5px;
+}
+
+/* Estilos del pie de página */
+footer {
   footer {
     background-color: #f2f2f2;
     padding: 20px;
     display: flex;
     justify-content: space-around;
+    font-size: 14px;
+    width: 100%;
+    flex-grow: 1;
+  
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
-  
-  .footer-lists {
-    margin-bottom: 20px;
-  }
-  
-  .footer-lists ul {
-    list-style: none;
-  }
-  
-  .footer-lists a {
-    text-decoration: none;
-    color: #028886;
-  }
-  
-  
-  
-  @media (max-width: 800px) {
-    .header-navBar {
-      display: none;
-    }
-  
-    .login-section {
-      width: 100%;
-    }
-    
-    .footer-lists{
-      font-size: 4vw;
-  }
-  }
+}
 
+.footer-lists {
+  margin-bottom: 20px;
+}
 
+.footer-lists ul {
+  list-style: none;
+}
+
+.footer-lists a {
+  text-decoration: none;
+  color: #028886;
+}
+
+@media (max-width: 400px) {
+  footer {
+    font-size: 12px;
+  }
+}
