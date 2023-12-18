@@ -23,9 +23,10 @@
       <h2 id="titulo-carrito">Mi Carrito</h2>
       <div class="cart-lista">
         <div class="div-prod">Producto</div>
+        <div class="div-precio">Precio</div>
         <div class="div-cant">Cantidad</div>
         <div class="div-envio">Envio</div>
-        <div class="div-precio">Precio</div>
+        
       </div>
 
       <article class="cart-product">
@@ -33,14 +34,18 @@
         <img src="/images\Apple-iPhone-15-Pro-Max-1TB.jpg" alt="Producto 1" class="product-image">
         <div class="descripcion-producto">Apple IPhone 15 Pro Max 1TB</div>
       </div>
+      <div class="precio-cant-remove__box">
+      <div class="precio-box">$ 2.099.999,00</div>
       <div class="cant-box">
-        <input type="number" value="1" class="inputCant">
-      </div>
-        <div class="envio-box">Gratis</div>
-        <div class="precio-box">$ 2.099.999,00</div>
+        <button class="minus" type="button">-</button>
+        <input type="number" step="1" min="1" max="10" value="1" class="inputCant">
+        <button class="plus" type="button">+</button>
         <span class="item-remove">
           <button id="trash"><i class="fa-solid fa-trash"></button></i>
           </span>
+      </div>
+        </div>
+        <div class="envio-box">Gratis</div>
       </article>
 
       <article class="cart-product">
@@ -48,14 +53,18 @@
         <img src="/images\Apple-AirPods-3-Generacion.jpg" alt="Producto 2" class="product-image">
         <div class="descripcion-producto">Auriculares Bluetooth Apple AirPods 3 Generacion</div>
         </div>
-        <div class="cant-box">
-          <input type="number" value="1" class="inputCant">
-        </div>
-        <div class="envio-box">Gratis</div>
+        <div class="precio-cant-remove__box">
         <div class="precio-box">$ 179.999,00</div>
+        <div class="cant-box">
+          <button class="minus" type="button">-</button>
+        <input type="number" step="1" min="1" max="10" value="1" class="inputCant">
+        <button class="plus" type="button">+</button>
         <span class="item-remove">
           <button id="trash"><i class="fa-solid fa-trash"></button></i>
           </span>
+        </div>
+          </div>
+          <div class="envio-box">Gratis</div>
       </article>
 
       <article class="cart-product">
@@ -63,14 +72,18 @@
         <img src="/images\Apple-USB-Power-Adapter-20W.jpg" alt="Producto 3" class="product-image">
         <div class="descripcion-producto">Apple Adaptador Carga Rápida USB-C 20W</div>
         </div>
-        <div class="cant-box">
-          <input type="number" value="1" class="inputCant">
-        </div>
-        <div class="envio-box">Gratis</div>
+        <div class="precio-cant-remove__box">
         <div class="precio-box">$ 19.999,00</div>
+        <div class="cant-box">
+          <button class="minus" type="button">-</button>
+        <input type="number" step="1" min="1" max="10" value="1" class="inputCant">
+        <button class="plus" type="button">+</button>
         <span class="item-remove">
           <button id="trash"><i class="fa-solid fa-trash"></button></i>
           </span>
+        </div>
+          </div>
+          <div class="envio-box">Gratis</div>
       </article>
 
     </section>
@@ -80,8 +93,8 @@
       <div class="resumen-compra">
       <article class="contenido">
         Apple IPhone 15 Pro Max 1TB + Auriculares Bluetooth Apple AirPods 3 Generacion + Apple Adaptador Carga Rápida USB-C 20W
-      </article>
       <div class="total">Total 2.299.997,00</div>
+      </article>
       <div class="chk-pago">
         <button id="botonPago">Proceder al pago</button>
       </div>
