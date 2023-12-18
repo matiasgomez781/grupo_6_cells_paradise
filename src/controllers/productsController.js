@@ -1,6 +1,11 @@
 const productsModel = require("../model/products");
 
 const productsController = {
+  // implementar la vista de todos los productos
+  // all: () => {
+  //   res.render("./products/allProducts", {products: productsModel.getAll()});
+  // },
+
   detail: (req, res) => {
     res.render("./products/productDetail", {
       product: productsModel.getById(req.params.id),
