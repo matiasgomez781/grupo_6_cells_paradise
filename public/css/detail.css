@@ -83,3 +83,74 @@ main {
   flex-direction: row;
   width: 100%;
 }
+
+@media (320px <= width < 768px) {
+  .product {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product section{
+    width: 100%;
+    align-items: center;
+  }
+
+  .images-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 15px 0px ;
+  }
+
+  .main-image{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+  }
+
+  .more-images{
+    width: 80%;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+  }
+  
+  .min-image {
+    margin: 0px 10px;
+  }
+
+  .buttons{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buttons article{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buttons button{
+    width: 90%;
+    margin: 10px ;
+    font-size: 0.9em;
+  }
+
+  .similarProducts{
+    width: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .individualProduct{
+    justify-content: center;
+    height: auto;
+    width: 75vw;
+  }
+
+  
+}
