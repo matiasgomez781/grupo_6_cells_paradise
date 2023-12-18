@@ -79,7 +79,7 @@ header {
 }
 
 /* Estilos de navegación */
-.header-navBar ul {
+/* .header-navBar ul {
   display: flex;
   justify-content: center;
   list-style: none;
@@ -91,7 +91,7 @@ header {
   text-decoration: none;
   color: black;
   padding: 0 50px;
-}
+} */
 
   /* Estilos del área de inicio de sesión */
   .login-section {
@@ -172,9 +172,9 @@ header {
   }
   
   @media (max-width: 800px) {
-    .header-navBar {
+    /* .header-navBar {
       display: none;
-    }
+    } */
   
     .login-section {
       width: 100%;
