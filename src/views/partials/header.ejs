@@ -3,10 +3,10 @@
     ><img src="/images/logo.jpeg" alt="Logo" id="logo"
   /></a>
 
-  <div class="header-main searchBar">
-    <input type="text" placeholder="Buscar Artículos" />
+  <form action="/search" method="GET" class="header-main searchBar">
+    <input type="text" name="keywords" placeholder="Buscar Artículos" />
     <i class="fa-solid fa-magnifying-glass"></i>
-  </div>
+  </form>
 
   <div class="header-main account-cart">
     <a href="/users/registro"> <i class="fa-solid fa-user"></i> MI CUENTA </a>
@@ -15,7 +15,7 @@
 </section>
 
 <nav class="burger">
-  <i class="fa-solid fa-bars" ></i>
+  <i class="fa-solid fa-bars"></i>
   <nav class="header-navBar">
     <ul>
       <li><a href="#">SAMSUNG</a></li>
@@ -36,5 +36,3 @@
     <li><a href="#">IPHONE</a></li>
   </ul>
 </nav>
-
-

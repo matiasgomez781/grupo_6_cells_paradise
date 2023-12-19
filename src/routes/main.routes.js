@@ -11,7 +11,6 @@ router.get("/about", mainController.about);
 
 router.get("/trabaja", mainController.trabaja);
 
-// Agregar método para el buscador
-// router.get("/search", mainController.search);
+router.get("/search", mainController.search);
 
 module.exports = router;
