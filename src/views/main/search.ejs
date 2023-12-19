@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head.ejs") %>
+    <title>Resultados de la búsqueda</title>
+  </head>
+  <body>
+    <header><%- include("../partials/header.ejs") %></header>
+
+    <main>
+      <% if(productSearched.length) { productSearched.forEach(product => { %>
+      <div class="">
+        <section class="">
+          <a href="/products/detail/<%= product.id %>">
+            <figure class="">
+              <img src="<%= product.image %>" alt="<%= product.name %>" width="300vw"/>
+            </figure>
+            <article class="">
+              <% if(product.discount > 0) { %>
+              <h2>
+                $<%= Math.floor(product.price - (product.price *
+                (product.discount / 100))) %>
+              </h2>
+              <span><%= product.discount %>% OFF</span>
+              <% } else { %>
+              <h2><%= product.price %></h2>
+              <% } %>
+              <p><%= product.name %></p>
+              <i class="fas fa-truck"></i>
+            </article>
+          </a>
+        </section>
+      </div>
+      <% })} else { %>
+      <div class="">
+        <h2 class="" style="color: tomato">
+          No hay productos que coincidan con esa búsqueda
+        </h2>
+      </div>
+      <% } %>
+    </main>
+
+    <footer><%- include("../partials/footer.ejs") %></footer>
+  </body>
+</html>

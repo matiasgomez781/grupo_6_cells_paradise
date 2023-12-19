@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const productsFilePath = path.join(__dirname, "../data/products.json");
+const productsFilePath = path.join(__dirname, "/products.json");
 const reWriteJson = fs.writeFileSync(
   productsFilePath,
   JSON.stringify(this.products),
