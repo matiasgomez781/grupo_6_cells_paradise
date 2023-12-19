@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "firstName": "Matias",
+        "lastName": "Nuñez",
+        "email": "matiasnuñez@cellsparadise.com",
+        "password": "tN9.r!U3fNl",
+        "ocupation": "Account Executive",
+        "avatar": "/images/avatars/pretzel.jpg"
+    },
+    {
+        "id": 2,
+        "firstName": "Matias",
+        "lastName": "Gomez",
+        "email": "matiasgomez@cellsparadise.com",
+        "password": "wY8|>/RkviTek@L?",
+        "ocupation": "Project Manager",
+        "avatar": ""
+    },
+    {
+        "id": 3,
+        "firstName": "Gabriel",
+        "lastName": "Rodriguez",
+        "email": "gabrielrodriguez@cellsparadise.com",
+        "password": "rL9`>b>8K(3",
+        "ocupation": "Software Engineer II",
+        "avatar": "/images/avatars/pletzale.jpg"
+    },
+    {
+        "id": 4,
+        "firstName": "Elias",
+        "lastName": "Orellana",
+        "email": "eliasorellana@cellsparadise.com",
+        "password": "pZ8*Q&7!Mh<b",
+        "ocupation": "Accounting Assistant II",
+        "avatar": "/images/avatars/pretzel.jpg"
+    },
+    {
+        "id": 5,
+        "firstName": "Carolina",
+        "lastName": "Geoltan",
+        "email": "carolinageoltan@cellsparadise.com",
+        "password": "iW7}@.wyy1\"rzCok",
+        "ocupation": "Staff Accountant III",
+        "avatar": "/images/avatars/kipa.jpg"
+    },
+    {
+        "id": 6,
+        "firstName": "augue aliquam",
+        "lastName": "dapibus at",
+        "email": "lulster5@cellsparadise.com",
+        "password": "rY7{1Cam>}",
+        "ocupation": "Account Representative III",
+        "avatar": "/images/avatars/kipa.jpg"
+    },
+    {
+        "id": 7,
+        "firstName": "nec nisi",
+        "lastName": "mauris",
+        "email": "tayres6@cellsparadise.com",
+        "password": "sT0?VIuQvh",
+        "ocupation": "VP Marketing",
+        "avatar": "/images/avatars/jala.jpg"
+    },
+    {
+        "id": 8,
+        "firstName": "sagittis sapien",
+        "lastName": "consequat",
+        "email": "gmckevin7@cellsparadise.com",
+        "password": "aG9*%WCu",
+        "ocupation": "Community Outreach Specialist",
+        "avatar": "/images/avatars/kipa.jpg"
+    },
+    {
+        "id": 9,
+        "firstName": "urna pretium",
+        "lastName": "eu",
+        "email": "pkelloway8@cellsparadise.com",
+        "password": "lN3~7eBQ/nqDKfGK",
+        "ocupation": "Environmental Tech",
+        "avatar": ""
+    },
+    {
+        "id": 10,
+        "firstName": "pellentesque",
+        "lastName": "nullam",
+        "email": "dbladesmith9@cellsparadise.com",
+        "password": "aW5=IvE6sV<!ZS",
+        "ocupation": "Dental Hygienist",
+        "avatar": "/images/avatars/kipa.jpg"
+    }
+]
