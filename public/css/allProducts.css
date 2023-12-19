@@ -1,0 +1,12 @@
+.products-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.product-slide {
+  padding: 10px;
+  margin-top: 20px;
+  width: 25%;
+}
