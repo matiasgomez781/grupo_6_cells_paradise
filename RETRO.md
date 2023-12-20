@@ -62,3 +62,24 @@ Sabiendo que todos somos partes importantes dentro del equipo y que debemos func
 ## Dejar de Hacer
 
 *) Respetar horarios de reuniones establecidos.
+
+
+## Retrospectiva del Tercer Sprint
+
+*) Con respecto al anterior sprint mejoramos la organizacion general del grupo y la division de tareas, aunque aun no podemos coordinar del todo los tiempos de los integrantes del grupo, debido a factores externos que imposibilitan que nos podamos reunir los 4, aun asi hemos logrado completar todas las tareas obligatorias en el pasado sprint.
+
+## Comenzar a Hacer
+
+*)Trabajar programando de a pares, sobre todo para realizar tareas complejas
+
+## Hacer Mas
+
+*) Reuniones cortas y que todos participemos en el uso de Trello
+
+## Continuar Haciendo
+
+*) Buena comunicacion y division de tareas
+
+## Dejar de Hacer
+
+*) No cumplir con las tareas en los tiempos estipulados
