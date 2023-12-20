@@ -15,12 +15,9 @@
     <section class="register-section">
       <h2 class="login-section-title">Crear Producto</h2>
 
-      <form action="/createProduct" method="post">
-        <section class="first">
-            <p class="id">
-                <label for="id">Id</label>
-                <input type="number" name="id" id="id" placeholder="Id" required>
-            </p>
+        <form action="/products" method="post" enctype="multipart/form-data">
+            <section class="first">
+            
             <p class="email">
                 <label for="name">Name</label>
                 <input type="name" name="name" id="name" placeholder="Nombre del producto" required>
@@ -33,13 +30,14 @@
                 <label for="discount">Descuento</label>
                 <input type="number" name="discount" id="discount" placeholder="Porcentaje de descuento" required>
             </p>
-            
-        </section>
-        <section class="second">
             <p class="telefono">
                 <label for="image">Imagen </label>
-                <input type="url" name="image" id="image" placeholder="Carpeta de imagenes">
+                <input type="file" name="image" id="image" accept=".jpg, .png" >
             </p>
+            
+            </section>
+            <section class="second">
+            
             <p> <label>Categoria</label>
                 <select class="trato" name="category" id="category" >
                     <option value="celular" >Celular</option>
@@ -50,13 +48,13 @@
                 <label for="description">Descripción</label>
                 <textarea name="description" id="description" style="height: 10vw; width: 100%;" class="textarea">Descripcion del producto</textarea>
             </p>
-        </section>
-        
-        
-    </form>
-    <p class="button">
-        <button type="submit"> Crear Producto </button>
-    </p>
+            </section>
+            <br>
+            <p class="button">
+                <button type="submit" > Crear Producto </button>
+            </p>
+        </form>
+    
     <p class="login-links">
         <br>
         <a href="/products/editProduct">Editar</a> un producto existente
