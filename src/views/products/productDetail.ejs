@@ -14,21 +14,21 @@
         <section class="images-container">
           <article class="more-images">
             <div class="min-image">
-              <img src=" <%= product.image %>" alt="<%= product.name %>" />
+              <img src="/images/<%= product.image %>" alt="<%= product.name %>" />
             </div>
             <div class="min-image">
-              <img src="<%= product.image %>" alt="<%= product.name %>" />
+              <img src="/images/<%= product.image %>" alt="<%= product.name %>" />
             </div>
             <div class="min-image">
-              <img src="<%= product.image %>" alt="<%= product.name %>" />
+              <img src="/images/<%= product.image %>" alt="<%= product.name %>" />
             </div>
             <div class="min-image">
-              <img src="<%= product.image %>" alt="<%= product.name %>" />
+              <img src="/images/<%= product.image %>" alt="<%= product.name %>" />
             </div>
           </article>
 
           <article class="main-image">
-            <img src="<%= product.image %>" alt="<%= product.name %>" />
+            <img src="/images/<%= product.image %>" alt="<%= product.name %>" />
           </article>
         </section>
 
@@ -41,7 +41,7 @@
       <section class="buttons">
         <!-- Botones temporales para poder acceder a sus respectivas fistas de form -->
         <article class="btns-temp">
-          <button class="btn-admin"><a href="/products/editProduct">Editar producto</a></button>
+          <button class="btn-admin"><a href="/products/:id/editProduct">Editar producto</a></button>
           <button class="btn-admin"><a href="/products/createProduct">Crear producto</a></button>
         </article>
 
@@ -63,7 +63,7 @@
             <% products.forEach(product => { %>
             <div class="individualProduct">
               <a href="/products/detail/<%= product.id %>"
-                ><img src="<%= product.image %>" alt="<%= product.name %>"
+                ><img src="/images/<%= product.image %>" alt="<%= product.name %>"
               /></a>
 
               <div class="descriptionProduct">

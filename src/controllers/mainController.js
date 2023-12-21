@@ -1,11 +1,11 @@
-const productsModel = require("../model/products");
+// const productsModel = require("../model/products");
 const mainService = require("../data/mainService");
 
 const mainController = {
   index: (req, res) => {
     res.render("./main/index", {
-      celulares: productsModel.getBy("celular"),
-      accesorios: productsModel.getBy("accesorio"),
+      celulares: mainService.getBy("celular"),
+      accesorios: mainService.getBy("accesorio"),
     });
   },
 

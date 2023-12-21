@@ -25,9 +25,7 @@ const productService = {
     return this.products.find((product) => product.id == id);
   },
 
-  getBy: function (category) {
-    return this.products.filter((product) => product.category == category);
-  },
+ 
 
   save: function (product) {
     product.id = this.products[this.products.length - 1].id + 1;

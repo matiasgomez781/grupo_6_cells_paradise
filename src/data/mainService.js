@@ -10,6 +10,9 @@ const mainService = {
       product.name.toLowerCase().includes(aSearch.toLowerCase())
     );
   },
+  getBy: function (category) {
+    return this.products.filter((product) => product.category == category);
+  }
 };
 
 module.exports = mainService;

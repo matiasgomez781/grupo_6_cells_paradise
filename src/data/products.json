@@ -5,7 +5,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolor sit amet",
     "price": 94445,
     "discount": 10,
-    "image": "/images/Motorola E22.png",
+    "image": "Motorola E22.png",
     "category": "celular"
   },
   {
@@ -14,7 +14,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolor sit amet",
     "price": 360000,
     "discount": 5,
-    "image": "/images/Samsung S21.png",
+    "image": "Samsung S21.png",
     "category": "celular"
   },
   {
@@ -23,7 +23,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolor sit amet",
     "price": 222000,
     "discount": 30,
-    "image": "/images/Moto EDGE 30 NEO.png",
+    "image": "Moto EDGE 30 NEO.png",
     "category": "celular"
   },
   {
@@ -32,7 +32,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolor sit amet",
     "price": 1070000,
     "discount": false,
-    "image": "/images/iPhone 11 PRO.png",
+    "image": "iPhone 11 PRO.png",
     "category": "celular"
   },
   {
@@ -41,7 +41,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolor sit amet",
     "price": 340000,
     "discount": false,
-    "image": "/images/Samsung A54.png",
+    "image": "Samsung A54.png",
     "category": "celular"
   },
   {
@@ -50,7 +50,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolor sit amet",
     "price": 750000,
     "discount": 10,
-    "image": "/images/iPhone SE.png",
+    "image": "iPhone SE.png",
     "category": "celular"
   },
   {
@@ -59,7 +59,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolor sit amet",
     "price": 20000,
     "discount": 10,
-    "image": "/images/Apple Watch Series 8.png",
+    "image": "Apple Watch Series 8.png",
     "category": "accesorio"
   },
   {
@@ -68,7 +68,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolor sit amet",
     "price": 4700,
     "discount": false,
-    "image": "/images/Sandisk 128GB.png",
+    "image": "Sandisk 128GB.png",
     "category": "accesorio"
   },
   {
@@ -77,7 +77,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolor sit amet",
     "price": 11000,
     "discount": false,
-    "image": "/images/Cargador Samsung.png",
+    "image": "Cargador Samsung.png",
     "category": "accesorio"
   },
   {
@@ -88,5 +88,14 @@
     "description": "Descripcion del producto",
     "image": "1703058354362_img_.jpg",
     "id": 10
+  },
+  {
+    "name": "chromecast",
+    "price": "909090",
+    "discount": "5",
+    "category": "celular",
+    "description": "Descripcion del producto",
+    "image": "1703114207789_img_.jpg",
+    "id": 11
   }
 ]
