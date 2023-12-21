@@ -36,6 +36,10 @@ const productsController = {
     productService.update(req.body, req.params.id);
     res.redirect(`/products/detail/${req.params.id}`);
   },
+  delete: (req, res) => {
+    productService.delete(req.params.id);
+    res.redirect(`/products`);
+  }
 };
 
 module.exports = productsController;

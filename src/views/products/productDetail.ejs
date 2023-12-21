@@ -43,6 +43,9 @@
         <article class="btns-temp">
           <button class="btn-admin"><a href="/products/<%= product.id %>/editProduct">Editar producto</a></button>
           <button class="btn-admin"><a href="/products/createProduct">Crear producto</a></button>
+          <form action="/products/<%=product.id %>?_method=DELETE" method="POST">
+          <button class="btn-admin" type="submit">Borrar producto</button>
+          </form>
         </article>
 
         <article>
