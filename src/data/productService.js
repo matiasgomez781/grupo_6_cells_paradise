@@ -2,14 +2,20 @@ const fs = require("fs");
 const path = require("path");
 
 const productsFilePath = path.join(__dirname, "/products.json");
-const reWriteJson = fs.writeFileSync(
-  productsFilePath,
-  JSON.stringify(this.products),
-  "utf-8"
-);
+// const reWriteJson = function () {
+//   fs.writeFileSync(
+//     productsFilePath,
+//     JSON.stringify(this.products),
+//     "utf-8"
+//   )
+// } 
 
 const productService = {
   products: JSON.parse(fs.readFileSync(productsFilePath, "utf-8")),
+
+  // reWriteJson: ()=>{
+  //   fs.writeFileSync(productsFilePath,JSON.stringify(this.products),"utf-8")
+  // }  
 
   getAll: function () {
     return this.products;
@@ -19,15 +25,14 @@ const productService = {
     return this.products.find((product) => product.id == id);
   },
 
-  getBy: function (category) {
-    return this.products.filter((product) => product.category == category);
-  },
+ 
 
   save: function (product) {
     product.id = this.products[this.products.length - 1].id + 1;
     this.products.push(product);
-    reWriteJson;
-    return;
+    fs.writeFileSync(productsFilePath,JSON.stringify(this.products),"utf-8")
+    // reWriteJson();
+    // return product
   },
 
   update: function (product, idProduct) {
