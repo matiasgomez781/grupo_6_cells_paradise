@@ -1,11 +1,12 @@
 const productService = require("../data/productService");
-const productsModel = require("../model/products");
 
 const productsController = {
+  // Vista de todos los productos
   all: (req, res) => {
-    res.render("./products/index", {products: productService.getAll()});
+    res.render("./products/index", { products: productService.getAll() });
   },
 
+  // Vista del detalle de producto
   detail: (req, res) => {
     res.render("./products/productDetail", {
       product: productService.getById(req.params.id),
@@ -13,19 +14,28 @@ const productsController = {
     });
   },
 
-  createProduct: (req,res) => {
-    res.render("./products/createProduct")
+  // Formulario de creación
+  createProduct: (req, res) => {
+    res.render("./products/createProduct");
+  },
+  // Método para guardar el producto nuevo
+  store: (req, res) => {
+    req.body.image = req.file.filename;
+    productService.save(req.body); //, req.file
+    res.redirect("./products");
   },
 
-  store: (req,res) => {
-    req.body.image = req.file.filename;
-		productService.save(req.body);  //, req.file
-		res.redirect ("./products")
-  } ,
-
-  editProduct: (req,res) => {
-    res.render("./products/editProduct")
-  }
+  // Formulario de edición
+  editProduct: (req, res) => {
+    res.render("./products/editProduct", {
+      product: productService.getById(req.params.id),
+    });
+  },
+  // Método para modificar el producto
+  editUpdate: (req, res) => {
+    productService.update(req.body, req.params.id);
+    res.redirect(`/products/detail/${req.params.id}`);
+  },
 };
 
 module.exports = productsController;
