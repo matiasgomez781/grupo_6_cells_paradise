@@ -9,8 +9,8 @@ router.get("/productCart", mainController.cart);
 
 router.get("/about", mainController.about);
 
-
 router.get("/trabaja", mainController.trabaja);
 
+router.get("/search", mainController.search);
 
 module.exports = router;
