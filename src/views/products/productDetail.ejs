@@ -41,8 +41,8 @@
       <section class="buttons">
         <!-- Botones temporales para poder acceder a sus respectivas fistas de form -->
         <article class="btns-temp">
-          <button class="btn-admin"><a href="/products/<%= product.id %>/editProduct">Editar producto</a></button>
-          <button class="btn-admin"><a href="/products/createProduct">Crear producto</a></button>
+          <a href="/products/<%= product.id %>/editProduct" class="btn-admin"><button class="btn-admin">Editar producto</button></a>
+          <a href="/products/createProduct" class="btn-admin"><button class="btn-admin">Crear producto</button></a>
           <form action="/products/<%=product.id %>?_method=DELETE" method="POST">
           <button class="btn-admin" type="submit">Borrar producto</button>
           </form>
