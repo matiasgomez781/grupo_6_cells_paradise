@@ -56,11 +56,11 @@
   {
     "id": 7,
     "name": "APPLE WATCH SERIES 8",
-    "description": "              Lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolor sit amet",
+    "description": "Lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolor sit amet",
     "price": "25000",
     "discount": "10",
     "image": "Apple Watch Series 8.png",
-    "category": "celular"
+    "category": "accesorio"
   },
   {
     "id": 8,

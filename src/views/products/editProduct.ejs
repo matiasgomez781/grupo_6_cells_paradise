@@ -52,8 +52,8 @@
             <p>
               <label>Categoria</label>
               <select class="trato" name="category" id="category">
-                <option value="celular">Celular</option>
-                <option value="accesorio">Accesorio</option>
+                <option value="celular" <%= product.category == "celular" ? "selected" : "" %>>Celular</option>
+                <option value="accesorio" <%= product.category == "accesorio" ? "selected" : "" %>>Accesorio</option>
               </select>
             </p>
             <p class="about">
