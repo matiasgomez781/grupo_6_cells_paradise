@@ -6,7 +6,7 @@
         "email": "matiasnuñez@cellsparadise.com",
         "password": "tN9.r!U3fNl",
         "ocupation": "Account Executive",
-        "avatar": "/images/avatars/pretzel.jpg"
+        "avatar": "pretzel.jpg"
     },
     {
         "id": 2,
@@ -24,7 +24,7 @@
         "email": "gabrielrodriguez@cellsparadise.com",
         "password": "rL9`>b>8K(3",
         "ocupation": "Software Engineer II",
-        "avatar": "/images/avatars/pletzale.jpg"
+        "avatar": "pletzale.jpg"
     },
     {
         "id": 4,
@@ -33,7 +33,7 @@
         "email": "eliasorellana@cellsparadise.com",
         "password": "pZ8*Q&7!Mh<b",
         "ocupation": "Accounting Assistant II",
-        "avatar": "/images/avatars/pretzel.jpg"
+        "avatar": "pretzel.jpg"
     },
     {
         "id": 5,
@@ -42,7 +42,7 @@
         "email": "carolinageoltan@cellsparadise.com",
         "password": "iW7}@.wyy1\"rzCok",
         "ocupation": "Staff Accountant III",
-        "avatar": "/images/avatars/kipa.jpg"
+        "avatar": "kipa.jpg"
     },
     {
         "id": 6,
@@ -51,7 +51,7 @@
         "email": "lulster5@cellsparadise.com",
         "password": "rY7{1Cam>}",
         "ocupation": "Account Representative III",
-        "avatar": "/images/avatars/kipa.jpg"
+        "avatar": "kipa.jpg"
     },
     {
         "id": 7,
@@ -60,7 +60,7 @@
         "email": "tayres6@cellsparadise.com",
         "password": "sT0?VIuQvh",
         "ocupation": "VP Marketing",
-        "avatar": "/images/avatars/jala.jpg"
+        "avatar": "jala.jpg"
     },
     {
         "id": 8,
@@ -69,7 +69,7 @@
         "email": "gmckevin7@cellsparadise.com",
         "password": "aG9*%WCu",
         "ocupation": "Community Outreach Specialist",
-        "avatar": "/images/avatars/kipa.jpg"
+        "avatar": "kipa.jpg"
     },
     {
         "id": 9,
@@ -87,6 +87,6 @@
         "email": "dbladesmith9@cellsparadise.com",
         "password": "aW5=IvE6sV<!ZS",
         "ocupation": "Dental Hygienist",
-        "avatar": "/images/avatars/kipa.jpg"
+        "avatar": "kipa.jpg"
     }
 ]
