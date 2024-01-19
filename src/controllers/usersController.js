@@ -1,3 +1,4 @@
+const usersService = require("../data/usersService");
 const path = require("path");
 
 const usersController = {
@@ -8,8 +9,15 @@ const usersController = {
   register: (req, res) => {
     res.render(("./users/registro"));
   },
+
+  newUser: (req, res) => {
+    req.body.image = req.file.filename;
+    usersService.save(req.body); //, req.file
+    res.redirect("./products");
+  },
+
   getOne: (req,res)=>{
-    res.send('pagina del user' + req.params.id)
+    res.render('./users/perfil', {user: usersService.getById(req.params.id)})
   }
 };
 
