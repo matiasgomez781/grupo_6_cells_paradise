@@ -1,8 +1,8 @@
 [
     {
         "id": 1,
-        "usuario": "Matias",
-        "lastName": "Nuñez",
+        "first_name": "Matias",
+        "last_name": "Nuñez",
         "email": "matiasnuñez@cellsparadise.com",
         "password": "tN9.r!U3fNl",
         "ocupation": "Account Executive",
@@ -10,8 +10,8 @@
     },
     {
         "id": 2,
-        "usuario": "Matias",
-        "lastName": "Gomez",
+        "first_name": "Matias",
+        "last_name": "Gomez",
         "email": "matiasgomez@cellsparadise.com",
         "password": "wY8|>/RkviTek@L?",
         "ocupation": "Project Manager",
@@ -19,8 +19,8 @@
     },
     {
         "id": 3,
-        "usuario": "Gabriel",
-        "lastName": "Rodriguez",
+        "first_name": "Gabriel",
+        "last_name": "Rodriguez",
         "email": "gabrielrodriguez@cellsparadise.com",
         "password": "rL9`>b>8K(3",
         "ocupation": "Software Engineer II",
@@ -28,8 +28,8 @@
     },
     {
         "id": 4,
-        "usuario": "Elias",
-        "lastName": "Orellana",
+        "first_name": "Elias",
+        "last_name": "Orellana",
         "email": "eliasorellana@cellsparadise.com",
         "password": "pZ8*Q&7!Mh<b",
         "ocupation": "Accounting Assistant II",
@@ -37,8 +37,8 @@
     },
     {
         "id": 5,
-        "usuario": "Carolina",
-        "lastName": "Geoltan",
+        "first_name": "Carolina",
+        "last_name": "Geoltan",
         "email": "carolinageoltan@cellsparadise.com",
         "password": "iW7}@.wyy1\"rzCok",
         "ocupation": "Staff Accountant III",
@@ -46,8 +46,8 @@
     },
     {
         "id": 6,
-        "usuario": "augue aliquam",
-        "lastName": "dapibus at",
+        "first_name": "augue aliquam",
+        "last_name": "dapibus at",
         "email": "lulster5@cellsparadise.com",
         "password": "rY7{1Cam>}",
         "ocupation": "Account Representative III",
@@ -55,8 +55,8 @@
     },
     {
         "id": 7,
-        "usuario": "nec nisi",
-        "lastName": "mauris",
+        "first_name": "nec nisi",
+        "last_name": "mauris",
         "email": "tayres6@cellsparadise.com",
         "password": "sT0?VIuQvh",
         "ocupation": "VP Marketing",
@@ -64,8 +64,8 @@
     },
     {
         "id": 8,
-        "usuario": "sagittis sapien",
-        "lastName": "consequat",
+        "first_name": "sagittis sapien",
+        "last_name": "consequat",
         "email": "gmckevin7@cellsparadise.com",
         "password": "aG9*%WCu",
         "ocupation": "Community Outreach Specialist",
@@ -73,8 +73,8 @@
     },
     {
         "id": 9,
-        "usuario": "urna pretium",
-        "lastName": "eu",
+        "first_name": "urna pretium",
+        "last_name": "eu",
         "email": "pkelloway8@cellsparadise.com",
         "password": "lN3~7eBQ/nqDKfGK",
         "ocupation": "Environmental Tech",
@@ -82,24 +82,22 @@
     },
     {
         "id": 10,
-        "usuario": "pellentesque",
-        "lastName": "nullam",
+        "first_name": "pellentesque",
+        "last_name": "nullam",
         "email": "dbladesmith9@cellsparadise.com",
         "password": "aW5=IvE6sV<!ZS",
         "ocupation": "Dental Hygienist",
         "avatar": "kipa.jpg"
     },
     {
-        "usuario": "Gabrielsd",
+        "first_name": "Gabrielsd",
+        "last_name": "Rod",
         "email": "asd@paradise",
-        "clave": [
-            "123123123",
-            "123123123"
-        ],
+        "password": "123123123",
         "Telefono": "154154154",
         "trato": "hombre",
         "comentario": "adddddAcerca de mi... ",
-        "image": "1705629355499_img_.jpg",
+        "avatar": "1705629355499_img_.jpg",
         "id": 11
     }
 ]
