@@ -16,22 +16,20 @@
   <!-- Contenido principal de la página -->
 
   <main>
-    <% if (typeof errors != "undefined") { %>
-        <p style="color:red">ERROR</p>
-        <ul>
-          <% for (let i=0; i < errors.length; i++) { %>
-          <li>
-            <%= errors[i].msg %>
-          </li>
-          <% } %>
-        </ul>
-        <% } %>
 
     <section class="login-section">
 
       <h2 class="login-section-title">Ingresá a Cell's Paradise</h2>
 
       
+        <% if (locals.errors && errors.email) { %>
+          <div class = "text-danger">
+            <%= errors.email.msg %>
+          </div>
+          <% } %>
+
+        </br>
+
 
         <form action="/users/login" method="POST">
         <div class="login-inputs">

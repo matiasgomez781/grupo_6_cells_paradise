@@ -26,9 +26,9 @@ app.use("/", mainRouter);
 app.use("/users", routerlogin);
 app.use("/products", productsRouter);
 
-app.post('/users/login', (req, res) => {
+/*app.post('/users/login', (req, res) => {
     res.render(("users/login"));
-  });
+  });*/
 
 //Error 404
 

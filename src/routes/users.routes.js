@@ -6,11 +6,12 @@ const upload = require("../middlewares/multerUsers");
 
 
 router.get('/', usersController.login);
-router.post('/users/login', [
+/*router.post('/users/login', [
 check('email').isEmail().withMessage('Email invalido'),
 check('password').isLength( {min: 8} ).withMessage('La contraseña debe tener al menos 8 caracteres')],
-usersController.processLogin);
+usersController.processLogin);*/
 //un comentario
+router.post('/login', usersController.loginProcess);
 
 router.get('/perfil/:id', usersController.getOne)
 
