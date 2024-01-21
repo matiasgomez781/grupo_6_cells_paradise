@@ -1,14 +1,8 @@
 const fs = require("fs");
 const path = require("path");
+const bcrypt = require("bcryptjs");
 
 const usersFilePath = path.join(__dirname, "/users.json");
-// const reWriteJson = function () {
-//   fs.writeFileSync(
-//     productsFilePath,
-//     JSON.stringify(this.products),
-//     "utf-8"
-//   )
-// }
 
 const usersService = {
   users: JSON.parse(fs.readFileSync(usersFilePath, "utf-8")),
@@ -23,6 +17,7 @@ const usersService = {
 
   save: function (user) {
     user.id = this.users[this.users.length - 1].id + 1;
+    user.password = bcrypt.hashSync(user.password, 10);
     this.users.push(user);
     fs.writeFileSync(usersFilePath, JSON.stringify(this.users), "utf-8");
   },

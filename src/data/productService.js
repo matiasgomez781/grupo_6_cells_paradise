@@ -2,13 +2,6 @@ const fs = require("fs");
 const path = require("path");
 
 const productsFilePath = path.join(__dirname, "/products.json");
-// const reWriteJson = function () {
-//   fs.writeFileSync(
-//     productsFilePath,
-//     JSON.stringify(this.products),
-//     "utf-8"
-//   )
-// }
 
 const productService = {
   products: JSON.parse(fs.readFileSync(productsFilePath, "utf-8")),
