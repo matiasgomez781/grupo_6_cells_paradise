@@ -35,7 +35,7 @@ const usersController = {
       } else {
         return res.render("users/login", {
           errors: { 
-            email: { msg: "Contraseña invalida" },
+            email: { msg: "Datos invalidos" },
           },
         });
       }
