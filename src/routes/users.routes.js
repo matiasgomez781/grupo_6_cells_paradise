@@ -10,6 +10,7 @@ router.post('/users/login', [
 check('email').isEmail().withMessage('Email invalido'),
 check('password').isLength( {min: 8} ).withMessage('La contraseña debe tener al menos 8 caracteres')],
 usersController.processLogin);
+//un comentario
 
 router.get('/perfil/:id', usersController.getOne)
 
