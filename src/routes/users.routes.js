@@ -13,7 +13,7 @@ usersController.processLogin);*/
 //un comentario
 router.post('/login', usersController.loginProcess);
 
-router.get('/perfil/:id', usersController.getOne)
+router.get('/perfil', usersController.obtenerPerfil);
 
 router.get('/registro', usersController.register)
 router.post("/", upload.single("image"), usersController.newUser);

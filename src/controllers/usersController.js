@@ -23,12 +23,15 @@ const usersController = {
   getOne: (req, res) => {
     res.render("./users/perfil", { user: usersService.getById(req.params.id) });
   },
+  obtenerPerfil: (req, res) => {
+    res.render("users/perfil", {user: usersService.findByField(this.email, req.body.email)});
+  },
   loginProcess: (req, res) => {
     let userToLogin = usersService.findByField("email", req.body.email);
 
     if (userToLogin) {
       if (userToLogin.password == req.body.password) {
-        return res.send("contraseña correcta");
+        return res.redirect("perfil");
       } else {
         return res.render("users/login", {
           errors: { 

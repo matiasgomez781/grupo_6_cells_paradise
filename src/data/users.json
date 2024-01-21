@@ -1,15 +1,5 @@
 [
   {
-    "usuario": "matias gomez",
-    "email": "darksho781@gmail.com",
-    "password": ["123456", "123456"],
-    "Telefono": "456456",
-    "trato": "hombre",
-    "comentario": "nada",
-    "image": "1705780259528_img_.png",
-    "id": 1
-  },
-  {
     "usuario": "mati nuñez",
     "email": "matinunez@gmail.com",
     "password": "123456",
@@ -17,6 +7,16 @@
     "trato": "hombre",
     "comentario": "asdasd",
     "image": "1705780492932_img_.png",
+    "id": 1
+  },
+  {
+    "usuario": "Matias Gomez",
+    "email": "darksho781@gmail.com",
+    "password": "1515",
+    "Telefono": "454545",
+    "trato": "no binarie",
+    "comentario": "spiderman!",
+    "image": "1705815048750_img_.png",
     "id": 2
   }
 ]
