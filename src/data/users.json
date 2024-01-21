@@ -2,7 +2,7 @@
   {
     "usuario": "matias gomez",
     "email": "darksho781@gmail.com",
-    "clave": ["123456", "123456"],
+    "password": ["123456", "123456"],
     "Telefono": "456456",
     "trato": "hombre",
     "comentario": "nada",
@@ -12,7 +12,7 @@
   {
     "usuario": "mati nuñez",
     "email": "matinunez@gmail.com",
-    "clave": ["123456", "123456"],
+    "password": "123456",
     "Telefono": "7879",
     "trato": "hombre",
     "comentario": "asdasd",

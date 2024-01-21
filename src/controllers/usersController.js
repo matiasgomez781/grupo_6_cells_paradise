@@ -1,17 +1,17 @@
 const usersService = require("../data/usersService");
 const path = require("path");
-const { validationResult } = require('express-validator');
+const { validationResult } = require("express-validator");
 const fs = require("fs");
 const bcrypt = require("bcrypt");
 let users = require("../data/users.json");
 
 const usersController = {
   login: (req, res) => {
-    res.render(("users/login"));
+    res.render("users/login");
   },
 
   register: (req, res) => {
-    res.render(("./users/registro"));
+    res.render("./users/registro");
   },
 
   newUser: (req, res) => {
@@ -20,24 +20,30 @@ const usersController = {
     res.redirect("./products");
   },
 
-  getOne: (req,res)=>{
-    res.render('./users/perfil', {user: usersService.getById(req.params.id)})
+  getOne: (req, res) => {
+    res.render("./users/perfil", { user: usersService.getById(req.params.id) });
   },
-  loginProcess: (req,res)=> {
-    let userToLogin = usersService.findByField('email', req.body.email);
+  loginProcess: (req, res) => {
+    let userToLogin = usersService.findByField("email", req.body.email);
 
-    if(userToLogin) {
-      return res.send(userToLogin);
+    if (userToLogin) {
+      if (userToLogin.password == req.body.password) {
+        return res.send("contraseña correcta");
+      } else {
+        return res.render("users/login", {
+          errors: { 
+            email: { msg: "Contraseña invalida" },
+          },
+        });
+      }
     }
 
-    return res.render ('users/login', {
+    return res.render("users/login", {
       errors: {
-        email: {msg: "No se encuentra este email en nuestra base de datos"}
-      }
+        email: { msg: "No se encuentra este email en nuestra base de datos" },
+      },
     });
-
-  }
-
+  },
 };
 
 module.exports = usersController;
