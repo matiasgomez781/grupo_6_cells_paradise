@@ -28,8 +28,12 @@ app.use("/", mainRouter);
 app.use("/users", routerlogin);
 app.use("/products", productsRouter);
 
+app.post('/users/login', (req, res) => {
+    res.render(("users/login"));
+  });
+
 //Error 404
 
-app.use((req,res, next) => {
+/*app.use((req,res, next) => {
     res.status(404).render("./main/error-404");
-})
+})*/
