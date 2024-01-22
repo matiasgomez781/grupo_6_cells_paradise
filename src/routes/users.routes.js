@@ -9,6 +9,8 @@ const authMid = require("../middlewares/authMid");
 router.get("/login", authMid, usersController.login);
 router.post('/login', usersController.loginProcess);
 
+router.post("/login", usersController.logout);
+
 //router.get('/profile/:id', usersController.getProfile);
 router.get("/profile/:id", usersController.getOne);
 

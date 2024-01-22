@@ -51,12 +51,11 @@ const usersController = {
       },
     });
   },
-  /*forget: (req, res) => {
-    req.session.color = "";
-    res.clearCookie("rememberColor");
-
-    res.redirect("/");
-  }*/
+  logout: (req, res) => {
+    req.session.userLogged = "";
+    //res.clearCookie("");
+    return res.redirect("/");
+  }
 };
 
 module.exports = usersController;
