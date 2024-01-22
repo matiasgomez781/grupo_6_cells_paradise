@@ -1,5 +1,5 @@
 [
-   {
+  {
     "first_name": "Matias",
     "last_name": "Gomez",
     "email": "darksho781@gmail.com",
@@ -9,6 +9,20 @@
     "trato": "hombre",
     "comentario": "asdas",
     "avatar": "1705891531264_img_.png",
+    "admin": 1,
     "id": 1
+  },
+  {
+    "first_name": "unusuario",
+    "last_name": "quenoesadmin",
+    "email": "noesadmin@gmail.com",
+    "password": "$2a$10$XQvjOwaS9jsEu4OhSunpxuf.yHnk98pUH3PxwfCKX2IeG3rw9PKYe",
+    "passwordRepetir": "1313",
+    "Telefono": "213123",
+    "trato": "no_binarie",
+    "comentario": "asdasd",
+    "avatar": "1705894190667_img_.jpg",
+    "admin": 0,
+    "id": 2
   }
 ]

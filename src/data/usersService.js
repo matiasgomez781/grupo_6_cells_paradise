@@ -16,6 +16,7 @@ const usersService = {
   },
 
   save: function (user) {
+    user.admin = 0 ; //Crea el usuario con valor admin en 0 (NO ES ADMIN)
     user.id = this.users[this.users.length - 1].id + 1;
     user.password = bcrypt.hashSync(user.password, 10);
     this.users.push(user);
