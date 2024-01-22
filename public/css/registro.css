@@ -148,7 +148,7 @@ form{
     justify-content: space-evenly;
 }
 
-.contenedorform {
+.inputs {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -278,48 +278,48 @@ ul{
     display: none;
   } */
 
-.contenedorform{
+.inputs{
     font-size: 1.75vh;
     display: flex;
     flex-direction: column;
     align-items: stretch;
 }
   
-  label{
-      font-size: 4vw;
-  }
-  imput{
-      font-size: 10vw;
-      width: 100%;
-  }
-  .first, .second {
+label{
+    font-size: 4vw;
+}
+imput{
+    font-size: 10vw;
     width: 100%;
-  }
-  .trato{
-      font-size: 4vw;
-  }
-  .button{
-      display: block;
-      justify-content: center;
-      
-  }
-  .volver{
-      margin-top: 10px;
-      width: 10em;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  
-  footer {
-    background-color: #f2f2f2;
-    padding: 20px;
-    display: flex;
-    justify-content: space-around;
-  }
+}
 
-  .footer-lists{
-      font-size: 4vw;
-  }
+.first, .second {
+  width: 100%;
+}
+.trato{
+    font-size: 4vw;
+}
+.button{
+    display: block;
+    justify-content: center;
+    
+}
+.volver{
+    margin-top: 10px;
+    width: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+  background-color: #f2f2f2;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+.footer-lists{
+    font-size: 4vw;
+}
 
 }
