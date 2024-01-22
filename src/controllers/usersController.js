@@ -1,8 +1,5 @@
 const usersService = require("../data/usersService");
-const { validationResult } = require("express-validator");
-const fs = require("fs");
 const bcrypt = require("bcrypt");
-let users = require("../data/users.json");
 
 const usersController = {
   login: (req, res) => {
