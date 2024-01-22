@@ -4,7 +4,6 @@
     "last_name": "Gomez",
     "email": "darksho781@gmail.com",
     "password": "$2a$10$O4lAGAovM8TM.NbLBuvRCOotjrrsqEgNNW8b4QWxHcKdgRDsMvuaq",
-    "passwordRepetir": "1515",
     "Telefono": "8797465",
     "trato": "hombre",
     "comentario": "asdas",
@@ -17,12 +16,23 @@
     "last_name": "quenoesadmin",
     "email": "noesadmin@gmail.com",
     "password": "$2a$10$XQvjOwaS9jsEu4OhSunpxuf.yHnk98pUH3PxwfCKX2IeG3rw9PKYe",
-    "passwordRepetir": "1313",
     "Telefono": "213123",
     "trato": "no_binarie",
     "comentario": "asdasd",
     "avatar": "1705894190667_img_.jpg",
     "admin": 0,
     "id": 2
+  },
+  {
+    "first_name": "salt",
+    "last_name": "fhjdk",
+    "email": "efef@dgfdg",
+    "password": "$2a$10$3znKYb6LbkBdSW72sM0ATeWzb/wUAsb95WHERyXcObYDBQS03TpkG",
+    "Telefono": "23232323",
+    "trato": "hombre",
+    "comentario": "hdhdvsf",
+    "avatar": "1705921442502_img_.png",
+    "admin": 0,
+    "id": 3
   }
 ]

@@ -25,20 +25,23 @@ const usersController = {
   /*getProfile: (req, res) => {
     res.render("users/perfil", {user: usersService.findByField("id", req.session.userLogged.id)});
   },*/
-  
+
   loginProcess: (req, res) => {
     let userToLogin = usersService.findByField("email", req.body.email);
 
     if (userToLogin) {
       if (bcrypt.compareSync(req.body.password, userToLogin.password)) {
-        
         //delete userToLogin.password; //Se elimina la contraseña por seguridad
         req.session.userLogged = userToLogin; //Se guarda en sesion los datos de usuario
+
+        if (req.body.remember) {
+          res.cookie("rememberMe", userToLogin.email, { maxAge: 3000000 });
+        }
 
         return res.redirect("/users/profile/" + userToLogin.id);
       } else {
         return res.render("users/login", {
-          errors: { 
+          errors: {
             email: { msg: "Credenciales invalidas" },
           },
         });
@@ -53,9 +56,9 @@ const usersController = {
   },
   logout: (req, res) => {
     req.session.userLogged = "";
-    //res.clearCookie("");
+    res.clearCookie("rememberMe");
     return res.redirect("/");
-  }
+  },
 };
 
 module.exports = usersController;
