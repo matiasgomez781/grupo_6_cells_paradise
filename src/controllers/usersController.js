@@ -22,14 +22,19 @@ const usersController = {
   getOne: (req, res) => {
     res.render("./users/perfil", { user: usersService.getById(req.params.id) });
   },
-  obtenerPerfil: (req, res) => {
-    res.render("users/perfil", {user: usersService.findByField(this.email, req.body.email)});
-  },
+  /*getProfile: (req, res) => {
+    res.render("users/perfil", {user: usersService.findByField("id", req.session.userLogged.id)});
+  },*/
+  
   loginProcess: (req, res) => {
     let userToLogin = usersService.findByField("email", req.body.email);
 
     if (userToLogin) {
       if (bcrypt.compareSync(req.body.password, userToLogin.password)) {
+        
+        //delete userToLogin.password; //Se elimina la contraseña por seguridad
+        req.session.userLogged = userToLogin; //Se guarda en sesion los datos de usuario
+
         return res.redirect("/users/profile/" + userToLogin.id);
       } else {
         return res.render("users/login", {
@@ -46,6 +51,12 @@ const usersController = {
       },
     });
   },
+  /*forget: (req, res) => {
+    req.session.color = "";
+    res.clearCookie("rememberColor");
+
+    res.redirect("/");
+  }*/
 };
 
 module.exports = usersController;

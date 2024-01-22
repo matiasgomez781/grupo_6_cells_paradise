@@ -3,15 +3,16 @@ const router = express.Router();
 
 const usersController = require("../controllers/usersController");
 const upload = require("../middlewares/multerUsers");
+const authMid = require("../middlewares/authMid");
 
 // Cambiar la ruta a /login
-router.get("/login", usersController.login);
+router.get("/login", authMid, usersController.login);
 router.post('/login', usersController.loginProcess);
 
-router.get('/perfil', usersController.obtenerPerfil);
+//router.get('/profile/:id', usersController.getProfile);
 router.get("/profile/:id", usersController.getOne);
 
-router.get("/register", usersController.register);
+router.get("/register", authMid, usersController.register);
 router.post("/", upload.single("avatar"), usersController.newUser);
 
 // router.get ('/:id', usersController.getOne)
