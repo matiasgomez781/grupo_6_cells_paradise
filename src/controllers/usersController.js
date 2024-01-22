@@ -29,12 +29,12 @@ const usersController = {
     let userToLogin = usersService.findByField("email", req.body.email);
 
     if (userToLogin) {
-      if (userToLogin.password == req.body.password) {
-        return res.redirect("perfil");
+      if (bcrypt.compareSync(req.body.password, userToLogin.password)) {
+        return res.redirect("/users/profile/" + userToLogin.id);
       } else {
         return res.render("users/login", {
           errors: { 
-            email: { msg: "Datos invalidos" },
+            email: { msg: "Credenciales invalidas" },
           },
         });
       }

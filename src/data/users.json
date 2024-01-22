@@ -111,5 +111,17 @@
     "comentario": "tyhdjfgjsfjdfhjk",
     "avatar": "1705826870710_img_.png",
     "id": 12
+  },
+  {
+    "first_name": "Daniel",
+    "last_name": "Perez",
+    "email": "daniperez@gmail.com",
+    "password": "$2a$10$jjkOETeUSE7ZxpRgxGpnO.vWky2ZugTtQSgWmO.RIxpJEjOZaqPCu",
+    "passwordRepetir": "123456",
+    "Telefono": "98798798",
+    "trato": "hombre",
+    "comentario": "nada...",
+    "avatar": "1705887427248_img_.png",
+    "id": 13
   }
 ]
