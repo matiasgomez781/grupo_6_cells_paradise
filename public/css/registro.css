@@ -3,27 +3,6 @@
     padding: 0;
 }
 
-
-/* header {
-  background-color: #028886;
-  width: 100vw;
-  top: 0;
-  
-}
-
-#logo {
-  width: 8%;
-  border-radius: 50%;
-}
-
-.header-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 0 10px;
-} */
-
 header{
   position: inherit;
 }
@@ -45,24 +24,6 @@ header{
   flex-wrap: wrap;
   padding: 0 10px;
 }
-
-/* .searchBar {
-  width: 45%;
-  position: relative;
-}
-
-.searchBar input {
-  width: 100%;
-  padding: 15px;
-  border-radius: 30px;
-} */
-
-/* .fa-magnifying-glass {
-  font-size: 20px;
-  position: absolute;
-  right: 4%;
-}
- */
 
  .fa-magnifying-glass{
   padding-top: 5%;
@@ -92,13 +53,6 @@ header{
   font-size: 25px;
 }
 
-/* .header-navBar ul {
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
-  padding: 15px;
-  background-color: #d8d8d8;
-} */
 
 .header-navBar a {
   text-decoration: none;
@@ -216,37 +170,6 @@ color:#028886;
   font-size: 0.8em;
 }
 
-/* footer {
-  background-color: #f2f2f2;
-  padding: 20px;
-  display: flex;
-  justify-content: space-around;
-}
-
-
-
-.footer-lists ul {
-  list-style: none;
-}
-
-ul{
-    padding: 0px;
-    margin: 0px;
-}
-
-.footer-lists li {
-  padding: 1vw;
-}
-
-.footer-lists h4 {
-  color: #000000;
-}
-
-.footer-lists a {
-  text-decoration: none;
-  color: #000000;
-}
- */
 .title{
     margin: 0px;
 }
@@ -273,10 +196,6 @@ ul{
   .fa-magnifying-glass {
     right: 12%;
   }
-
-  /* .header-navBar {
-    display: none;
-  } */
 
 .inputs{
     font-size: 1.75vh;
