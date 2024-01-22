@@ -1,28 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <title>Perfil de usuario</title>
-  <%- include("../partials/head.ejs") %>
-  <link rel="stylesheet" href="/css/detail.css" />
-</head>
+  <head>
+    <title>Paradise Perfil</title>
+    <%- include("../partials/head.ejs") %>
+    <link rel="stylesheet" href="/css/perfil.css" />
+  </head>
 
 <body>
   <header><%- include("../partials/header.ejs") %></header>
 
-  <main>
-    <section class="product">
-      <section class="images-container">
-        <article class="main-image">
-          <img src="<%= user.image %>" alt="Imagen de <%= user.usuario %>" />
-        </article>
-      </section>
+    <main>
+      <div class="perfil">
+        
+        <section class="avatar">          
+          <img class="img" src="/images/users/<%= user.avatar%>" alt="<%= user.first_name%>" />
+        </section>
 
-      <section class="description-container">
-        <h3><%= user.usuario %></h3>
-        <p class="description"><%= user.email %></p>
-      </section>
-    </section>
-  </main>
+        <section class="datos">
+          <h4>
+            Datos principales y de contacto
+          </h4>
+          <ul class="lista">
+            <li><%= user.first_name + " " + user.last_name %></li>
+            <li><%= user.email %></li>
+            <li><%= user.telefono %></li>
+            <li><%= user.trato %></li>
+          </ul>
+          
+        </section>
+
+        <section class="descripcion">
+          <h4>
+            Acerca de mi
+          </h4>
+          <em><%=user.comentario%></em>
+        </section>
+
+      </div>
+      <p class="button">
+        <button type="submit"> Exportar perfil </button>
+      </p>  
+
+ 
+    </main>
 
   <footer><%- include("../partials/footer.ejs") %></footer>
 </body>

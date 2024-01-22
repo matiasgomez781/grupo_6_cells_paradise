@@ -1,5 +1,4 @@
 const usersService = require("../data/usersService");
-const path = require("path");
 const { validationResult } = require("express-validator");
 const fs = require("fs");
 const bcrypt = require("bcrypt");
@@ -15,9 +14,9 @@ const usersController = {
   },
 
   newUser: (req, res) => {
-    req.body.image = req.file.filename;
+    req.body.avatar = req.file.filename;
     usersService.save(req.body); //, req.file
-    res.redirect("./products");
+    res.redirect(`/users/profile/${req.body.id}`);
   },
 
   getOne: (req, res) => {

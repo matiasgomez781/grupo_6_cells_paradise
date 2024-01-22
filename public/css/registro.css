@@ -63,6 +63,11 @@ header{
   right: 4%;
 }
  */
+
+ .fa-magnifying-glass{
+  padding-top: 5%;
+ }
+
 .account-cart {
   width: 13%;
   display: flex;
@@ -76,7 +81,11 @@ header{
 }
 
 .fa-user {
-  font-size: 20px;
+  font-size: 20px;;
+}
+
+.regicon{
+  display: none;
 }
 
 .fa-cart-shopping {
@@ -135,7 +144,14 @@ form{
     margin: 0px;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-evenly;
+}
+
+.contenedorform {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 h2{
@@ -262,12 +278,12 @@ ul{
     display: none;
   } */
 
-  form{
-      font-size: 1.75vh;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-  }
+.contenedorform{
+    font-size: 1.75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
   
   label{
       font-size: 4vw;
@@ -283,11 +299,11 @@ ul{
       font-size: 4vw;
   }
   .button{
-      display: flex;
+      display: block;
       justify-content: center;
       
   }
-  button, .volver{
+  .volver{
       margin-top: 10px;
       width: 10em;
       display: flex;

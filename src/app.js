@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 const express = require("express");
 const app = express();
 
-const routerlogin = require("./routes/users.routes");
+const usersRouter = require("./routes/users.routes");
 const mainRouter = require("./routes/main.routes");
 const productsRouter = require("./routes/products.routes");
 
@@ -23,7 +23,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 app.use("/", mainRouter);
-app.use("/users", routerlogin);
+app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 
 /*app.post('/users/login', (req, res) => {
