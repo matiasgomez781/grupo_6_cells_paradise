@@ -7,9 +7,9 @@ const usersFilePath = path.join(__dirname, "/users.json");
 const usersService = {
   users: JSON.parse(fs.readFileSync(usersFilePath, "utf-8")),
 
-  getAll: function () {
-    return this.users;
-  },
+  // getAll: function () {
+  //   return this.users;
+  // },
 
   getById: function (id) {
     return this.users.find((user) => user.id == id);
