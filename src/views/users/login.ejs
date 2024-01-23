@@ -16,19 +16,31 @@
   <!-- Contenido principal de la página -->
 
   <main>
+
     <section class="login-section">
 
       <h2 class="login-section-title">Ingresá a Cell's Paradise</h2>
-      <form action="/login.php" method="post">
+
+      
+        <% if (locals.errors && errors.email) { %>
+          <div class = "text-danger">
+            <%= errors.email.msg %>
+          </div>
+          <% } %>
+
+        </br>
+
+
+        <form action="/users/login" method="POST">
         <div class="login-inputs">
           <div class="login-input email-input">
             <label for="email">Correo electrónico</label>
-            <input type="email" name="email" id="email" placeholder="Introduce tu correo electrónico" required>
+            <input type="email" name="email" id="email" placeholder="Introduce tu correo electrónico">
           </div>
 
           <div class="login-input password-input">
             <label for="password">Contraseña</label>
-            <input type="password" name="password" id="password" placeholder="Introduce tu contraseña" required>
+            <input type="password" name="password" id="password" placeholder="Introduce tu contraseña">
           </div>
         </div>
 
@@ -41,7 +53,7 @@
       </form>
       <p class="login-links">
         <br>
-        ¿No tienes cuenta? <a href="/users/registro">Crear cuenta</a> | ¿Olvidaste tu contraseña? <a href="#">Recuperar contraseña</a>
+        ¿No tienes cuenta? <a href="/users/register">Crear cuenta</a> | ¿Olvidaste tu contraseña? <a href="#">Recuperar contraseña</a>
       </p>
     </section>
   </main>

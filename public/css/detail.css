@@ -47,6 +47,11 @@ main {
 .buttons a {
   color: #000000;
   text-decoration: none;
+  padding: 0;
+}
+
+.buttons a button {
+  margin: 0;
 }
 
 .buttons button {

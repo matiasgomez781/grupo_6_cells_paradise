@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Perfil de <%= user.first_name + " " + user.last_name %></title>
+    <%- include("../partials/head.ejs") %>
+    <link rel="stylesheet" href="/css/perfil.css" />
+  </head>
+
+<body>
+  <header><%- include("../partials/header.ejs") %></header>
+
+    <main>
+      <div class="perfil">
+        
+        <section class="avatar">          
+          <img class="img" src="/images/users/<%= user.avatar%>" alt="<%= user.first_name%>" width="50%" />
+        </section>
+
+        <section class="datos">
+          <h4>
+            Datos principales y de contacto
+          </h4>
+          <ul class="lista">
+            <li><%= user.first_name + " " + user.last_name %></li>
+            <li><%= user.email %></li>
+            <li><%= user.telefono %></li>
+            <li><%= user.trato %></li>
+          </ul>
+          
+        </section>
+
+        <section class="descripcion">
+          <h4>
+            Acerca de mi
+          </h4>
+          <em><%=user.comentario%></em>
+        </section>
+
+      </div>
+
+      <form action="/users/logout" method="POST">
+      <p class="button">
+        <button type="submit"> Cerrar sesion </button>
+      </p>  
+      </form>
+
+ 
+    </main>
+
+  <footer><%- include("../partials/footer.ejs") %></footer>
+</body>
+</html>

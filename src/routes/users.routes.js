@@ -1,11 +1,22 @@
-const express = require ('express');
+const express = require("express");
 const router = express.Router();
-const usersController = require ('../controllers/usersController')
 
-router.get('/', usersController.login)
+const usersController = require("../controllers/usersController");
+const upload = require("../middlewares/multerUsers");
+const authMid = require("../middlewares/authMid");
 
-router.get('/registro', usersController.register)
+// Cambiar la ruta a /login
+router.get("/login", authMid, usersController.login);
+router.post('/login', usersController.loginProcess);
 
-router.get ('/:id', usersController.getOne)
+router.post("/logout", usersController.logout);
+
+//router.get('/profile/:id', usersController.getProfile);
+router.get("/profile/:id", usersController.getOne);
+
+router.get("/register", authMid, usersController.register);
+router.post("/", upload.single("avatar"), usersController.newUser);
+
+// router.get ('/:id', usersController.getOne)
 
 module.exports = router;
