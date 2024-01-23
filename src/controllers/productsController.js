@@ -1,4 +1,5 @@
 const productService = require("../data/productService");
+const usersService = require("../data/usersService");
 
 const productsController = {
   // Vista de todos los productos
@@ -11,6 +12,9 @@ const productsController = {
     res.render("./products/productDetail", {
       product: productService.getById(req.params.id),
       products: productService.getAll(),
+      user: usersService.getById(
+        req.session.userLogged ? req.session.userLogged.id : null
+      ),
     });
   },
 
@@ -39,7 +43,7 @@ const productsController = {
   delete: (req, res) => {
     productService.delete(req.params.id);
     res.redirect(`/products`);
-  }
+  },
 };
 
 module.exports = productsController;

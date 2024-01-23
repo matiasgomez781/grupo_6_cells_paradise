@@ -14,21 +14,36 @@
         <section class="images-container">
           <article class="more-images">
             <div class="min-image">
-              <img src="/images/products/<%= product.image %>" alt="<%= product.name %>" />
+              <img
+                src="/images/products/<%= product.image %>"
+                alt="<%= product.name %>"
+              />
             </div>
             <div class="min-image">
-              <img src="/images/products/<%= product.image %>" alt="<%= product.name %>" />
+              <img
+                src="/images/products/<%= product.image %>"
+                alt="<%= product.name %>"
+              />
             </div>
             <div class="min-image">
-              <img src="/images/products/<%= product.image %>" alt="<%= product.name %>" />
+              <img
+                src="/images/products/<%= product.image %>"
+                alt="<%= product.name %>"
+              />
             </div>
             <div class="min-image">
-              <img src="/images/products/<%= product.image %>" alt="<%= product.name %>" />
+              <img
+                src="/images/products/<%= product.image %>"
+                alt="<%= product.name %>"
+              />
             </div>
           </article>
 
           <article class="main-image">
-            <img src="/images/products/<%= product.image %>" alt="<%= product.name %>" />
+            <img
+              src="/images/products/<%= product.image %>"
+              alt="<%= product.name %>"
+            />
           </article>
         </section>
 
@@ -39,14 +54,22 @@
       </section>
 
       <section class="buttons">
-        <!-- Botones temporales para poder acceder a sus respectivas fistas de form -->
+        <% if (user && user.admin > 0) { %>
         <article class="btns-temp">
-          <a href="/products/<%= product.id %>/editProduct" class="btn-admin"><button class="btn-admin">Editar producto</button></a>
-          <a href="/products/createProduct" class="btn-admin"><button class="btn-admin">Crear producto</button></a>
-          <form action="/products/<%=product.id %>?_method=DELETE" method="POST">
-          <button class="btn-admin" type="submit">Borrar producto</button>
+          <a href="/products/<%= product.id %>/editProduct" class="btn-admin"
+            ><button class="btn-admin">Editar producto</button></a
+          >
+          <a href="/products/createProduct" class="btn-admin"
+            ><button class="btn-admin">Crear producto</button></a
+          >
+          <form
+            action="/products/<%=product.id %>?_method=DELETE"
+            method="POST"
+          >
+            <button class="btn-admin" type="submit">Borrar producto</button>
           </form>
         </article>
+        <% } %>
 
         <article>
           <button class="btn-addToCart">Agregar al carrito</button>
@@ -66,7 +89,9 @@
             <% products.forEach(product => { %>
             <div class="individualProduct">
               <a href="/products/detail/<%= product.id %>"
-                ><img src="/images/products/<%= product.image %>" alt="<%= product.name %>"
+                ><img
+                  src="/images/products/<%= product.image %>"
+                  alt="<%= product.name %>"
               /></a>
 
               <div class="descriptionProduct">
