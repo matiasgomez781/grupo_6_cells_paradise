@@ -17,7 +17,12 @@ const usersController = {
   },
 
   getOne: (req, res) => {
-    res.render("./users/perfil", { user: usersService.getById(req.params.id) });
+    res.render("./users/perfil", {
+      user: usersService.getById(req.params.id),
+      userLogged: usersService.getById(
+        req.session.userLogged ? req.session.userLogged.id : null
+      ),
+    });
   },
   /*getProfile: (req, res) => {
     res.render("users/perfil", {user: usersService.findByField("id", req.session.userLogged.id)});
