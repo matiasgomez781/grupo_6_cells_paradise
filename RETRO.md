@@ -83,3 +83,25 @@ Sabiendo que todos somos partes importantes dentro del equipo y que debemos func
 ## Dejar de Hacer
 
 *) No cumplir con las tareas en los tiempos estipulados
+
+## Retrospectiva del Cuarto Sprint
+
+*) El equipo comenzo a implementar el trabajo de a pares y hemos mejorado la velocidad de resolucion de los requerimientos, aunque
+    aun no hemos logrado coordinar del todo los tiempos, tenemos menos reuniones y somo conscientes que debemos mejorar eso.
+    
+## Comenzar a Hacer
+
+*)Reuniones diarias cortas para seguimiento del progreso en el sprint
+*)Que todos participemos en mantener el tablero de Trello actualizado
+
+## Hacer Mas
+
+*) Mejorar el uso de metodologias agiles en el equipo
+
+## Continuar Haciendo
+
+*) Buena comunicacion, compromiso de todos por aportar, consultar dudas a tiempo.
+
+## Dejar de Hacer
+
+*) Dejar tareas para resolver en ultima hora
