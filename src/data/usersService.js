@@ -23,6 +23,7 @@ const usersService = {
     this.users.push(user);
     fs.writeFileSync(usersFilePath, JSON.stringify(this.users), "utf-8");
   },
+  
   findByField: function (field, text) {
     let allUsers = this.getAll();
     let userFound = allUsers.find((oneUser) => oneUser[field] === text);

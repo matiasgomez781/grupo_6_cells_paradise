@@ -13,6 +13,12 @@ const usersController = {
   newUser: (req, res) => {
     req.body.avatar = req.file.filename;
     usersService.save(req.body); //, req.file
+    
+    // auto login luego de guardar al nuevo usuario
+    let createdUser = usersService.findByField("email", req.body.email); // obtengo los datos del usuario
+    req.session.userLogged = createdUser; // creo una sesión de usuario
+    res.cookie("rememberMe", createdUser.email, { maxAge: 3000000 }); // también creo una cookie (no era suficiente con la session)
+
     res.redirect(`/users/profile/${req.body.id}`);
   },
 
@@ -24,9 +30,6 @@ const usersController = {
       ),
     });
   },
-  /*getProfile: (req, res) => {
-    res.render("users/perfil", {user: usersService.findByField("id", req.session.userLogged.id)});
-  },*/
 
   loginProcess: (req, res) => {
     let userToLogin = usersService.findByField("email", req.body.email);
