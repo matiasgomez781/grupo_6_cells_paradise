@@ -22,5 +22,16 @@ module.exports = (sequelize, DataTypes) => {
     };
     let UserAddress = sequelize.define(alias, columns, config);
 
+    UserAddress.associate = function(models) {
+        UserAddress.belongsTo(models.Address, {
+            as: 'address',
+            foreignKey: 'id_address'
+        });
+        UserAddress.belongsTo(models.User, {
+            as: 'user',
+            foreignKey: 'id_user'
+        });
+    };
+
     return UserAddress;
 };
