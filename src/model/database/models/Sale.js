@@ -26,5 +26,31 @@ module.exports = (sequelize, DataTypes) => {
     };
     let Sale = sequelize.define(alias, columns, config);
 
+    Sale.associate = function(models) {
+        Sale.belongsTo(models.PaymentMethod, {
+            as: 'payment_method',
+            foreignKey: 'id_payment'
+        });
+        Sale.belongsToMany(models.Product, {
+            as: 'products',
+            through: 'product_sale',
+            foreignKey: 'id_sale',
+            otherKey: 'id_product'
+        });
+    };
+
+    Sale.associate = function(models) {
+        Sale.belongsTo(models.PaymentMethod, {
+            as: 'payment_method',
+            foreignKey: 'id_payment'
+        });
+        Sale.belongsToMany(models.Product, {
+            as: 'products',
+            through: 'product_sale',
+            foreignKey: 'id_sale',
+            otherKey: 'id_product'
+        });
+    };
+
     return Sale;
 };
