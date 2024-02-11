@@ -22,5 +22,16 @@ module.exports = (sequelize, DataTypes) => {
     };
     let ProductCart = sequelize.define(alias, columns, config);
 
+    ProductCart.associate = function(models) {
+        ProductCart.belongsTo(models.Cart, {
+            as: 'cart',
+            foreignKey: 'id_cart'
+        });
+        ProductCart.belongsTo(models.Product, {
+            as: 'product',
+            foreignKey: 'id_product'
+        });
+    };
+
     return ProductCart;
 };
