@@ -22,5 +22,18 @@ module.exports = (sequelize, DataTypes) => {
     };
     let Purchase = sequelize.define(alias, columns, config);
 
+    Purchase.associate = function(models) {
+        Purchase.belongsTo(models.User, {
+            as: 'user',
+            foreignKey: 'id_user'
+        });
+        Purchase.belongsToMany(models.Product, {
+            as: 'products',
+            through: 'product_purchase',
+            foreignKey: 'id_purchase',
+            otherKey: 'id_product'
+        });
+    };
+
     return Purchase;
 };
