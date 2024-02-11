@@ -22,5 +22,16 @@ module.exports = (sequelize, DataTypes) => {
     };
     let ProductColor = sequelize.define(alias, columns, config);
 
+    ProductColor.associate = function(models) {
+        ProductColor.belongsTo(models.Color, {
+            as: 'color',
+            foreignKey: 'id_color'
+        });
+        ProductColor.belongsTo(models.Product, {
+            as: 'product',
+            foreignKey: 'id_product'
+        });
+    };
+
     return ProductColor;
 };
