@@ -22,5 +22,12 @@ module.exports = (sequelize, DataTypes) => {
     };
     let Stock = sequelize.define(alias, columns, config);
 
+    Stock.associate = function(models) {
+        Stock.belongsTo(models.Product, {
+            as: 'product',
+            foreignKey: 'id_product'
+        });
+    };
+
     return Stock;
 };
