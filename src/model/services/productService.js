@@ -1,17 +1,41 @@
 const fs = require("fs");
 const path = require("path");
+const db = require("../database/models");
 
-const productsFilePath = path.join(__dirname, "/products.json");
+// productos del archivo json
+// const productsFilePath = path.join(__dirname, "/products.json");
 
-const productService = {
-  products: JSON.parse(fs.readFileSync(productsFilePath, "utf-8")),
+module.exports = {
+  // products: JSON.parse(fs.readFileSync(productsFilePath, "utf-8")),
 
-  getAll: function () {
-    return this.products;
+  getAll: async function () {
+    try {
+      return await db.Product.findAll({
+        include: [
+          {
+            association: "images",
+          },
+        ],
+      });
+    } catch (error) {
+      console.log(error);
+      return [];
+    }
   },
 
-  getById: function (id) {
-    return this.products.find((product) => product.id == id);
+  getOne: async function (id) {
+    try {
+      return await db.Product.findByPk(id, {
+        include: [
+          {
+            association: "images",
+          },
+        ],
+      });
+    } catch (error) {
+      console.log(error);
+      return [];
+    }
   },
 
   save: function (product) {
@@ -38,5 +62,3 @@ const productService = {
     fs.writeFileSync(productsFilePath, JSON.stringify(this.products), "utf-8");
   },
 };
-
-module.exports = productService;

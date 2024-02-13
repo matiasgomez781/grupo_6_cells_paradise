@@ -1,16 +1,22 @@
-const productService = require("../data/productService");
+const productService = require("../model/services/productService");
 const usersService = require("../data/usersService");
 
-const productsController = {
+module.exports = {
   // Vista de todos los productos
-  all: (req, res) => {
-    res.render("./products/index", { products: productService.getAll() });
+  all: async (req, res) => {
+    try {
+      let products = await productService.getAll();
+      return res.render("./products/index", { products });
+    } catch (error) {
+      console.log(error);
+      throw new Error("No hay productos disponibles para mostrar.");
+    }
   },
 
   // Vista del detalle de producto
   detail: (req, res) => {
     res.render("./products/productDetail", {
-      product: productService.getById(req.params.id),
+      product: productService.getOne(req.params.id),
       products: productService.getAll(),
       user: usersService.getById(
         req.session.userLogged ? req.session.userLogged.id : null
@@ -45,5 +51,3 @@ const productsController = {
     res.redirect(`/products`);
   },
 };
-
-module.exports = productsController;
