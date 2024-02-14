@@ -24,14 +24,22 @@
     width: 100%;
     padding: 15px;
     border-radius: 30px;
+    border: 1px solid lightblue;
   }
   
   .fa-magnifying-glass {
     font-size: 20px;
     position: absolute;
-    right: 4%;
+    right: 8%;
+    color: #333;
+  }
+
+  .fa-magnifying-glass:hover {
+    color: #028886;
   }
   
+  
+
   .account-cart {
     width: 13%;
     display: flex;
@@ -41,18 +49,28 @@
   
   .account-cart a {
     text-decoration: none;
-    color: darkblue;
+    color: #333;
     padding: 10px;
+  }
+
+  .account-cart a:hover {
+    color: #028886;
   }
   
   .fa-user {
-    font-size: 20px;
+    font-size: 30px;
     color: #d8d8d8;
+  }
+  .fa-user:hover {
+    color: darkblue;
   }
   
   .fa-cart-shopping {
-    font-size: 25px;
+    font-size: 30px;
     color: #d8d8d8;
+  }
+  .fa-cart-shopping:hover {
+    color: darkblue;
   }
   
   .header-navBar ul {
@@ -65,12 +83,43 @@
   
   .header-navBar a {
     text-decoration: none;
-    color: darkblue;
+    color: #333;
   }
   
   .burger {
     display: none; /* Ocultar el menú hamburguesa por defecto */
   }
+
+  i.fa-solid.fa-bars {
+    color: #333;
+  }
+  i.fa-solid.fa-bars:hover {
+    color: #028886;
+  }
+
+  .menu-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu-list li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .menu-list li:last-child {
+    margin-right: 0;
+  }
+  
+  .menu-list li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .menu-list li a:hover {
+    color: #028886;
+  }
+  
 
   @media (320px <= width < 768px) {
     .header-main {
