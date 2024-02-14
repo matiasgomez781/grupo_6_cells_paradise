@@ -1,153 +1,145 @@
-ody{
-    margin: 0px;
-    width: 100vw;
-    height: 100vh;
-    background-color: #FFF9F0;
+body{
+  margin: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFF9F0;
 }
 
 .register-section {
-  text-align: center;
-  margin: 50px auto;
-  width: 80%; /* Reduje el ancho de la sección de inicio de sesión */
-  background-color: #f2f2f2;
-  padding: 20px;
-  border-radius: 10px;
+text-align: center;
+margin: 50px auto;
+width: 80%; /* Reduje el ancho de la sección de inicio de sesión */
+background-color: #f2f2f2;
+padding: 20px;
+border-radius: 10px;
 }
 
-.first, .second{
-  width: 40%;
+.personal-info, .additional-info {
+width: 40%;
 }
 
-form input{
-  width: 100%;
+.register-form input, 
+.register-form select, 
+.register-form textarea {
+width: 100%;
+padding: 8px;
+border-radius: 5px;
+border: 1px solid #ccc;
+margin-bottom: 15px;
+}
+
+.register-form {
+  margin: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.inputs {
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+}
+
+h2 {
+margin-bottom: 20px;
+}
+
+.input-wrapper {
+  display: inline;
+  width: auto;
+}
+
+.label {
+display: block;
+margin-bottom: 5px;
+}
+
+.trato {
+  border-color: #028886;
+  font-size: 15px;
   padding: 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
   margin-bottom: 15px;
 }
 
-form{
-    margin: 0px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-evenly;
+.textarea {
+border-radius: 5px;
+border: 1px solid #ccc;
+margin-bottom: 15px;
 }
 
-.inputs {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-h2{
-  margin-bottom: 20px;
-}
-
-
-p{
-    display: inline;
-    width: auto;
-    
-}
-
-label{
+.button-wrapper {
   display: block;
-  margin-bottom: 5px;
+  justify-content: center;
 }
 
-.trato{
-    border-color: #028886;
-    font-size: 15px;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 15px;
+button, .volver {
+padding: 5px 10px;
+display: inline;
+border: none;
+border-radius: 5px;
+background-color: #028886;
+color: white;
+transition: 
+  border-color,
+  background-color,
+  color;
 }
 
-.textarea{
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-bottom: 15px;
+.volver:hover {
+background-color: white ;
+color:#028886;
 }
 
-button, .volver{
-  padding: 5px 10px;
-  display: inline;
-  border: none;
-  border-radius: 5px;
-  background-color:#028886;
-  color: white;
-  transition: 
-    border-color,
-    background-color,
-    color;
-}
-
-.volver:hover{
-  background-color: white ;
-  color:#028886;
-  
-}
-
-button:hover{
+button:hover {
 background-color: white ;
 color:#028886;
 }
 
 .login-links {
-  font-size: 0.8em;
+font-size: 0.8em;
 }
 
-.title{
-    margin: 0px;
+.title {
+  margin: 0px;
 }
-
 
 @media (max-width:450px) {
 
-.inputs{
-    font-size: 1.75vh;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-}
-  
-label{
-    font-size: 4vw;
-}
-imput{
-    font-size: 10vw;
-    width: 100%;
+.inputs {
+  font-size: 1.75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
-.first, .second {
+label {
+  font-size: 4vw;
+}
+input, select, textarea {
+  font-size: 10vw;
   width: 100%;
 }
-.trato{
-    font-size: 4vw;
+
+.personal-info, .additional-info {
+width: 100%;
 }
-.button{
-    display: block;
-    justify-content: center;
-    
+.trato {
+  font-size: 4vw;
 }
-.volver{
-    margin-top: 10px;
-    width: 10em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.button-wrapper {
+  display: block;
+  justify-content: center;
 }
 
-footer {
-  background-color: #f2f2f2;
-  padding: 20px;
+.volver {
+  margin-top: 10px;
+  width: 10em;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
 }
-.footer-lists{
-    font-size: 4vw;
-}
-
 }
