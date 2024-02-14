@@ -1,98 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nosifer&family=Poppins:wght@300&family=Roboto:wght@100;400;700&display=swap");
 
-/* Estilos generales */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins";
-}
-
-body {
-  background-color: #fff9f0;
-}
-
-/* Estilos del encabezado */
-header {
-  background-color: #028886;
-  width: 100vw;
-  top: 0;
-} 
-
-
-.header-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10px;
-}
-
-#logo-container {
-  width: 8%;
-  border-radius: 50%;
-}
-
-#logo {
-  width: 100%;
-  border-radius: 50%;
-}
-
-.searchBar {
-  width: 45%;
-  position: relative;
-}
-
-
-
-
-.searchBar input {
-  width: 100%; /* Modifiqué el ancho de la barra de búsqueda */
-  padding: 15px; /* Ajusté el padding para el ícono */
-  border-radius: 30px;
-  
-}
-
-
-.fa-magnifying-glass {
-  font-size: 20px;
-  position: absolute;
-  right: 4%;
-}
-
-.account-cart a {
-  color: black;
-  text-decoration: none;
-  margin-left: 10px;
-}
-
-.fa-user {
-  font-size: 20px;
-}
-
-.fa-cart-shopping {
-  font-size: 25px;
-}
-
-.home-link i {
-  font-size: 1.5em;
-  color: black;
-}
-
-/* Estilos de navegación */
-/* .header-navBar ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 10px;
-  background-color: #d8d8d8;
-}
-
-.header-navBar a {
-  text-decoration: none;
-  color: black;
-  padding: 0 50px;
-} */
-
   /* Estilos del área de inicio de sesión */
   .login-section {
     text-align: center;
@@ -172,10 +79,6 @@ header {
   }
   
   @media (max-width: 800px) {
-    /* .header-navBar {
-      display: none;
-    } */
-  
     .login-section {
       width: 100%;
     }
