@@ -144,7 +144,7 @@ CREATE TABLE users
                ),
        FOREIGN KEY
                (
-               id
+               id_rol
                )
           REFERENCES roles
                (

@@ -36,13 +36,11 @@
         </section>
       </div>
 
-      <% if (userLogged && userLogged.id == user.id) { %>
-      <form action="/users/logout" method="POST">
-        <p class="button">
-          <button type="submit">Cerrar sesion</button>
-        </p>
+      <a href="/users/edit/<%= user.id %>">Editar Perfil</a>
+
+      <form action="/users/logout" method="post">
+        <button type="submit">Cerrar Sesión</button>
       </form>
-      <% } %>
     </main>
 
     <footer><%- include("../partials/footer.ejs") %></footer>
