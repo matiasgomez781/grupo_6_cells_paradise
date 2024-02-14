@@ -15,7 +15,7 @@ router.post("/logout", usersController.logout);
 router.get("/profile/:id", usersController.getOne);
 
 router.get("/register", authMid, usersController.register);
-router.post("/", upload.single("avatar"), usersController.newUser);
+router.post("/", upload.any("avatar"), usersController.newUser);
 
 // router.get ('/:id', usersController.getOne)
 

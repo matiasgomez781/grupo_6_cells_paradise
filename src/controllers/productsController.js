@@ -14,14 +14,25 @@ module.exports = {
   },
 
   // Vista del detalle de producto
-  detail: (req, res) => {
-    res.render("./products/productDetail", {
-      product: productService.getOne(req.params.id),
-      products: productService.getAll(),
-      user: usersService.getById(
+  detail: async (req, res) => {
+    try {
+      let product = await productService.getOne(req.params.id);
+
+      let products = await productService.getAll();
+
+      let user = await usersService.getById(
         req.session.userLogged ? req.session.userLogged.id : null
-      ),
-    });
+      );
+
+      return res.render("./products/productDetail", {
+        product,
+        products,
+        user,
+      });
+    } catch (error) {
+      console.log(error);
+      throw new Error("No se pudo obtener el detalle de este producto.");
+    }
   },
 
   // Formulario de creación
@@ -36,10 +47,15 @@ module.exports = {
   },
 
   // Formulario de edición
-  editProduct: (req, res) => {
-    res.render("./products/editProduct", {
-      product: productService.getById(req.params.id),
-    });
+  editProduct: async (req, res) => {
+    try {
+      let product = await productService.getOne(req.params.id);
+
+      return res.render("./products/editProduct", { product });
+    } catch (error) {
+      console.log(error);
+      throw new Error("No se pudo obtener el detalle de este producto.");
+    }
   },
   // Método para modificar el producto
   editUpdate: (req, res) => {
