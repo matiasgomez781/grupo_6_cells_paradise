@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         id_rol: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         },
         first_name: {
             type: DataTypes.STRING,
@@ -25,18 +25,10 @@ module.exports = (sequelize, DataTypes) => {
         },
         phone: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         avatar: {
             type: DataTypes.TEXT,
-            allowNull: false
-        },
-        birth_date: {
-            type: DataTypes.DATE,
-            allowNull: false
-        },
-        dni: {
-            type: DataTypes.STRING,
             allowNull: false
         }
     };

@@ -10,26 +10,33 @@ const usersController = {
     res.render("./users/registro");
   },
 
-  newUser: (req, res) => {
-    req.body.avatar = req.file.filename;
-    usersService.save(req.body); //, req.file
-    
-    // auto login luego de guardar al nuevo usuario
-    let createdUser = usersService.findByField("email", req.body.email); // obtengo los datos del usuario
-    req.session.userLogged = createdUser; // creo una sesión de usuario
-    res.cookie("rememberMe", createdUser.email, { maxAge: 3000000 }); // también creo una cookie (no era suficiente con la session)
+  newUser: async (req, res) => {
+    try {
+      req.body.avatar = req.file.filename;
+      const newUser = await usersService.save(req.body); // Guarda el nuevo usuario en la base de datos
+      
+      // Auto login después de guardar al nuevo usuario
+      req.session.userLogged = newUser; // Crea una sesión de usuario
+      res.cookie("rememberMe", newUser.email, { maxAge: 3000000 }); // También crea una cookie
 
-    res.redirect(`/users/profile/${req.body.id}`);
+      res.redirect(`/users/profile/${newUser.id}`);
+    } catch (error) {
+      console.error("Error al crear nuevo usuario:", error);
+      res.status(500).send("Error al crear nuevo usuario");
+    }
   },
 
-  getOne: (req, res) => {
-    res.render("./users/perfil", {
-      user: usersService.getById(req.params.id),
-      userLogged: usersService.getById(
-        req.session.userLogged ? req.session.userLogged.id : null
-      ),
-    });
-  },
+  getOne: async (req, res) => {
+    try {
+      const user = await usersService.getById(req.params.id); // Obtiene un usuario por su ID
+      const userLogged = await usersService.getById(req.session.userLogged ? req.session.userLogged.id : null);
+      
+      res.render("./users/perfil", { user, userLogged });
+    } catch (error) {
+      console.error("Error al obtener usuario:", error);
+      res.status(500).send("Error al obtener usuario");
+    }
+  },  
 
   loginProcess: (req, res) => {
     let userToLogin = usersService.findByField("email", req.body.email);
