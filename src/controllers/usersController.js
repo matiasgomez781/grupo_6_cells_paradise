@@ -36,7 +36,32 @@ const usersController = {
       console.error("Error al obtener usuario:", error);
       res.status(500).send("Error al obtener usuario");
     }
-  },  
+  },
+  
+  // Método para mostrar el formulario de edición de usuario
+  edit: async (req, res) => {
+    try {
+      const userId = req.params.id;
+      const user = await usersService.getById(userId);
+      res.render("users/editUser", { user });
+    } catch (error) {
+      console.error("Error al obtener usuario:", error);
+      res.status(500).send("Error al obtener usuario");
+    }
+  },
+
+  // Método para manejar la actualización del usuario
+  update: async (req, res) => {
+    try {
+      const userId = req.params.id;
+      const updatedUserData = req.body;
+      await usersService.update(userId, updatedUserData);
+      res.redirect(`/users/profile/${userId}`);
+    } catch (error) {
+      console.error("Error al actualizar usuario:", error);
+      res.status(500).send("Error al actualizar usuario");
+    }
+  },
 
   loginProcess: (req, res) => {
     let userToLogin = usersService.findByField("email", req.body.email);

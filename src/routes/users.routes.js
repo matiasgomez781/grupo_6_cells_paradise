@@ -19,10 +19,7 @@ router.post("/", upload.single("avatar"), usersController.newUser);
 
 // router.get ('/:id', usersController.getOne)
 
-// Ruta para mostrar el formulario de edición de usuario
 router.get('/edit/:id', usersController.edit);
-
-// Ruta para manejar la actualización del usuario
 router.post('/update/:id', usersController.update);
 
 module.exports = router;

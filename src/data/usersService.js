@@ -45,6 +45,14 @@ const usersService = {
       throw new Error("Error al obtener el usuario: " + error.message);
     }
   },
+
+  update: async (userId, userData) => {
+    try {
+      await db.User.update(userData, { where: { id: userId } });
+    } catch (error) {
+      throw new Error("Error al actualizar el usuario en la base de datos: " + error.message);
+    }
+  },
   
   findByField: function (field, text) {
     let allUsers = this.getAll();
