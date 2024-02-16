@@ -38,10 +38,14 @@ module.exports = {
     }
   },
 
-  save: function (product) {
-    product.id = this.products[this.products.length - 1].id + 1;
-    this.products.push(product);
-    fs.writeFileSync(productsFilePath, JSON.stringify(this.products), "utf-8");
+  save: async function (product) {
+    try {
+      let productCreated = await db.Product.create(product);
+      return productCreated;
+    } catch (error) {
+      console.log(error);
+      return [];
+    }
   },
 
   update: function (product, idProduct) {

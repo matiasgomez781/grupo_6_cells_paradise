@@ -40,10 +40,15 @@ module.exports = {
     res.render("./products/createProduct");
   },
   // Método para guardar el producto nuevo
-  store: (req, res) => {
-    req.body.image = req.file.filename;
-    productService.save(req.body); //, req.file
-    res.redirect("./products");
+  store: async (req, res) => {
+    try {
+      req.body.image = req.file.filename;
+      await productService.save(req.body); //, req.file
+      res.redirect("./products");
+    } catch (error) {
+      console.log(error);
+      throw new Error("No se pudo crear el producto.");
+    }
   },
 
   // Formulario de edición

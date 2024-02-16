@@ -32,7 +32,7 @@
             </p>
             <p class="telefono">
                 <label for="image">Imagen </label>
-                <input type="file" name="image" id="image" accept=".jpg, .png" required>
+                <input type="file" name="image" id="image" accept="image/*" required multiple>
             </p>
             
             </section>
@@ -46,7 +46,7 @@
             </p>
             <p class="about">
                 <label for="description">Descripción</label>
-                <textarea name="description" id="description" style="height: 10vw; width: 100%;" class="textarea">Descripcion del producto</textarea>
+                <textarea name="description" id="description" style="height: 10vw; width: 100%;" placeholder="Descripción del producto" class="textarea"></textarea>
             </p>
             </section>
             <br>
@@ -57,7 +57,7 @@
     
     <p class="login-links">
         <br>
-        <a href="/products/editProduct">Editar</a> un producto existente
+        <a href="/products">Editar un producto existente</a>
     </p>
     
   </main>
