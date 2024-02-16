@@ -18,7 +18,7 @@ module.exports = {
         ],
       });
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
       return [];
     }
   },
@@ -33,31 +33,35 @@ module.exports = {
         ],
       });
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
       return [];
     }
   },
 
   save: async function (product) {
     try {
-      let productCreated = await db.Product.create(product);
-      return productCreated;
+      return await db.Product.create(product);
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
       return [];
     }
   },
 
-  update: function (product, idProduct) {
-    let productToEdit = this.getById(idProduct);
+  update: async function (product, idProduct) {
+    try {
+      let productToEdit = await this.getOne(idProduct);
 
-    productToEdit.name = product.name;
-    productToEdit.price = product.price;
-    productToEdit.description = product.description;
-    productToEdit.category = product.category;
-    productToEdit.discount = product.discount;
+      productToEdit.name = product.name;
+      productToEdit.price = product.price;
+      productToEdit.description = product.description;
+      productToEdit.category = product.category;
+      productToEdit.discount = product.discount;
 
-    fs.writeFileSync(productsFilePath, JSON.stringify(this.products), "utf-8");
+      return await db.Product.update(productToEdit);
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
   },
 
   delete: function (id) {

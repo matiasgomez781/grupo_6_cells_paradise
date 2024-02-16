@@ -8,7 +8,7 @@ module.exports = {
       let products = await productService.getAll();
       return res.render("./products/index", { products });
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
       throw new Error("No hay productos disponibles para mostrar.");
     }
   },
@@ -30,7 +30,7 @@ module.exports = {
         user,
       });
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
       throw new Error("No se pudo obtener el detalle de este producto.");
     }
   },
@@ -46,7 +46,7 @@ module.exports = {
       await productService.save(req.body); //, req.file
       res.redirect("./products");
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
       throw new Error("No se pudo crear el producto.");
     }
   },
@@ -58,14 +58,19 @@ module.exports = {
 
       return res.render("./products/editProduct", { product });
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
       throw new Error("No se pudo obtener el detalle de este producto.");
     }
   },
   // Método para modificar el producto
-  editUpdate: (req, res) => {
-    productService.update(req.body, req.params.id);
-    res.redirect(`/products/detail/${req.params.id}`);
+  editUpdate: async (req, res) => {
+    try {
+      await productService.update(req.body, req.params.id);
+      return res.redirect(`/products/detail/${req.params.id}`);
+    } catch (error) {
+      console.log(error.message);
+      throw new Error("Error al actualizar el producto.");
+    }
   },
   delete: (req, res) => {
     productService.delete(req.params.id);
