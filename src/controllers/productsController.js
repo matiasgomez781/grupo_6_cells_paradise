@@ -72,8 +72,13 @@ module.exports = {
       throw new Error("Error al actualizar el producto.");
     }
   },
-  delete: (req, res) => {
-    productService.delete(req.params.id);
-    res.redirect(`/products`);
+  delete: async (req, res) => {
+    try {
+      await productService.delete(req.params.id);
+      return res.redirect(`/products`);
+    } catch (error) {
+      console.log(error.message);
+      throw new Error("Ocurrió un error. No se ha podido eliminar este producto.");
+    }
   },
 };

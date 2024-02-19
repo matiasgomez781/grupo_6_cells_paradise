@@ -64,9 +64,16 @@ module.exports = {
     }
   },
 
-  delete: function (id) {
-    this.products = this.products.filter((product) => product.id != id);
-
-    fs.writeFileSync(productsFilePath, JSON.stringify(this.products), "utf-8");
+  delete: async function (id) {
+    try {
+      return await db.Product.destroy({
+        where: {
+          id: id,
+        },
+      });
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
   },
 };
