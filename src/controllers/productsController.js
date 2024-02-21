@@ -37,11 +37,20 @@ module.exports = {
 
   // Formulario de creación
   createProduct: async (req, res) => {
-    let categories = await productService.getCategories();
-    let brands = await productService.getBrands();
-    let colors = await productService.getColors();
+    try {
+      let categories = await productService.getCategories();
+      let brands = await productService.getBrands();
+      let colors = await productService.getColors();
 
-    res.render("./products/createProduct", { categories, brands, colors });
+      return res.render("./products/createProduct", {
+        categories,
+        brands,
+        colors,
+      });
+    } catch (error) {
+      console.log(error.message);
+      throw new Error("Hubo un error inesperado");
+    }
   },
   // Método para guardar el producto nuevo
   store: async (req, res) => {
