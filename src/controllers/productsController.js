@@ -36,15 +36,24 @@ module.exports = {
   },
 
   // Formulario de creación
-  createProduct: (req, res) => {
-    res.render("./products/createProduct");
+  createProduct: async (req, res) => {
+    let categories = await productService.getCategories();
+    let brands = await productService.getBrands();
+    let colors = await productService.getColors();
+
+    res.render("./products/createProduct", { categories, brands, colors });
   },
   // Método para guardar el producto nuevo
   store: async (req, res) => {
     try {
-      req.body.image = req.file.filename;
+      console.log(req);
+      // Creo un array para poder guardar las diferentes imágenes del producto
+      req.body.images = [];
+      req.files.forEach((img) => {
+        req.body.images.push({ filename: img.filename });
+      });
       await productService.save(req.body); //, req.file
-      res.redirect("./products");
+      return res.redirect("/products");
     } catch (error) {
       console.log(error.message);
       throw new Error("No se pudo crear el producto.");
@@ -78,7 +87,9 @@ module.exports = {
       return res.redirect(`/products`);
     } catch (error) {
       console.log(error.message);
-      throw new Error("Ocurrió un error. No se ha podido eliminar este producto.");
+      throw new Error(
+        "Ocurrió un error. No se ha podido eliminar este producto."
+      );
     }
   },
 };

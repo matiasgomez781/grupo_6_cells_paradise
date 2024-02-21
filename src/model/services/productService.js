@@ -2,20 +2,11 @@ const fs = require("fs");
 const path = require("path");
 const db = require("../database/models");
 
-// productos del archivo json
-// const productsFilePath = path.join(__dirname, "/products.json");
-
 module.exports = {
-  // products: JSON.parse(fs.readFileSync(productsFilePath, "utf-8")),
-
   getAll: async function () {
     try {
       return await db.Product.findAll({
-        include: [
-          {
-            association: "images",
-          },
-        ],
+        include: ["images", "brand" /* "colors", "stock" */],
       });
     } catch (error) {
       console.log(error.message);
@@ -26,11 +17,7 @@ module.exports = {
   getOne: async function (id) {
     try {
       return await db.Product.findByPk(id, {
-        include: [
-          {
-            association: "images",
-          },
-        ],
+        include: ["images", "brand" /* "colors", "stock" */],
       });
     } catch (error) {
       console.log(error.message);
@@ -38,9 +25,55 @@ module.exports = {
     }
   },
 
-  save: async function (product) {
+  getCategories: async function () {
     try {
-      return await db.Product.create(product);
+      return await db.Category.findAll();
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
+  },
+
+  getBrands: async function () {
+    try {
+      return await db.Brand.findAll();
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
+  },
+
+  getColors: async function () {
+    try {
+      return await db.Color.findAll();
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
+  },
+
+  save: async function ({
+    name,
+    price,
+    description,
+    discount,
+    category,
+    brand,
+    images,
+  }) {
+    try {
+      // Guardar el producto creado en la base de datos
+      let productCreated = await db.Product.create(
+        new Product(name, price, description, discount, category, brand)
+      );
+
+      // Por cada imagen que exista, asociarlas con el producto
+      await images.forEach(img => {
+        db.Image.create({
+          url: img.filename,
+          id_product: productCreated.id,
+        });
+      });
     } catch (error) {
       console.log(error.message);
       return [];
@@ -57,7 +90,11 @@ module.exports = {
       productToEdit.category = product.category;
       productToEdit.discount = product.discount;
 
-      return await db.Product.update(productToEdit);
+      return await db.Product.update(productToEdit, {
+        where: {
+          id: idProduct,
+        },
+      });
     } catch (error) {
       console.log(error.message);
       return [];
@@ -77,3 +114,12 @@ module.exports = {
     }
   },
 };
+
+function Product(name, price, description, discount, id_category, id_brand) {
+  this.name = name;
+  this.price = price;
+  this.description = description;
+  this.discount = discount;
+  this.id_category = id_category;
+  this.id_brand = id_brand;
+}
