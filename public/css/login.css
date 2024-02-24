@@ -57,27 +57,6 @@
     margin-left: 5px;
   }
   
-  /* Estilos del pie de página */
-  footer {
-    background-color: #f2f2f2;
-    padding: 20px;
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .footer-lists {
-    margin-bottom: 20px;
-  }
-  
-  .footer-lists ul {
-    list-style: none;
-  }
-  
-  .footer-lists a {
-    text-decoration: none;
-    color: #028886;
-  }
-  
   @media (max-width: 800px) {
     .login-section {
       width: 100%;
