@@ -49,32 +49,32 @@
               />
             </p>
             <p class="clave2">
-              <label for="stock">Stock</label>
-              <input
-                type="number"
-                name="stock"
-                id="stock"
-                placeholder="Cantidad disponible"
-                value="<%= product.stock %>"
-              />
+              <label for="images">Imágenes del producto</label>
+              <input type="file" name="images" id="images" value="" multiple />
+              <% if (product.images.length) { %>
+                <section class="old-images">
+                  <% product.images.forEach(img => { %>
+                    <article class="img">
+                      <img src="/images/products/<%= img.url %>" alt="<%= product.name %>" width="200px">
+                    </article>
+                  <% }) %>
+                </section>
+              <% } %>
             </p>
             <p class="clave2">
-              <label for="images">Imágenes</label>
+              <label>Elije el o los colores</label>
+              <% colors.forEach(color => { %>
+              <label for="<%= color.name %>"><%= color.name %></label>
               <input
-                type="file"
-                name="images"
-                id="images"
-                multiple
+                type="checkbox"
+                name="colors"
+                id="<%= color.name %>"
+                value="<%= color.id %>"
+                <% product.colors.forEach(colorProduct => { %>
+                <%= colorProduct.product_color.id_color === color.id ? "checked" : ""%>
+                <% }) %>
               />
-            </p>
-            <p class="clave2">
-              <label for="colors">Colores</label>
-              <select name="colors" id="colors">
-                <option>Colores</option>
-                <option value="black">Negro</option>
-                <option value="white">Blanco</option>
-                <option value="grey">Gris</option>
-              </select>
+              <% }) %>
             </p>
           </section>
           <section class="second">
