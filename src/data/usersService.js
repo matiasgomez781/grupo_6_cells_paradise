@@ -26,10 +26,9 @@ const usersService = {
   },*/
   save: async (userData) => {
     try {
-      // Agrega id_rol al objeto userData antes de guardar el usuario
-      userData.id_rol = 1;
-      // Crea un nuevo usuario en la base de datos utilizando el modelo User
-      const newUser = await db.User.create(userData);
+      userData.id_rol = 1;// Agrega id_rol al objeto userData antes de guardar el usuario
+      userData.password = bcrypt.hashSync(userData.password, 10); // Hashear la contraseña
+      const newUser = await db.User.create(userData);// Crea un nuevo usuario en la base de datos utilizando el modelo User
       return newUser; // Devuelve el usuario creado
     } catch (error) {
       throw new Error("Error al guardar el usuario: " + error.message);
