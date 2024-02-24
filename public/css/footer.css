@@ -1,6 +1,5 @@
 .footer {
-    background-color: #222;
-    color: #fff;
+    background-color: whitesmoke;
     padding: 20px 0;
     display: flex;
     justify-content: space-between;
@@ -10,6 +9,7 @@
   .container {
     max-width: 1200px;
     margin: 0 auto;
+    width: 70%;
   }
   
   .row {
@@ -37,35 +37,37 @@
     margin-bottom: 10px;
   }
   
-  a {
-    color: #fff;
+  .lista-informacion a,
+  .redes-sociales a,
+  .metodos-pago i {
     text-decoration: none;
+    color: #333;
   }
   
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  .redes-sociales li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  .redes-sociales i {
-    font-size: 20px;
-  }
-  
+  .redes-sociales li,
   .metodos-pago li {
     display: inline-block;
     margin-right: 10px;
   }
   
+  .redes-sociales i,
+  .metodos-pago i {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .metodos-pago i {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
   .copyright {
-    background-color: #111;
     text-align: center;
     padding: 10px 0;
+    width: 25%;
   }
   
   .copyright p {
     margin: 0;
   }
+  
