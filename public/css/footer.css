@@ -58,6 +58,11 @@
     font-size: 20px;
     color: #333;
   }
+
+  .redes-sociales i:hover,
+  .metodos-pago i:hover{
+    color: darkblue;
+  }
   
   .metodos-pago i {
     font-size: 24px;
