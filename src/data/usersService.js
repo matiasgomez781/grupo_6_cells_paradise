@@ -11,19 +11,7 @@ const usersService = {
   getAll: function () {
     return this.users;
   },
-
-  /*getById: function (id) {
-    return this.users.find((user) => user.id == id);
-  },
-
-  save: function (user) {
-    user.admin = 0; //Crea el usuario con valor admin en 0 (NO ES ADMIN)
-    user.id = this.users[this.users.length - 1].id + 1;
-    user.password = bcrypt.hashSync(user.password, 10);
-    delete user.passwordRepetir; // Eliminar el campo de repetición de contraseña (solo se lo usará con las validaciones)
-    this.users.push(user);
-    fs.writeFileSync(usersFilePath, JSON.stringify(this.users), "utf-8");
-  },*/
+  
   save: async (userData) => {
     try {
       userData.id_rol = 1;// Agrega id_rol al objeto userData antes de guardar el usuario
