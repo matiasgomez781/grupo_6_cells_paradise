@@ -43,6 +43,9 @@
     text-decoration: none;
     color: #333;
   }
+  .lista-informacion a:hover {
+    color: #028886;
+  }
   
   .redes-sociales li,
   .metodos-pago li {
@@ -69,5 +72,9 @@
   
   .copyright p {
     margin: 0;
+  }
+
+  .copyright p:hover {
+    color: #028886;
   }
   
