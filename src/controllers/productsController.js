@@ -55,7 +55,6 @@ module.exports = {
   // Método para guardar el producto nuevo
   store: async (req, res) => {
     try {
-      console.log(req);
       // Creo un array para poder guardar las diferentes imágenes del producto
       req.body.images = [];
       req.files.forEach((img) => {
@@ -73,8 +72,10 @@ module.exports = {
   editProduct: async (req, res) => {
     try {
       let product = await productService.getOne(req.params.id);
+      let colors = await productService.getColors();
+      let images = await productService.getImages();
 
-      return res.render("./products/editProduct", { product });
+      return res.render("./products/editProduct", { product, colors, images });
     } catch (error) {
       console.log(error.message);
       throw new Error("No se pudo obtener el detalle de este producto.");

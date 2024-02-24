@@ -1,12 +1,10 @@
-const fs = require("fs");
-const path = require("path");
 const db = require("../database/models");
 
 module.exports = {
   getAll: async function () {
     try {
       return await db.Product.findAll({
-        include: ["images", "brand" /* "colors", "stock" */],
+        include: ["images", "brand", "colors", "stock"],
       });
     } catch (error) {
       console.log(error.message);
@@ -17,7 +15,7 @@ module.exports = {
   getOne: async function (id) {
     try {
       return await db.Product.findByPk(id, {
-        include: ["images", "brand" /* "colors", "stock" */],
+        include: ["images", "brand", "colors", "stock"],
       });
     } catch (error) {
       console.log(error.message);
@@ -27,7 +25,9 @@ module.exports = {
 
   getCategories: async function () {
     try {
-      return await db.Category.findAll();
+      return await db.Category.findAll({
+        include: ["products"],
+      });
     } catch (error) {
       console.log(error.message);
       return [];
@@ -36,7 +36,9 @@ module.exports = {
 
   getBrands: async function () {
     try {
-      return await db.Brand.findAll();
+      return await db.Brand.findAll({
+        include: ["products"],
+      });
     } catch (error) {
       console.log(error.message);
       return [];
@@ -45,7 +47,20 @@ module.exports = {
 
   getColors: async function () {
     try {
-      return await db.Color.findAll();
+      return await db.Color.findAll({
+        include: ["products"],
+      });
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
+  },
+
+  getImages: async function () {
+    try {
+      return await db.Image.findAll({
+        include: ["product"],
+      });
     } catch (error) {
       console.log(error.message);
       return [];
@@ -60,6 +75,7 @@ module.exports = {
     category,
     brand,
     images,
+    colors,
   }) {
     try {
       // Guardar el producto creado en la base de datos
@@ -68,9 +84,17 @@ module.exports = {
       );
 
       // Por cada imagen que exista, asociarlas con el producto
-      await images.forEach(img => {
+      await images.forEach((img) => {
         db.Image.create({
           url: img.filename,
+          id_product: productCreated.id,
+        });
+      });
+
+      // Asociar el o los colores elegidos con el producto
+      await colors.forEach((color) => {
+        db.ProductColor.create({
+          id_color: color,
           id_product: productCreated.id,
         });
       });

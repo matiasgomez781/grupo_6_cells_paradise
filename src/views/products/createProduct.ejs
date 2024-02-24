@@ -39,7 +39,7 @@
             <section class="second">
             
             <p> <label>Categoría</label>
-                <select class="trato" name="category" id="category" >
+                <select class="trato" name="category" id="category" required>
                     <option>Elije la categoría</option>
                     <% categories.forEach(category => { %>
                     <option value="<%= category.id %>"><%= category.name %></option>
@@ -52,7 +52,7 @@
             </p>
             <p class="email">
                 <label for="brand">Marca</label>
-                <select name="brand" id="brand">
+                <select name="brand" id="brand" required>
                     <option>Elije la marca</option>
                     <% brands.forEach(brand => { %>
                     <option value="<%= brand.id %>"><%= brand.name %></option>
@@ -64,13 +64,16 @@
                 <input type="number" name="stock" id="stock" placeholder="Cantidad disponible" required>
             </p> -->
             <p class="email">
-                <label for="colors">Colores</label>
-                <select name="colors" id="colors">
-                    <option>Elije el o los colores</option>
-                    <% colors.forEach(color => { %>
-                    <option value="<%= color.id %>"><%= color.name %></option>
-                    <% }) %>
-                </select>
+                <label>Elije el o los colores</label>
+                <% colors.forEach(color => { %>
+                <label for="<%= color.name %>"><%= color.name %></label>
+                <input
+                  type="checkbox"
+                  name="colors"
+                  id="<%= color.name %>"
+                  value="<%= color.id %>"
+                />
+                <% }) %>
             </p>
             </section>
             <br>
