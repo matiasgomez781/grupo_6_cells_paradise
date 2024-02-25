@@ -74,8 +74,16 @@ module.exports = {
       let product = await productService.getOne(req.params.id);
       let colors = await productService.getColors();
       let images = await productService.getImages();
+      let brands = await productService.getBrands();
+      let categories = await productService.getCategories();
 
-      return res.render("./products/editProduct", { product, colors, images });
+      return res.render("./products/editProduct", {
+        product,
+        colors,
+        images,
+        brands,
+        categories,
+      });
     } catch (error) {
       console.log(error.message);
       throw new Error("No se pudo obtener el detalle de este producto.");

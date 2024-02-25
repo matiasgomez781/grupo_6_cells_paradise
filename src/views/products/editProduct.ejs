@@ -76,6 +76,23 @@
               />
               <% }) %>
             </p>
+            <p class="email">
+              <label for="brand">Marca</label>
+              <select name="brand" id="brand" required>
+                  <option>Elije la marca</option>
+                  <% brands.forEach(brand => { %>
+                  <option value="<%= brand.id %>" <%= product.id_brand === brand.id ? "selected" : "" %>><%= brand.name %></option>
+                  <% }) %>
+              </select>
+          </p>
+          <p> <label>Categoría</label>
+            <select class="trato" name="category" id="category" required>
+                <option>Elije la categoría</option>
+                <% categories.forEach(category => { %>
+                <option value="<%= category.id %>" <%= product.id_category === category.id ? "selected" : "" %>><%= category.name %></option>
+                <% }) %>
+            </select>
+        </p>
           </section>
           <section class="second">
             <p class="about">
