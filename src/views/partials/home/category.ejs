@@ -1,9 +1,10 @@
 <% products.forEach(product => { %>
 <div class="product-slide">
   <section class="individualProduct">
-    <a href="/products/detail/<%= product.id %>"
-      ><img src="/images/products/<%= product.image %>" alt="<%= product.name %>"
-    /></a>
+    <a href="/products/detail/<%= product.id %>">
+      <img src="/images/products/<%= product.images[0] ? product.images[0].url : "" %>" alt="<%=
+      product.name %>" />
+    </a>
 
     <article class="descriptionProduct">
       <% if(product.discount) { %>
