@@ -26,7 +26,7 @@ const usersController = {
     }
   },
 
-  getOne: async (req, res) => {
+  detail: async (req, res) => {
     try {
       const user = await usersService.getById(req.params.id); // Obtiene un usuario por su ID
       const userLogged = await usersService.getById(req.session.userLogged ? req.session.userLogged.id : null);
