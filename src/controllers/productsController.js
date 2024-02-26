@@ -52,14 +52,12 @@ module.exports = {
       throw new Error("Hubo un error inesperado");
     }
   },
+
   // Método para guardar el producto nuevo
   store: async (req, res) => {
     try {
       // Creo un array para poder guardar las diferentes imágenes del producto
-      req.body.images = [];
-      req.files.forEach((img) => {
-        req.body.images.push({ filename: img.filename });
-      });
+      req.body.images = productService.imagesConverter(req.files);
       await productService.save(req.body); //, req.file
       return res.redirect("/products");
     } catch (error) {
@@ -92,7 +90,18 @@ module.exports = {
   // Método para modificar el producto
   editUpdate: async (req, res) => {
     try {
+      // Creo un array para poder agregar nuevas imágenes al producto
+      req.body.images = productService.imagesConverter(req.files);
+
+      if (req.body.colors) {
+        req.body.colors = [...req.body.colors];
+      }
+
+      console.log("COLORRRRRRRRRRRRRRRSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS ");
+      console.log(req.body.colors);
+
       await productService.update(req.body, req.params.id);
+
       return res.redirect(`/products/detail/${req.params.id}`);
     } catch (error) {
       console.log(error.message);

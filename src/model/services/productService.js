@@ -67,6 +67,17 @@ module.exports = {
     }
   },
 
+  // Construir un array para poder trabajar con las imágenes
+  imagesConverter: (files) => {
+    let images = [];
+
+    files.forEach((img) => {
+      images.push({ filename: img.filename });
+    });
+
+    return images;
+  },
+
   save: async function ({
     name,
     price,
@@ -84,41 +95,116 @@ module.exports = {
       );
 
       // Por cada imagen que exista, asociarlas con el producto
-      await images.forEach((img) => {
-        db.Image.create({
+      images.forEach(async (img) => {
+        await db.Image.create({
           url: img.filename,
           id_product: productCreated.id,
         });
       });
 
       // Asociar el o los colores elegidos con el producto
-      await colors.forEach((color) => {
-        db.ProductColor.create({
-          id_color: color,
+      // Primero identificar si se ha elegido más de un color
+      if (colors.length > 1) {
+        // Cuando sea más de uno, es un array. Hay que asociar a cada color
+        colors.forEach(async (color) => {
+          await db.ProductColor.create({
+            id_color: color,
+            id_product: productCreated.id,
+          });
+        });
+      } else {
+        // Cuando se elige un solo color se lo asocia directamente
+        await db.ProductColor.create({
+          id_color: colors,
           id_product: productCreated.id,
         });
-      });
+      }
     } catch (error) {
       console.log(error.message);
       return [];
     }
   },
 
-  update: async function (product, idProduct) {
+  update: async function (
+    { name, price, description, discount, category, brand, images, colors },
+    idProduct
+  ) {
     try {
-      let productToEdit = await this.getOne(idProduct);
+      if (images.length) {
+        images.forEach(async (img) => {
+          await db.Image.update(
+            {
+              url: img.filename,
+            },
+            {
+              where: {
+                id_product: idProduct,
+              },
+            }
+          );
+        });
+      }
 
-      productToEdit.name = product.name;
-      productToEdit.price = product.price;
-      productToEdit.description = product.description;
-      productToEdit.category = product.category;
-      productToEdit.discount = product.discount;
-
-      return await db.Product.update(productToEdit, {
+      let colorRelated = await db.ProductColor.findAll({
         where: {
-          id: idProduct,
+          id_product: idProduct,
         },
       });
+      console.log("COLOR RELATEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD ");
+      console.log(colorRelated);
+
+      if (colors && colors.length) {
+        colors.map(async (col) => {
+          if (colorRelated.length) {
+            let colorExists = false;
+            for (let i = 0; i < colorRelated.length; i++) {
+              if (colorRelated[i].dataValues.id_color == col) {
+                colorExists = true;
+                break;
+              }
+            }
+            if (!colorExists) {
+              await db.ProductColor.create({
+                id_color: col,
+                id_product: idProduct,
+              });
+            }
+          } else {
+            await db.ProductColor.create({
+              id_color: col,
+              id_product: idProduct,
+            });
+          }
+        });
+
+        // Eliminar los colores que ya no están asociados
+        colorRelated.map(async (color) => {
+          if (!colors.includes(color.dataValues.id_color)) {
+            await db.ProductColor.destroy({
+              where: {
+                id_color: color.dataValues.id_color,
+                id_product: idProduct,
+              },
+            });
+          }
+        });
+      }
+
+      return await db.Product.update(
+        {
+          name,
+          price,
+          description,
+          discount,
+          category,
+          brand,
+        },
+        {
+          where: {
+            id: idProduct,
+          },
+        }
+      );
     } catch (error) {
       console.log(error.message);
       return [];
@@ -127,7 +213,19 @@ module.exports = {
 
   delete: async function (id) {
     try {
-      return await db.Product.destroy({
+      await db.Image.destroy({
+        where: {
+          id_product: id,
+        },
+      });
+
+      await db.ProductColor.destroy({
+        where: {
+          id_product: id,
+        },
+      });
+
+      await db.Product.destroy({
         where: {
           id: id,
         },

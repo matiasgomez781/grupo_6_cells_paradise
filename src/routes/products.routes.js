@@ -14,7 +14,7 @@ router.get("/createProduct", adminMid, productsController.createProduct);
 router.post("/", upload.array("images"), productsController.store);
 
 router.get("/:id/editProduct", adminMid, productsController.editProduct);
-router.put("/:id", productsController.editUpdate);
+router.put("/:id", upload.array("images"), productsController.editUpdate);
 
 router.delete("/:id", productsController.delete);
 

@@ -50,7 +50,7 @@
             </p>
             <p class="clave2">
               <label for="images">Imágenes del producto</label>
-              <input type="file" name="images" id="images" value="" multiple />
+              <input type="file" name="images" id="images" multiple accept="image/*" />
               <% if (product.images.length) { %>
                 <section class="old-images">
                   <% product.images.forEach(img => { %>
