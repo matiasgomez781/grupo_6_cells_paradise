@@ -41,9 +41,9 @@ const usersService = {
     }
   },
   
-  findByField: async function (field, text) {
+  findByField: async function (field, email) {
     try {
-      let userFound = await db.User.findOne({where: {email: text} });
+      let userFound = await db.User.findOne({where: {email} });
       return userFound;
     } catch (error) {
       throw new Error("Error al buscar usuario por campo" + error.message);

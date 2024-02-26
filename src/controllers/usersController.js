@@ -67,7 +67,7 @@ const usersController = {
 
   loginProcess: async (req, res) => {
     try {
-      let userToLogin = usersService.findByField("email", req.body.email);
+      let userToLogin = await usersService.findByField("email", req.body.email);
 
       if (userToLogin) {
         if (bcrypt.compareSync(req.body.password, userToLogin.password)) {
