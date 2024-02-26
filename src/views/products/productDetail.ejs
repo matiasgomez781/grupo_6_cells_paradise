@@ -52,7 +52,7 @@
             action="/products/<%=product.id %>?_method=DELETE"
             method="POST"
           >
-            <button class="btn-admin" type="submit">Borrar producto</button>
+            <button class="btn-admin" type="submit" onclick="return confirm('¿Estás seguro de querer eliminar este producto?')">Borrar producto</button>
           </form>
         </article>
         <% } %>
