@@ -1,5 +1,7 @@
 const productService = require("../model/services/productService");
 const usersService = require("../data/usersService");
+const fs = require("fs");
+const path = require("path");
 
 module.exports = {
   // Vista de todos los productos
@@ -9,7 +11,7 @@ module.exports = {
       return res.render("./products/index", { products });
     } catch (error) {
       console.log(error.message);
-      throw new Error("No hay productos disponibles para mostrar.");
+      return [];
     }
   },
 
@@ -31,7 +33,7 @@ module.exports = {
       });
     } catch (error) {
       console.log(error.message);
-      throw new Error("No se pudo obtener el detalle de este producto.");
+      return [];
     }
   },
 
@@ -49,7 +51,7 @@ module.exports = {
       });
     } catch (error) {
       console.log(error.message);
-      throw new Error("Hubo un error inesperado");
+      return [];
     }
   },
 
@@ -62,7 +64,7 @@ module.exports = {
       return res.redirect("/products");
     } catch (error) {
       console.log(error.message);
-      throw new Error("No se pudo crear el producto.");
+      return [];
     }
   },
 
@@ -84,7 +86,7 @@ module.exports = {
       });
     } catch (error) {
       console.log(error.message);
-      throw new Error("No se pudo obtener el detalle de este producto.");
+      return [];
     }
   },
   // Método para modificar el producto
@@ -97,26 +99,30 @@ module.exports = {
         req.body.colors = [...req.body.colors];
       }
 
-      console.log("COLORRRRRRRRRRRRRRRSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS ");
-      console.log(req.body.colors);
-
-      await productService.update(req.body, req.params.id);
+      await productService.update(req.body, req.params.id, req.files);
 
       return res.redirect(`/products/detail/${req.params.id}`);
     } catch (error) {
       console.log(error.message);
-      throw new Error("Error al actualizar el producto.");
+      return [];
     }
   },
   delete: async (req, res) => {
     try {
       await productService.delete(req.params.id);
+
+      // console.log(req);
+      // fs.unlinkSync(
+      //   path.join(
+      //     __dirname,
+      //     "../../public/images/products/",
+      //     req.files.filename
+      //   )
+      // );
       return res.redirect(`/products`);
     } catch (error) {
       console.log(error.message);
-      throw new Error(
-        "Ocurrió un error. No se ha podido eliminar este producto."
-      );
+      return [];
     }
   },
 };

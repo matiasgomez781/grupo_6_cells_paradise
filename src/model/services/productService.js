@@ -1,4 +1,6 @@
 const db = require("../database/models");
+const fs = require("fs");
+const path = require("path");
 
 module.exports = {
   getAll: async function () {
@@ -127,21 +129,44 @@ module.exports = {
 
   update: async function (
     { name, price, description, discount, category, brand, images, colors },
-    idProduct
+    idProduct,
+    files
   ) {
     try {
       if (images.length) {
+        let imagesExists = await db.Image.findAll({
+          where: {
+            id_product: idProduct,
+          },
+        });
+
+        // fs.unlinkSync(
+        //   path.join(
+        //     __dirname,
+        //     "/images/products",
+        //     files.filename
+        //   )
+        // );
+
         images.forEach(async (img) => {
-          await db.Image.update(
-            {
-              url: img.filename,
-            },
-            {
-              where: {
-                id_product: idProduct,
-              },
+          // await db.Image.create({
+          //   url: img.filename,
+          // });
+
+          for (let i = 0; i < imagesExists.length; i++) {
+            if (!(imagesExists[i].dataValues.url == img.filename)) {
+              await db.Image.update(
+                {
+                  url: img.filename,
+                },
+                {
+                  where: {
+                    id_product: idProduct,
+                  },
+                }
+              );
             }
-          );
+          }
         });
       }
 
@@ -150,8 +175,6 @@ module.exports = {
           id_product: idProduct,
         },
       });
-      console.log("COLOR RELATEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD ");
-      console.log(colorRelated);
 
       if (colors && colors.length) {
         colors.map(async (col) => {
