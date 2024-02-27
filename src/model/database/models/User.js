@@ -1,4 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
+ 
   let alias = "User";
   let columns = {
     id: {
@@ -46,6 +47,9 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
   };
   let User = sequelize.define(alias, columns, config);
+
+    
+
 
   User.associate = function (models) {
     User.belongsTo(models.Role, {

@@ -34,5 +34,17 @@
     "avatar": "1705921442502_img_.png",
     "admin": 0,
     "id": 3
+  },
+  {
+    "first_name": "Pedro",
+    "last_name": "Pascal",
+    "email": "pedropascal@gmail.com",
+    "password": "$2a$10$yv0fdQE.9DAZlicrwDpXZeOEj9xMXgkDYm6xwE7/erKHBMm9grT8u",
+    "telefono": "12345678",
+    "trato": "hombre",
+    "comentario": "12345678",
+    "avatar": "1707861206375_img_.jfif",
+    "admin": 0,
+    "id": 4
   }
 ]
