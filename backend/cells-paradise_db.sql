@@ -80,7 +80,7 @@ CREATE TABLE products
        id_brand INT NOT NULL,                              
        name VARCHAR(50) NOT NULL,                              
        description TEXT NOT NULL,                              
-       price DECIMAL(7,2) NOT NULL,                              
+       price DECIMAL(10,2) NOT NULL,                              
        discount INT NOT NULL,                              
        PRIMARY KEY
                (
@@ -88,7 +88,7 @@ CREATE TABLE products
                ),
        FOREIGN KEY
                (
-               id
+               id_category
                )
           REFERENCES categories
                (
@@ -96,7 +96,7 @@ CREATE TABLE products
                ),
        FOREIGN KEY
                (
-               id
+               id_brand
                )
           REFERENCES brands
                (
@@ -110,14 +110,14 @@ CREATE TABLE images
        (
        id INT NOT NULL AUTO_INCREMENT,               
        id_product INT NOT NULL,                              
-       name TEXT NOT NULL,                              
+       url VARCHAR(250) NOT NULL,                              
        PRIMARY KEY
                (
                id
                ),
        FOREIGN KEY
                (
-               id
+               id_product
                )
           REFERENCES products
                (
@@ -133,11 +133,11 @@ CREATE TABLE users
        id_rol INT NOT NULL,                              
        first_name VARCHAR(50) NOT NULL,                              
        last_name VARCHAR(50) NOT NULL,                              
-       email VARCHAR(100) NOT NULL,                              
-       phone VARCHAR(50) NOT NULL,                              
+       email VARCHAR(100) NOT NULL UNIQUE,                              
+       phone VARCHAR(25) NOT NULL,                              
        avatar TEXT NOT NULL,                              
-       birth_date DATETIME NOT NULL,                              
-       dni VARCHAR(50) NOT NULL,                              
+       birth_date DATE NOT NULL,                              
+       dni VARCHAR(25) NOT NULL,                              
        PRIMARY KEY
                (
                id
@@ -165,7 +165,7 @@ CREATE TABLE addresses
                ),
        FOREIGN KEY
                (
-               id
+               id_postal_code
                )
           REFERENCES postal_codes
                (
@@ -186,7 +186,7 @@ CREATE TABLE carts
                ),
        FOREIGN KEY
                (
-               id
+               id_user
                )
           REFERENCES users
                (
@@ -201,14 +201,14 @@ CREATE TABLE sales
        id INT NOT NULL AUTO_INCREMENT,               
        id_payment INT NOT NULL,                              
        date DATETIME NOT NULL,                              
-       total_amount DECIMAL(8,2) NOT NULL,                              
+       total_amount DECIMAL(10,2) NOT NULL,                              
        PRIMARY KEY
                (
                id
                ),
        FOREIGN KEY
                (
-               id
+               id_payment
                )
           REFERENCES payment_methods
                (
@@ -229,7 +229,7 @@ CREATE TABLE stocks
                ),
        FOREIGN KEY
                (
-               id
+               id_product
                )
           REFERENCES products
                (
@@ -250,7 +250,7 @@ CREATE TABLE purchases
                ),
        FOREIGN KEY
                (
-               id
+               id_user
                )
           REFERENCES users
                (
@@ -264,15 +264,16 @@ CREATE TABLE product_color
        (
        id INT NOT NULL AUTO_INCREMENT,
        id_color INT NOT NULL,                              
-       id_product INT NOT NULL,                              
+       id_product INT NOT NULL,
+       createdAt DATETIME DEFAULT NOW(),
+       updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
        PRIMARY KEY
                (
-               id_color,
-               id_product
+               id
                ),
        FOREIGN KEY
                (
-               id
+               id_color
                )
           REFERENCES colors
                (
@@ -280,7 +281,7 @@ CREATE TABLE product_color
                ),
        FOREIGN KEY
                (
-               id
+               id_product
                )
           REFERENCES products
                (
@@ -294,15 +295,16 @@ CREATE TABLE user_address
        (
        id INT NOT NULL AUTO_INCREMENT,
        id_address INT NOT NULL,                              
-       id_user INT NOT NULL,                              
+       id_user INT NOT NULL,
+       createdAt DATETIME DEFAULT NOW(),
+       updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
        PRIMARY KEY
                (
-               id_address,
-               id_user
+               id
                ),
        FOREIGN KEY
                (
-               id
+               id_address
                )
           REFERENCES addresses
                (
@@ -310,7 +312,7 @@ CREATE TABLE user_address
                ),
        FOREIGN KEY
                (
-               id
+               id_user
                )
           REFERENCES users
                (
@@ -324,15 +326,16 @@ CREATE TABLE product_sale
        (
        id INT NOT NULL AUTO_INCREMENT,
        id_sale INT NOT NULL,                              
-       id_product INT NOT NULL,                              
+       id_product INT NOT NULL,
+       createdAt DATETIME DEFAULT NOW(),
+       updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
        PRIMARY KEY
                (
-               id_sale,
-               id_product
+               id
                ),
        FOREIGN KEY
                (
-               id
+               id_sale
                )
           REFERENCES sales
                (
@@ -340,7 +343,7 @@ CREATE TABLE product_sale
                ),
        FOREIGN KEY
                (
-               id
+               id_product
                )
           REFERENCES products
                (
@@ -354,15 +357,16 @@ CREATE TABLE product_cart
        (
        id INT NOT NULL AUTO_INCREMENT,
        id_cart INT NOT NULL,                              
-       id_product INT NOT NULL,                              
+       id_product INT NOT NULL,
+       createdAt DATETIME DEFAULT NOW(),
+       updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
        PRIMARY KEY
                (
-               id_cart,
-               id_product
+               id
                ),
        FOREIGN KEY
                (
-               id
+               id_cart
                )
           REFERENCES carts
                (
@@ -370,7 +374,7 @@ CREATE TABLE product_cart
                ),
        FOREIGN KEY
                (
-               id
+               id_product
                )
           REFERENCES products
                (
@@ -384,15 +388,16 @@ CREATE TABLE product_purchase
        (
        id INT NOT NULL AUTO_INCREMENT,
        id_purchase INT NOT NULL,                              
-       id_product INT NOT NULL,                              
+       id_product INT NOT NULL,
+       createdAt DATETIME DEFAULT NOW(),
+       updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
        PRIMARY KEY
                (
-               id_purchase,
-               id_product
+               id
                ),
        FOREIGN KEY
                (
-               id
+               id_purchase
                )
           REFERENCES purchases
                (
@@ -400,12 +405,121 @@ CREATE TABLE product_purchase
                ),
        FOREIGN KEY
                (
-               id
+               id_product
                )
           REFERENCES products
                (
                id
                )
        );
+       
+/* DATOS DE PRUEBA */
 
+DESCRIBE products;
 
+INSERT INTO categories
+(name)
+VALUES("celular");
+
+INSERT INTO categories
+(name)
+VALUES("accesorio");
+
+SELECT * FROM categories;
+
+INSERT INTO brands
+(name)
+VALUES("Motorola");
+
+INSERT INTO brands
+(name)
+VALUES("Samsung");
+
+INSERT INTO brands
+(name)
+VALUES("Apple");
+
+SELECT * FROM brands;
+
+INSERT INTO products
+(id_category, id_brand, name, description, price, discount)
+VALUES(1, 1, "MOTOROLA E22", "Celular moderno", 94445.00, 10);
+
+INSERT INTO products
+(id_category, id_brand, name, description, price, discount)
+VALUES(1, 2, "SAMSUNG S21", "Celular moderno", 360000.00, 5);
+
+INSERT INTO products
+(id_category, id_brand, name, description, price, discount)
+VALUES(1, 1, "MOTO EDGE 30 NEO", "Celular moderno", 222000.00, 30);
+
+SELECT * FROM categories
+WHERE id = 1;
+
+INSERT INTO products
+(id_category, id_brand, name, description, price, discount)
+VALUES(2, 2, "CARGADOR SAMSUNG", "Reloj inteligente", 11000.00, 0);
+
+UPDATE products
+SET description = "Cargador con carga rápida"
+WHERE id = 4;
+
+SELECT * FROM products;
+
+INSERT INTO images
+(id_product, url)
+VALUES(1, "Motorola E22.png");
+
+INSERT INTO images
+(id_product, url)
+VALUES(1, "SAMSUNG S21.png");
+
+INSERT INTO images
+(id_product, url)
+VALUES(3, "MOTO EDGE 30 NEO.png");
+
+INSERT INTO images
+(id_product, url)
+VALUES(4, "Reloj inteligente.png");
+
+UPDATE images
+SET url = "CARGADOR SAMSUNG.png"
+WHERE id = 4;
+
+SELECT * FROM images;
+
+UPDATE images
+SET id_product = 2
+WHERE id = 2;
+
+INSERT INTO colors
+(name)
+VALUES("Negro");
+
+INSERT INTO colors
+(name)
+VALUES("Blanco");
+
+INSERT INTO colors
+(name)
+VALUES("Gris");
+
+SELECT * FROM colors;
+
+INSERT INTO product_color
+(id_product, id_color)
+VALUES(3, 1);
+
+INSERT INTO product_color
+(id_product, id_color)
+VALUES(2, 2);
+
+INSERT INTO product_color
+(id_product, id_color)
+VALUES(4, 2);
+
+INSERT INTO product_color
+(id_product, id_color)
+VALUES(1, 3);
+
+SELECT * FROM product_color;
