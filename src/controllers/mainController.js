@@ -1,12 +1,20 @@
 // const productsModel = require("../model/products");
-const mainService = require("../data/mainService");
+const mainService = require("../model/services/mainService");
 
-const mainController = {
-  index: (req, res) => {
-    res.render("./main/index", {
-      celulares: mainService.getBy("celular"),
-      accesorios: mainService.getBy("accesorio"),
-    });
+module.exports = {
+  index: async (req, res) => {
+    try {
+      let celulares = await mainService.getBy(1);
+      let accesorios = await mainService.getBy(2);
+
+      res.render("./main/index", {
+        celulares,
+        accesorios,
+      });
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
   },
 
   cart: (req, res) => {
@@ -21,11 +29,16 @@ const mainController = {
     res.render("./main/trabaja");
   },
 
-  search: (req, res) => {
-    res.render("./main/search", {
-      productSearched: mainService.search(req.query.keywords),
-    });
+  search: async (req, res) => {
+    try {
+      let productSearched = await mainService.search(req.query.keywords);
+
+      res.render("./main/search", {
+        productSearched,
+      });
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
   },
 };
-
-module.exports = mainController;
