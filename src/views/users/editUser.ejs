@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Editar usuario></title>
+    <%- include("../partials/head.ejs") %>
+    <link rel="stylesheet" href="/css/perfil.css" />
+  </head>
+
+  <body>
+    <header><%- include("../partials/header.ejs") %></header>
+
+    <main>
+        <h1>Editar Usuario</h1>
+    <form action="/users/update/<%= user.id %>" method="post">
+        <label for="first_name">Nombre:</label>
+        <input type="text" id="first_name" name="first_name" value="<%= user.first_name %>">
+        <label for="last_name">Apellido:</label>
+        <input type="text" id="last_name" name="last_name" value="<%= user.last_name %>">
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" value="<%= user.email %>">
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    </main>
+
+    <footer><%- include("../partials/footer.ejs") %></footer>
+  </body>
+</html>

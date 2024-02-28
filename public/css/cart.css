@@ -60,13 +60,17 @@
 }
 #botonPago{
     padding: 14px 10px;
-    background-color: #00bf63;
+    background-color: #007bff;
     color:white;
     font-weight: 500;
     font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
     border: none;
+    transition: background-color 0.3s ease;
+}
+#botonPago:hover{
+    background-color: #0056b3;
 }
 .contenido{
     padding: 15px;

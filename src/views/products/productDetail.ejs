@@ -12,39 +12,25 @@
     <main>
       <section class="product">
         <section class="images-container">
+          <% if (product.images.length) { %>
           <article class="more-images">
+            <% product.images.forEach(img => { %>
             <div class="min-image">
               <img
-                src="/images/products/<%= product.image %>"
+                src="/images/products/<%= img.url %>"
                 alt="<%= product.name %>"
               />
             </div>
-            <div class="min-image">
-              <img
-                src="/images/products/<%= product.image %>"
-                alt="<%= product.name %>"
-              />
-            </div>
-            <div class="min-image">
-              <img
-                src="/images/products/<%= product.image %>"
-                alt="<%= product.name %>"
-              />
-            </div>
-            <div class="min-image">
-              <img
-                src="/images/products/<%= product.image %>"
-                alt="<%= product.name %>"
-              />
-            </div>
+            <% }) %>
           </article>
 
           <article class="main-image">
             <img
-              src="/images/products/<%= product.image %>"
+              src="/images/products/<%= product.images[0].url %>"
               alt="<%= product.name %>"
             />
           </article>
+          <% } %>
         </section>
 
         <section class="description-container">
@@ -66,7 +52,7 @@
             action="/products/<%=product.id %>?_method=DELETE"
             method="POST"
           >
-            <button class="btn-admin" type="submit">Borrar producto</button>
+            <button class="btn-admin" type="submit" onclick="return confirm('¿Estás seguro de querer eliminar este producto?')">Borrar producto</button>
           </form>
         </article>
         <% } %>
@@ -90,7 +76,7 @@
             <div class="individualProduct">
               <a href="/products/detail/<%= product.id %>"
                 ><img
-                  src="/images/products/<%= product.image %>"
+                  src="/images/products/<%= product.images[0] ? product.images[0].url : "" %>"
                   alt="<%= product.name %>"
               /></a>
 
