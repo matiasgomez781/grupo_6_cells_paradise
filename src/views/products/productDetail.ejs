@@ -40,7 +40,7 @@
       </section>
 
       <section class="buttons">
-        <% if (user && user.admin > 0) { %>
+        <% if (user && user.id_rol == 1) { %>
         <article class="btns-temp">
           <a href="/products/<%= product.id %>/editProduct" class="btn-admin"
             ><button class="btn-admin">Editar producto</button></a
