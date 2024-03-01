@@ -35,11 +35,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     birth_date: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
     },
     dni: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
   };
   let config = {
