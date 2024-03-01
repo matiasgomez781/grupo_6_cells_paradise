@@ -133,7 +133,8 @@ CREATE TABLE users
        id_rol INT NOT NULL,                              
        first_name VARCHAR(50) NOT NULL,                              
        last_name VARCHAR(50) NOT NULL,                              
-       email VARCHAR(100) NOT NULL UNIQUE,                              
+       email VARCHAR(100) NOT NULL UNIQUE, 
+       password VARCHAR(200) NOT NULL,                            
        phone VARCHAR(25) NOT NULL,                              
        avatar TEXT NOT NULL,                              
        birth_date DATE NOT NULL,                              
@@ -523,3 +524,17 @@ INSERT INTO product_color
 VALUES(1, 3);
 
 SELECT * FROM product_color;
+
+/*Datos de prueba para usuarios*/
+
+INSERT into roles VALUES (1, 0);
+INSERT into roles VALUES (2, 1);
+select * from roles;
+
+INSERT INTO users (id_rol, first_name, last_name, email, password, phone, avatar, birth_date, dni)
+VALUES
+    (1, 'Admin', 'CellsParadise', 'admin@cellsparadise.com', '$2a$10$hqGZU/qKno/sIpWRDDkD6O.f7n8XJaqgUzIr8C0Xjj4an75cGHyLe', '3855800721', 'logo_cellsparadise.png', '1990-05-15', '12345678A'),
+    (2, 'Invitado', 'CellsParadise', 'invitado@cellsparadise.com', '$2a$10$hqGZU/qKno/sIpWRDDkD6O.f7n8XJaqgUzIr8C0Xjj4an75cGHyLe', '3856970155', 'logo_cellsparadise.png', '1992-08-20', '87654321B');
+
+select * from users;
+

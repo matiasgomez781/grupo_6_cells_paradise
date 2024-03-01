@@ -24,6 +24,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       unique: true,
       allowNull: false,
+      
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     phone: {
       type: DataTypes.STRING,
@@ -35,11 +40,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     birth_date: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
     },
     dni: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
   };
   let config = {
