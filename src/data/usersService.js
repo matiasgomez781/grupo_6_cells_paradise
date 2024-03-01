@@ -14,7 +14,8 @@ const usersService = {
   
   save: async (userData) => {
     try {
-      userData.id_rol = 1;// Agrega id_rol al objeto userData antes de guardar el usuario
+      userData.id_rol = 2;// Agrega id_rol al objeto userData antes de guardar el usuario
+      //Rol 1 es admin, Rol 2 es usuario invitado
       userData.password = bcrypt.hashSync(userData.password, 10); // Hashear la contraseña
       const newUser = await db.User.create(userData);// Crea un nuevo usuario en la base de datos utilizando el modelo User
       return newUser; // Devuelve el usuario creado
