@@ -1,5 +1,6 @@
 const usersService = require("../data/usersService");
 const bcrypt = require("bcrypt");
+const { validationResult } = require('express-validator');
 
 const usersController = {
   login: (req, res) => {
@@ -12,6 +13,11 @@ const usersController = {
 
   newUser: async (req, res) => {
     try {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+      }
+
       req.body.avatar = req.file.filename;
       const newUser = await usersService.save(req.body); // Guarda el nuevo usuario en la base de datos
 
@@ -25,7 +31,6 @@ const usersController = {
       res.status(500).send("Error al crear nuevo usuario");
     }
   },
-
   detail: async (req, res) => {
     try {
       const user = await usersService.getById(req.params.id); // Obtiene un usuario por su ID
