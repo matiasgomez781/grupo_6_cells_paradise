@@ -1,7 +1,5 @@
 const productService = require("../model/services/productService");
 const usersService = require("../data/usersService");
-const fs = require("fs");
-const path = require("path");
 const { validationResult } = require('express-validator');
 
 

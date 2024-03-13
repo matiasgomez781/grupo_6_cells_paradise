@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const usersService = require("../data/usersService");
 const usersController = require("../controllers/usersController");
 const upload = require("../middlewares/multerUsers");
 const authMid = require("../middlewares/authMid");
