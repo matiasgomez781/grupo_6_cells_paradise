@@ -1,7 +1,6 @@
 const productService = require("../model/services/productService");
 const usersService = require("../data/usersService");
-const { validationResult } = require('express-validator');
-
+const { validationResult } = require("express-validator");
 
 module.exports = {
   // Vista de todos los productos
@@ -60,13 +59,13 @@ module.exports = {
     try {
       // Creo un array para poder guardar las diferentes imágenes del producto
       req.body.images = productService.imagesConverter(req.files);
-      
+
       // Manejar errores de validación
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
       }
-      
+
       await productService.save(req.body); //, req.file
       return res.redirect("/products");
     } catch (error) {

@@ -1,6 +1,6 @@
 const usersService = require("../data/usersService");
 const bcrypt = require("bcrypt");
-const { validationResult } = require('express-validator');
+const { validationResult } = require("express-validator");
 
 const usersController = {
   login: (req, res) => {
