@@ -1,7 +1,7 @@
 const { body, validationResult } = require('express-validator');
 const usersService = require("../data/usersService");
 
-const validator = {
+const userValidationMid = {
   registerUser: [
     body('first_name').notEmpty().withMessage('Nombre obligatorio').isLength({ min: 2 }).withMessage('Debe tener al menos 2 caracteres'),
     body('last_name').notEmpty().withMessage('Apellido obligatorio').isLength({ min: 2 }).withMessage('Debe tener al menos 2 caracteres'),
@@ -40,4 +40,4 @@ const validator = {
   }
 };
 
-module.exports = validator;
+module.exports = userValidationMid;
