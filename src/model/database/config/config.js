@@ -2,9 +2,9 @@ require("dotenv").config();
 
 const config = {
   development: {
-    username: "root",
-    password: null,
-    database: "cellsparadise_db",
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
     host: "127.0.0.1",
     dialect: "mysql",
   },
