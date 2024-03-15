@@ -6,9 +6,7 @@ const cookieParser = require("cookie-parser");
 const express = require("express");
 const app = express();
 
-const usersRouter = require("./routes/users.routes");
-const mainRouter = require("./routes/main.routes");
-const productsRouter = require("./routes/products.routes");
+const indexRouter = require("./routes/index.routes");
 const loginMid = require("./middlewares/loginMid");
 
 app.use(express.static("public"));
@@ -28,9 +26,7 @@ app.listen(3000, () => console.log("listening on port 3000"));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-app.use("/", mainRouter);
-app.use("/users", usersRouter);
-app.use("/products", productsRouter);
+app.use("/", indexRouter);
 
 //Error 404
 
