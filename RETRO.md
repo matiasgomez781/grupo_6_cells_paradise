@@ -153,3 +153,37 @@ Sabiendo que todos somos partes importantes dentro del equipo y que debemos func
 
 
 --------------------------------------------------------------------------------------------------------------
+
+
+## Retrospectiva del Sexto Sprint
+
+
+*) Este sprint fue el mas dificil hasta el momento, si bien base de datos es un tema que nos resulta atractivo aun asi es bastante amplio y puede llegar a ser muy complejo.
+
+
+## Comenzar a Hacer
+
+*) Probar de trabajar todos los miembros del grupo juntos porque necesitamos reunir energia para finalizar el proyecto.
+
+  
+## Hacer Mas
+
+*) Continuar trabajando en el tablero de Trello.
+
+*) Seguir mejorando el front end de la página.
+
+## Continuar Haciendo
+
+*) Continuar con las reuniones grupales para mostrar avances y destrabar bloqueantes entre todos.
+
+*) Mantener la comunicacion fluida.
+
+
+## Dejar de Hacer
+
+*) Dejar de posponer tareas que quedaron pendiente del sprint anterior.
+
+*) Dejar de incumplir los dias acordados para las reuniones.
+
+
+-------------------------------------------------------------------------------------------------------------
