@@ -18,14 +18,14 @@
       </div>
 
       <div class="priceDiscount">
-        <p class="oldPrice">$<%= product.price %></p>
+        <p class="oldPrice">$<%= parseInt(product.price) %></p>
         <p class="discount"><%= product.discount %>% Off</p>
       </div>
       <% } else { %>
       <div class="btn-price">
         <button type="button" class="btn-Add">AGREGAR</button>
 
-        <p class="priceProduct">$<%= product.price %></p>
+        <p class="priceProduct">$<%= parseInt(product.price) %></p>
       </div>
       <% } %>
 
