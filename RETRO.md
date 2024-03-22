@@ -187,3 +187,40 @@ Sabiendo que todos somos partes importantes dentro del equipo y que debemos func
 
 
 -------------------------------------------------------------------------------------------------------------
+
+
+
+## Retrospectiva del Septimo Sprint
+
+
+*) En este sprint volvimos a retomar la energia con la que veniamos trabajando y pudimos resolver mejor algunas temáticas
+
+## Comenzar a Hacer
+
+*) Probar el codigo despues de cada update para corroborar que funciona correctamente.
+
+*) Comenzar a corregir bugs que quedaron de sprint anteriores.
+
+
+## Hacer Mas
+
+*) Hacer reuniones con mayor frecuencia para resolver todos los bugs.
+
+*) Solicitar ayuda a los profesores cuando surjan bloqueantes.
+
+
+## Continuar Haciendo
+
+*) La resolucion de conflictos de manera grupal nos resulto mas efectiva, por lo tanto debemos seguir trabajando de este modo.
+
+*) Mantener la comunicacion fluida.
+
+
+## Dejar de Hacer
+
+*) Dejar de posponer tareas que quedaron pendiente del sprint anterior.
+
+*) Dejar de subir el codigo a ultimo momento del cierre del sprint.
+
+
+---------------------------------------------------------------------------------------------------------------
