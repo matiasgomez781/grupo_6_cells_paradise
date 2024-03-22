@@ -6,30 +6,23 @@ import Celulares from "../Celulares/Celulares"; */
 import Product from "../Products/Products";
 import { Route, Routes } from "react-router-dom";
 
-
-
-export default class Index extends Component {
-  render() {
-
-    return (
-      <>
-        <h3 className="main-categorie">PRODUCTOS</h3>
+export default function Index() {
+  return (
+    <>
+      <main className="content-wrap">
         <Product />
+        {/* <Routes>
+        
+          <Route path="/" exact element={<Product />} />
+        
 
-        {/* <h3 className="main-categorie">CELULARES</h3>
+          <h3 className="main-categorie">CELULARES</h3>
         <Celulares />
 
         <h3 classNameName="main-categorie">ACCESORIOS</h3>
-        <Accesorios /> */}
-      </>
-
-    );
-  }
-
-  /* constructor(){
-    super();
-    this.state = {
-        productList: []
-    }
-} */
+        <Accesorios />
+        </Routes> */}
+      </main>
+    </>
+  );
 }
