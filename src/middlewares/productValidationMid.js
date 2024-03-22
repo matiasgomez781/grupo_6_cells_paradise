@@ -24,11 +24,11 @@ const productValidationMid = {
       .withMessage("Descuento debe ser numérico"),
     body("category").notEmpty().withMessage("Categoría obligatoria"),
     body("brand").notEmpty().withMessage("Marca obligatoria"),
-    body("images")
+    /*body("images")
       .notEmpty()
       .withMessage("Imágenes obligatorias")
       .isArray({ min: 1 })
-      .withMessage("Debe subir al menos una imagen"),
+      .withMessage("Debe subir al menos una imagen"),*/
     body("images.*").custom((value, { req }) => {
       const allowedExtensions = ["jpg", "jpeg", "png", "gif"];
       const fileExtension = value.originalname.split(".").pop().toLowerCase();
