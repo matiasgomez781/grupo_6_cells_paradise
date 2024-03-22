@@ -4,6 +4,8 @@ import ofertAcc from "../../../../public/images/products/Oferta-Accesorios.jpg";
 import Accesorios from "../Accesorios/Accesorios";
 import Celulares from "../Celulares/Celulares"; */
 import Product from "../Products/Products";
+import { Route, Routes } from "react-router-dom";
+
 
 
 export default class Index extends Component {
