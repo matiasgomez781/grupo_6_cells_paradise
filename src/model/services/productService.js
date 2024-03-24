@@ -168,47 +168,42 @@ module.exports = {
         });
       }
 
-      let colorRelated = await db.ProductColor.findAll({
-        where: {
-          id_product: idProduct,
-        },
-      });
+      if (colors.length) {
+        let colorRelated = await db.ProductColor.findAll({
+          where: {
+            id_product: idProduct,
+          },
+        });
 
-      if (colors && colors.length) {
-        colors.map(async (col) => {
-          if (colorRelated.length) {
-            let colorExists = false;
-            for (let i = 0; i < colorRelated.length; i++) {
-              if (colorRelated[i].dataValues.id_color == col) {
-                colorExists = true;
-                break;
-              }
-            }
-            if (!colorExists) {
-              await db.ProductColor.create({
-                id_color: col,
-                id_product: idProduct,
-              });
-            }
-          } else {
-            await db.ProductColor.create({
-              id_color: col,
-              id_product: idProduct,
-            });
+        let colorExists = [];
+
+        colorRelated.forEach((col) =>
+          colorExists.push(col.dataValues.id_color)
+        );
+
+        let colorsToCreate = colors.filter((col) => {
+          if (!colorExists.includes(parseInt(col))) {
+            return col;
           }
         });
 
-        // Eliminar los colores que ya no están asociados
-        colorRelated.map(async (color) => {
-          if (!colors.includes(color.dataValues.id_color)) {
+        for (let i = 0; i < colorExists.length; i++) {
+          if (!colors.includes(colorExists[i].toString())) {
             await db.ProductColor.destroy({
               where: {
-                id_color: color.dataValues.id_color,
+                id_color: colorExists[i],
                 id_product: idProduct,
               },
             });
           }
-        });
+        }
+
+        for (let i = 0; i < colorsToCreate.length; i++) {
+          await db.ProductColor.create({
+            id_color: colorsToCreate[i],
+            id_product: idProduct,
+          });
+        }
       }
 
       return await db.Product.update(
