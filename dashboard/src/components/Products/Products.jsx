@@ -21,9 +21,10 @@ export default function Product() {
           <table   className={style.table}>
             <thead>
               <tr>
-                <th>Marcas</th>
+                <th>Nombre</th>
+                <th>Marca</th>
                 <th>Precio</th>
-                <th>Descripcion</th>
+                <th>Descripción</th>
               </tr>
             </thead>
             {products.map((product) => (

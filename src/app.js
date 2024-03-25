@@ -23,6 +23,7 @@ app.use(
 app.use(cookieParser());
 app.use(loginMid);
 
+// Config de cors sin dependencia
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
