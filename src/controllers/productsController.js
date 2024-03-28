@@ -131,4 +131,19 @@ module.exports = {
       return [];
     }
   },
+
+  filtrarPorMarca: async (req,res) => {
+    try {
+      const marca = req.params.brand;
+      const productos = await productService.obtenerProductosPorMarca(marca);
+      const todasLasMarcas = await productService.getBrands();
+
+      return res.render("./products/productosFiltrados", {productos, todasLasMarcas, marca:marca});
+
+      
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
+  }
 };

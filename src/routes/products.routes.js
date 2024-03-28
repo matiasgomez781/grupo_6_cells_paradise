@@ -7,6 +7,7 @@ const adminMid = require("../middlewares/adminMid");
 
 router.get("/", productsController.all);
 router.get("/detail/:id", productsController.detail);
+router.get('/products/:brand', productsController.filtrarPorMarca);
 
 router.get("/createProduct", adminMid, productsController.createProduct);
 router.post(
