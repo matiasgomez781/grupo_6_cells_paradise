@@ -256,7 +256,26 @@ module.exports = {
       return [];
     }
   },
-};
+
+  obtenerProductosPorMarca: async function (nombreMarca) {
+    try {
+      const marca = await db.Brand.findOne({
+        where: { name: nombreMarca },
+      });
+  
+      const productos = await db.Product.findAll({
+        where: { id_brand: marca.id },
+        include: ["images", "brand", "colors", "stock"],
+      });
+  
+      return productos;
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
+  },
+
+}
 
 function Product(name, price, description, discount, id_category, id_brand) {
   this.name = name;
