@@ -21,13 +21,13 @@ const productValidationMid = {
       .notEmpty()
       .withMessage("Descuento obligatorio")
       .isNumeric()
-      .withMessage("Descuento debe ser numérico"),
+      .withMessage("Descuento debe ser numérico (si no tiene descuento puede ser 0)"),
     body("category").notEmpty().withMessage("Categoría obligatoria"),
     body("brand").notEmpty().withMessage("Marca obligatoria"),
     body("images.*").custom((value, { req }) => {
-      const allowedExtensions = ["jpg", "jpeg", "png", "gif"];
+      const extensionesPermitidas = ["jpg", "jpeg", "png", "gif"];
       const fileExtension = value.originalname.split(".").pop().toLowerCase();
-      if (!allowedExtensions.includes(fileExtension)) {
+      if (!extensionesPermitidas.includes(fileExtension)) {
         throw new Error("Formato de imagen no válido");
       }
       return true;
