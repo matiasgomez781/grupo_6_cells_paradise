@@ -265,6 +265,7 @@ module.exports = {
   
       const productos = await db.Product.findAll({
         where: { id_brand: marca.id },
+        include: ["images", "brand", "colors", "stock"],
       });
   
       return productos;

@@ -135,10 +135,9 @@ module.exports = {
   filtrarPorMarca: async (req,res) => {
     try {
       const marca = req.params.brand;
-      const productos = await productService.obtenerProductosPorMarca(marca);
-      const todasLasMarcas = await productService.getBrands();
+      const products = await productService.obtenerProductosPorMarca(marca);
 
-      return res.render("./products/productosFiltrados", {productos, todasLasMarcas, marca:marca});
+      return res.render("./products/productosFiltrados", {products});
 
       
     } catch (error) {
