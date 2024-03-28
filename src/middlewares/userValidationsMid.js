@@ -19,8 +19,8 @@ const userValidationMid = {
       .isEmail()
       .withMessage("Email inválido")
       .custom(async (value) => {
-        const existingUser = await usersService.findByField("email", value);
-        if (existingUser) {
+        const usuarioExistente = await usersService.findByField("email", value);
+        if (usuarioExistente) {
           throw new Error("El email ya está registrado");
         }
       }),
@@ -33,13 +33,13 @@ const userValidationMid = {
       if (!req.file) {
         throw new Error("Imagen obligatoria");
       }
-      const allowedExtensions = ["jpg", "jpeg", "png", "gif"];
+      const extensionesPermitidas = ["jpg", "jpeg", "png", "gif"];
       const fileExtension = req.file.originalname
         .split(".")
         .pop()
         .toLowerCase();
-      if (!allowedExtensions.includes(fileExtension)) {
-        throw new Error("Formato de imagen no válido");
+      if (!extensionesPermitidas.includes(fileExtension)) {
+        throw new Error("El formato de imagen no es válido, debe ser jpg, jpeg, png o gif");
       }
       return true;
     }),
