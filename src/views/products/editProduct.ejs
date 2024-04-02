@@ -11,6 +11,22 @@
     <main>
       <section class="register-section">
         <h2 class="login-section-title">Editar Producto</h2>
+        
+        <section>
+          <h3>Imágenes del producto</h3>
+              <% if (product.images.length) { %>
+                <section class="old-images">
+                  <% product.images.forEach(img => { %>
+                    <article class="img">
+                      <form action="/products/delete-img/<%= img.id %>?_method=DELETE" method="POST">
+                        <img class="img-product" src="/images/products/<%= img.url %>" alt="<%= product.name %>">
+                        <button type="submit" class="delete-img-btn">X</button>
+                      </form>
+                    </article>
+                  <% }) %>
+                </section>
+              <% } %>
+        </section>
 
         <form
           action="/products/<%= product.id %>?_method=PUT"
@@ -18,6 +34,10 @@
           enctype="multipart/form-data"
         >
           <section class="first">
+            <p class="clave2">
+              <label for="images">Agregar otra imagen</label>
+              <input type="file" name="images" id="images" multiple accept="image/*" />
+            </p>
             <p class="email">
               <label for="name">Nombre</label>
               <input
@@ -47,19 +67,6 @@
                 placeholder="Porcentaje de descuento"
                 value="<%= product.discount %>"
               />
-            </p>
-            <p class="clave2">
-              <label for="images">Imágenes del producto</label>
-              <input type="file" name="images" id="images" multiple accept="image/*" />
-              <% if (product.images.length) { %>
-                <section class="old-images">
-                  <% product.images.forEach(img => { %>
-                    <article class="img">
-                      <img src="/images/products/<%= img.url %>" alt="<%= product.name %>" width="200px">
-                    </article>
-                  <% }) %>
-                </section>
-              <% } %>
             </p>
             <p class="clave2">
               <label>Elije el o los colores</label>

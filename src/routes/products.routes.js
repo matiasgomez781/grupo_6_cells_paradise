@@ -18,6 +18,7 @@ router.post(
 );
 
 router.get("/:id/editProduct", adminMid, productsController.editProduct);
+router.delete("/delete-img/:imgId", adminMid, productsController.deleteImg);
 router.put(
   "/:id",
   adminMid,

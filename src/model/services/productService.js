@@ -78,6 +78,21 @@ module.exports = {
     return images;
   },
 
+  imagesCreate: async function (images, idProduct) {
+    try {
+      for (const img of images) {
+        await db.Image.create({
+          url: img.filename,
+          id_product: idProduct,
+        });
+      }
+      return "Imágenes creadas con éxito";
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
+  },
+
   save: async function ({
     name,
     price,
@@ -95,12 +110,7 @@ module.exports = {
       );
 
       // Por cada imagen que exista, asociarlas con el producto
-      images.forEach(async (img) => {
-        await db.Image.create({
-          url: img.filename,
-          id_product: productCreated.id,
-        });
-      });
+      this.imagesCreate(images, productCreated.id);
 
       // Asociar el o los colores elegidos con el producto
       // Primero identificar si se ha elegido más de un color
@@ -125,19 +135,25 @@ module.exports = {
     }
   },
 
+  deleteImg: async function (imgId) {
+    try {
+      return await db.Image.destroy({
+        where: {
+          id: imgId,
+        },
+      });
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
+  },
+
   update: async function (
     { name, price, description, discount, category, brand, images, colors },
-    idProduct,
-    files
+    idProduct
   ) {
     try {
       if (images.length) {
-        let imagesExists = await db.Image.findAll({
-          where: {
-            id_product: idProduct,
-          },
-        });
-
         // fs.unlinkSync(
         //   path.join(
         //     __dirname,
@@ -146,26 +162,7 @@ module.exports = {
         //   )
         // );
 
-        images.forEach(async (img) => {
-          // await db.Image.create({
-          //   url: img.filename,
-          // });
-
-          for (let i = 0; i < imagesExists.length; i++) {
-            if (!(imagesExists[i].dataValues.url == img.filename)) {
-              await db.Image.update(
-                {
-                  url: img.filename,
-                },
-                {
-                  where: {
-                    id_product: idProduct,
-                  },
-                }
-              );
-            }
-          }
-        });
+        this.imagesCreate(images, idProduct);
       }
 
       if (colors.length) {
