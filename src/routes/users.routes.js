@@ -27,6 +27,12 @@ router.post(
 );
 
 router.get("/edit/:id", usersController.edit);
-router.put("/update/:id",upload.single("avatar"), usersController.update);
+router.put(
+  "/update/:id",
+  upload.single("avatar"),
+  userValidationMid.registerUser,
+  userValidationMid.validate,
+  usersController.update
+);
 
 module.exports = router;

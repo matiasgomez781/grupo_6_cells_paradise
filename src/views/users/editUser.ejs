@@ -4,42 +4,72 @@
     <title>Editar usuario></title>
     <%- include("../partials/head.ejs") %>
     <link rel="stylesheet" href="/css/perfil.css" />
+    <script src="/js/registerValidations.js"></script>
   </head>
 
   <body>
     <header><%- include("../partials/header.ejs") %></header>
 
     <main>
-        <h1>Editar Usuario</h1>
-        <form action="/users/update/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-
-        
-      <section class="avatar">
-        <img
-          class="img"
-          src="/images/users/<%= user.avatar%>"
-          alt="<%= user.first_name%>"
-        />
-        
-        <label for="first_name">Nombre:</label>
-        <input type="text" id="first_name" name="first_name" value="<%= user.first_name %>">
-
-        <label for="last_name">Apellido:</label>
-        <input type="text" id="last_name" name="last_name" value="<%= user.last_name %>">
-
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" value="<%= user.email %>">
-
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password">
-        
-        <label for="imagen">Imagen de perfil</label>
-        <input type="file" name="avatar" id="imagen" accept="image/*">
-        </div>
+      <h1>Editar Usuario</h1>
+      <form
+        class="register-form"
+        action="/users/update/<%= user.id %>?_method=PUT"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <section class="avatar">
+          <img
+            class="img"
+            src="/images/users/<%= user.avatar%>"
+            alt="<%= user.first_name%>"
+          />
         </section>
-        
+
+        <div class="inputs">
+          <p class="input-wrapper">
+            <label for="first_name">Nombre:</label>
+            <input
+              type="text"
+              id="nombre"
+              name="first_name"
+              value="<%= user.first_name %>"
+            />
+          </p>
+
+          <p class="input-wrapper">
+            <label for="last_name">Apellido:</label>
+            <input
+              type="text"
+              id="apellido"
+              name="last_name"
+              value="<%= user.last_name %>"
+            />
+          </p>
+
+          <p class="input-wrapper">
+            <label for="email">Correo electrónico:</label>
+            <input
+              type="email"
+              id="correo"
+              name="email"
+              value="<%= user.email %>"
+            />
+          </p>
+
+          <p class="input-wrapper">
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" />
+          </p>
+
+          <p class="input-wrapper">
+            <label for="imagen">Imagen de perfil</label>
+            <input type="file" name="avatar" id="imagen" accept="image/*" />
+          </p>
+        </div>
+
         <button type="submit">Guardar Cambios</button>
-    </form>
+      </form>
     </main>
 
     <footer><%- include("../partials/footer.ejs") %></footer>
