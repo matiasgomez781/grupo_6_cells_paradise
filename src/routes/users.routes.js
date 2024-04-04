@@ -27,6 +27,6 @@ router.post(
 );
 
 router.get("/edit/:id", usersController.edit);
-router.post("/update/:id", usersController.update);
+router.put("/update/:id",upload.single("avatar"), usersController.update);
 
 module.exports = router;
