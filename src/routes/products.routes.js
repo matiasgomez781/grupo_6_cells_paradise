@@ -6,8 +6,8 @@ const productValidationMid = require("../middlewares/productValidationMid");
 const adminMid = require("../middlewares/adminMid");
 
 router.get("/", productsController.all);
+
 router.get("/detail/:id", productsController.detail);
-router.get('/:brand', productsController.filtrarPorMarca);
 
 router.get("/createProduct", adminMid, productsController.createProduct);
 router.post(
@@ -31,5 +31,6 @@ router.put(
 );
 
 router.delete("/:id", adminMid, productsController.delete);
+router.get("/:brand", productsController.filtrarPorMarca);
 
 module.exports = router;

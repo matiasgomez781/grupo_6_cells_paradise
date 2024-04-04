@@ -14,6 +14,7 @@ module.exports = {
         todasLasMarcas
       });
     } catch (error) {
+      console.log("ASDASDADASDASDASD");
       console.log(error.message);
       return [];
     }
