@@ -30,15 +30,17 @@ SELECT * FROM brands;
 
 INSERT INTO products
 (id_category, id_brand, name, description, price, discount)
-VALUES(1, 1, "MOTOROLA E22", "Celular moderno", 94445.00, 10);
+VALUES(1, 1, "MOTOROLA E22", "
+Motorola Moto E22
+El Motorola Moto E22 es la propuesta más económica de Motorola. Se trata de un smartphone Android con pantalla IPS de 6.5 pulgadas a resolución HD+ y tasa de refresco de 90Hz. Por dentro, encontramos un procesador MediaTek Helio G37 acompañado de 4GB de RAM y 64GB de almacenamiento interno expandible. Una cámara dual de 16MP + 2MP se ubica en su posterior, mientras que la cámara selfie al frente es de 5MP. Alimentado por una batería de 4020 mAh, el Moto e22 completa sus características con parlantes stereo, lector de huellas lateral, diseño repelente al agua y Android 12.", 94445.00, 10);
 
 INSERT INTO products
 (id_category, id_brand, name, description, price, discount)
-VALUES(1, 2, "SAMSUNG S21", "Celular moderno", 360000.00, 5);
+VALUES(1, 2, "SAMSUNG S21", "El Samsung Galaxy S21 marca la llegada de la nueva generación de flagships de Samsung para el 2021. El Galaxy S21 cuenta con una pantalla Dynamic AMOLED de 6.2 pulgadas a resolución Full HD+, con tasa de refresco de 120 Hz y protegida por Gorilla Glass Victus. Por dentro, encontramos un procesador Exynos 2100 - en su versión internacional - o Snapdragon 888 para la versión USA, China y Corea. En ambos casos, la memoria RAM es de 8GB con 128GB o 256GB de almacenamiento interno pero sin posibilidad de expansión. En el posterior del Galaxy S21 observamos una cámara triple con lente wide de 12MP, lente telefoto de 64MP y lente ultrawide de 12MP y al frente la cámara es de 10MP, capaz de capturar video 4K. El resto de las características del Galaxy S21 incluyen parlantes stereo con sonido de alta fidelidad de AKG, batería de 4000 mAh de carga rápida, soportando también carga inalámbrica y reversible, lector de huellas integrado en la pantalla, resistencia al polvo y agua y corre Android 11 con la interfaz One UI.", 360000.00, 5);
 
 INSERT INTO products
 (id_category, id_brand, name, description, price, discount)
-VALUES(1, 1, "MOTO EDGE 30 NEO", "Celular moderno", 222000.00, 30);
+VALUES(1, 1, "MOTO EDGE 30 NEO", "El Motorola Edge 30 Neo es un smartphone Android con una pantalla P-OLED de 6.28 pulgadas a resolución FHD+ y tasa de refresco de 120Hz. Potenciando por un procesador Snapdragon 695, el Edge 30 Neo cuenta con 6GB o 8GB de RAM con hasta 256GB de almacenamiento interno no expandible. La cámara trasera es dual, con un sensor principal de 64MP con OIS y una cámara ultrawide de 13MP y su cámara selfie es de 32MP. Una batería de 4020 mAh de carga rápida alimenta al Motorola Edge 30 Neo, que completa sus características con un lector de huellas debajo de la pantalla, parlantes stereo, resistencia al salpicaduras y corre Android 12.", 222000.00, 30);
 
 SELECT * FROM categories
 WHERE id = 1;
@@ -48,7 +50,9 @@ INSERT INTO products
 VALUES(2, 2, "CARGADOR SAMSUNG", "Reloj inteligente", 11000.00, 0);
 
 UPDATE products
-SET description = "Cargador con carga rápida"
+SET description = "El Samsung Cargador de Pared Fast USB C proporciona una carga rápida para los dispositivos compatibles. Usá el cargador de pared con un cable de carga oficial Samsung de tipo C a tipo C para obtener resultados óptimos.
+
+De hecho, con este cargador vas a poder utilizar todos tus dispositivos tecnológicos como nunca antes."
 WHERE id = 4;
 
 SELECT * FROM products;
