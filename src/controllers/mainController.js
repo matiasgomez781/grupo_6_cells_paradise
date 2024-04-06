@@ -1,3 +1,4 @@
+const usersService = require("../data/usersService");
 const mainService = require("../model/services/mainService");
 const productService = require("../model/services/productService");
 
@@ -8,10 +9,16 @@ module.exports = {
       let celulares = await mainService.getBy(1);
       let accesorios = await mainService.getBy(2);
 
+      //Traer un usuario para usarlo en la vista del header
+      const userLogged = await usersService.getById(
+        req.session.userLogged ? req.session.userLogged.id : null
+      );
+
       res.render("./main/index", {
         celulares,
         accesorios,
-        todasLasMarcas
+        todasLasMarcas,
+        userLogged,
       });
     } catch (error) {
       console.log("ASDASDADASDASDASD");
