@@ -37,10 +37,9 @@
   <nav class="header-navBar">
     <ul class="menu-list">
       <li><a href="/products">TODOS NUESTROS PRODUCTOS</a></li>
-      <li><a href="/products/Samsung">SAMSUNG</a></li>
-      <li><a href="/products/Apple">IPHONE</a></li>
-      <li><a href="/products/Motorola">MOTOROLA</a></li>
-      <li><a href="#accesorios">ACCESORIOS</a></li>
+      <% locals.marcas.forEach(marca => { %>
+        <li><a href="/products/<%= marca.name %>"><%=marca.name %></a></li>
+        <%}) %>
     </ul>
   </nav>
 </nav>
@@ -48,9 +47,8 @@
 <nav class="header-navBar">
   <ul class="menu-list">
     <li><a href="/products">TODOS NUESTROS PRODUCTOS</a></li>
-    <li><a href="/products/Samsung">SAMSUNG</a></li>
-    <li><a href="/products/Apple">IPHONE</a></li>
-    <li><a href="/products/Motorola">MOTOROLA</a></li>
-    <li><a href="#accesorios">ACCESORIOS</a></li>
+    <% locals.marcas.forEach(marca => { %>
+    <li><a href="/products/<%= marca.name %>"><%=marca.name %></a></li>
+    <%}) %>
   </ul>
 </nav>
