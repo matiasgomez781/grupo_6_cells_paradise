@@ -9,4 +9,6 @@ router.get("/users/:id", apiController.userDetail);
 router.get("/products", apiController.products);
 router.get("/products/:id", apiController.productDetail);
 
+router.get("/brands", apiController.brands);
+
 module.exports = router;
