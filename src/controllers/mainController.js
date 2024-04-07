@@ -11,10 +11,9 @@ module.exports = {
       res.render("./main/index", {
         celulares,
         accesorios,
-        todasLasMarcas
+        todasLasMarcas,
       });
     } catch (error) {
-      console.log("ASDASDADASDASDASD");
       console.log(error.message);
       return [];
     }

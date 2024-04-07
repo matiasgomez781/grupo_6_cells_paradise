@@ -11,8 +11,24 @@
   </form>
 
   <div class="header-main account-cart">
-    <a class="regicon" href="/users/login"> <i class="fa-solid fa-user"></i> MI CUENTA </a>
-    <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i> MI CARRITO </a>
+    <a class="regicon" href="/users/login">
+      <i class="fa-solid fa-user"></i> MI CUENTA
+    </a>
+
+    <a href="/productCart"
+      ><i class="fa-solid fa-cart-shopping"></i> MI CARRITO
+    </a>
+
+    <!--Boton de cerrar sesion, solo si el usuario esta logeado-->
+    <% if (locals.userLogged) { %>
+    <form action="/users/logout" method="post">
+      <button type="submit">
+        <i class="fa-solid fa-right-from-bracket"></i>
+      </button>
+    </form>
+    <% } %>
+
+
   </div>
 </section>
 
@@ -21,10 +37,9 @@
   <nav class="header-navBar">
     <ul class="menu-list">
       <li><a href="/products">TODOS NUESTROS PRODUCTOS</a></li>
-      <li><a href="/products/Samsung">SAMSUNG</a></li>
-      <li><a href="/products/Apple">IPHONE</a></li>
-      <li><a href="/products/Motorola">MOTOROLA</a></li>
-      <li><a href="#accesorios">ACCESORIOS</a></li>
+      <% locals.marcas.forEach(marca => { %>
+        <li><a href="/products/<%= marca.name %>"><%=marca.name %></a></li>
+        <%}) %>
     </ul>
   </nav>
 </nav>
@@ -32,9 +47,8 @@
 <nav class="header-navBar">
   <ul class="menu-list">
     <li><a href="/products">TODOS NUESTROS PRODUCTOS</a></li>
-      <li><a href="/products/Samsung">SAMSUNG</a></li>
-      <li><a href="/products/Apple">IPHONE</a></li>
-      <li><a href="/products/Motorola">MOTOROLA</a></li>
-      <li><a href="#accesorios">ACCESORIOS</a></li>
+    <% locals.marcas.forEach(marca => { %>
+    <li><a href="/products/<%= marca.name %>"><%=marca.name %></a></li>
+    <%}) %>
   </ul>
 </nav>

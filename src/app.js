@@ -8,6 +8,8 @@ const app = express();
 
 const indexRouter = require("./routes/index.routes");
 const loginMid = require("./middlewares/loginMid");
+const userCredentialsMid = require("./middlewares/userCredentialsMid");
+const obtenerMarcasMid = require("./middlewares/obtenerMarcasMid");
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
@@ -22,6 +24,10 @@ app.use(
 );
 app.use(cookieParser());
 app.use(loginMid);
+app.use(userCredentialsMid);
+app.use(obtenerMarcasMid);
+
+
 
 // Config de cors sin dependencia
 app.use((req, res, next) => {

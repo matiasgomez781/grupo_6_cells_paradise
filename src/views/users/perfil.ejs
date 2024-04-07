@@ -17,6 +17,7 @@
     <header><%- include("../partials/header.ejs") %></header>
 
     <main>
+      <section class="perfil-section">
 
       <% if (user) { %>
 
@@ -40,20 +41,10 @@
             <li>Teléfono: <%= user.phone %></li>
           </ul>
         </section>
-    
-        <section class="descripcion">
-          <h4>Acerca de mí</h4>
-          <p><%= user.comentario %></p>
-        </section>
-      </div>
-    
-      <div class="opciones">
-        <form action="/users/logout" method="post">
-          <button type="submit">Cerrar Sesión</button>
-        </form>
       </div>
 
       <% } %>
+    </section>
     </main>
     
 
