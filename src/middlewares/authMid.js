@@ -1,9 +1,15 @@
-let authMid = (req,res,next) => {
-    if(req.session.userLogged) {
-        return res.redirect("/users/profile/" + req.session.userLogged.id);
+let authMid = async (req, res, next) => {
+  try {
+    const userLogged = await req.session.userLogged;
+    if (userLogged) {
+      return res.redirect("/users/profile/" + userLogged.id);
     }
+  } catch (error) {
+    console.log(error.message);
+    return next(error);
+  }
 
-    next();
-}
+  next();
+};
 
 module.exports = authMid;

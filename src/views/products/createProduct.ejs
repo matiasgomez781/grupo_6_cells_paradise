@@ -20,26 +20,26 @@
             
             <p class="email">
                 <label for="name">Nombre</label>
-                <input type="name" name="name" id="name" placeholder="Nombre del producto" required>
+                <input type="name" name="name" id="name" placeholder="Nombre del producto" >
             </p>
             <p class="clave">
                 <label for="price">Precio</label>
-                <input type="number" name="price" id="price" placeholder="Precio del producto" required>
+                <input type="number" name="price" id="price" placeholder="Precio del producto" >
             </p>
             <p class="clave2">
                 <label for="discount">Descuento</label>
-                <input type="number" name="discount" id="discount" placeholder="Porcentaje de descuento" required>
+                <input type="number" name="discount" id="discount" placeholder="Porcentaje de descuento" >
             </p>
             <p class="telefono">
                 <label for="image">Imágenes</label>
-                <input type="file" name="images" id="image" accept="image/*" required multiple>
+                <input type="file" name="images" id="image" accept="image/*" multiple>
             </p>
             
             </section>
             <section class="second">
             
             <p> <label>Categoría</label>
-                <select class="trato" name="category" id="category" required>
+                <select class="trato" name="category" id="category" >
                     <option>Elije la categoría</option>
                     <% categories.forEach(category => { %>
                     <option value="<%= category.id %>"><%= category.name %></option>
@@ -52,17 +52,14 @@
             </p>
             <p class="email">
                 <label for="brand">Marca</label>
-                <select name="brand" id="brand" required>
+                <select name="brand" id="brand" >
                     <option>Elije la marca</option>
                     <% brands.forEach(brand => { %>
                     <option value="<%= brand.id %>"><%= brand.name %></option>
                     <% }) %>
                 </select>
             </p>
-            <!-- <p class="email">
-                <label for="stock">Stock</label>
-                <input type="number" name="stock" id="stock" placeholder="Cantidad disponible" required>
-            </p> -->
+            
             <p class="email">
                 <label>Elije el o los colores</label>
                 <% colors.forEach(color => { %>
@@ -92,7 +89,9 @@
   <footer>
     <%- include('../partials/footer.ejs') %>
   </footer>
-  
+ 
+  <script src="/js/productValidations.js"></script>
 
 </body>
+
 </html>

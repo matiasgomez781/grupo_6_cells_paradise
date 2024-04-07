@@ -67,6 +67,32 @@ module.exports = {
     }
   },
 
+  // Construir un array para poder trabajar con las imágenes
+  imagesConverter: (files) => {
+    let images = [];
+
+    files.forEach((img) => {
+      images.push({ filename: img.filename });
+    });
+
+    return images;
+  },
+
+  imagesCreate: async function (images, idProduct) {
+    try {
+      for (const img of images) {
+        await db.Image.create({
+          url: img.filename,
+          id_product: idProduct,
+        });
+      }
+      return "Imágenes creadas con éxito";
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
+  },
+
   save: async function ({
     name,
     price,
@@ -84,39 +110,36 @@ module.exports = {
       );
 
       // Por cada imagen que exista, asociarlas con el producto
-      await images.forEach((img) => {
-        db.Image.create({
-          url: img.filename,
-          id_product: productCreated.id,
-        });
-      });
+      this.imagesCreate(images, productCreated.id);
 
       // Asociar el o los colores elegidos con el producto
-      await colors.forEach((color) => {
-        db.ProductColor.create({
-          id_color: color,
+      // Primero identificar si se ha elegido más de un color
+      if (colors.length > 1) {
+        // Cuando sea más de uno, es un array. Hay que asociar a cada color
+        colors.forEach(async (color) => {
+          await db.ProductColor.create({
+            id_color: color,
+            id_product: productCreated.id,
+          });
+        });
+      } else {
+        // Cuando se elige un solo color se lo asocia directamente
+        await db.ProductColor.create({
+          id_color: colors,
           id_product: productCreated.id,
         });
-      });
+      }
     } catch (error) {
       console.log(error.message);
       return [];
     }
   },
 
-  update: async function (product, idProduct) {
+  deleteImg: async function (imgId) {
     try {
-      let productToEdit = await this.getOne(idProduct);
-
-      productToEdit.name = product.name;
-      productToEdit.price = product.price;
-      productToEdit.description = product.description;
-      productToEdit.category = product.category;
-      productToEdit.discount = product.discount;
-
-      return await db.Product.update(productToEdit, {
+      return await db.Image.destroy({
         where: {
-          id: idProduct,
+          id: imgId,
         },
       });
     } catch (error) {
@@ -125,9 +148,97 @@ module.exports = {
     }
   },
 
+  update: async function (
+    { name, price, description, discount, category, brand, images, colors },
+    idProduct
+  ) {
+    try {
+      if (images.length) {
+        // fs.unlinkSync(
+        //   path.join(
+        //     __dirname,
+        //     "/images/products",
+        //     files.filename
+        //   )
+        // );
+
+        this.imagesCreate(images, idProduct);
+      }
+
+      if (colors.length) {
+        let colorRelated = await db.ProductColor.findAll({
+          where: {
+            id_product: idProduct,
+          },
+        });
+
+        let colorExists = [];
+
+        colorRelated.forEach((col) =>
+          colorExists.push(col.dataValues.id_color)
+        );
+
+        let colorsToCreate = colors.filter((col) => {
+          if (!colorExists.includes(parseInt(col))) {
+            return col;
+          }
+        });
+
+        for (let i = 0; i < colorExists.length; i++) {
+          if (!colors.includes(colorExists[i].toString())) {
+            await db.ProductColor.destroy({
+              where: {
+                id_color: colorExists[i],
+                id_product: idProduct,
+              },
+            });
+          }
+        }
+
+        for (let i = 0; i < colorsToCreate.length; i++) {
+          await db.ProductColor.create({
+            id_color: colorsToCreate[i],
+            id_product: idProduct,
+          });
+        }
+      }
+
+      return await db.Product.update(
+        {
+          name,
+          price,
+          description,
+          discount,
+          category,
+          brand,
+        },
+        {
+          where: {
+            id: idProduct,
+          },
+        }
+      );
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
+  },
+
   delete: async function (id) {
     try {
-      return await db.Product.destroy({
+      await db.Image.destroy({
+        where: {
+          id_product: id,
+        },
+      });
+
+      await db.ProductColor.destroy({
+        where: {
+          id_product: id,
+        },
+      });
+
+      await db.Product.destroy({
         where: {
           id: id,
         },
@@ -137,7 +248,26 @@ module.exports = {
       return [];
     }
   },
-};
+
+  obtenerProductosPorMarca: async function (nombreMarca) {
+    try {
+      const marca = await db.Brand.findOne({
+        where: { name: nombreMarca },
+      });
+  
+      const productos = await db.Product.findAll({
+        where: { id_brand: marca.id },
+        include: ["images", "brand", "colors", "stock"],
+      });
+  
+      return productos;
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
+  },
+
+}
 
 function Product(name, price, description, discount, id_category, id_brand) {
   this.name = name;

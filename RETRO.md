@@ -105,3 +105,34 @@ Sabiendo que todos somos partes importantes dentro del equipo y que debemos func
 ## Dejar de Hacer
 
 *) Dejar tareas para resolver en ultima hora
+
+
+## Retrospectiva del Quinto Sprint
+
+
+*) Durante este el transcurso del sprint notamos que nuestro rendimiento bajó un poco, y eso nos afectó al momento de terminar las tareas.
+## Comenzar a Hacer
+
+*) Deberiamos retomar la iniciativa que tuvimos cuando iniciamos el proyecto.
+
+*) Hacer reuniones grupales para ver el contenido teórico en forma conjunta de modo de ayudar a resolver dudas que puedan llegar a plantearse individualmente.
+  
+## Hacer Mas
+
+*) Continuar trabajando en el tablero de Trello.
+
+*) Seguir mejorando el front end de la página.
+
+## Continuar Haciendo
+
+*) Seguir trabajando de a pares para la realización de las tareas.
+
+*) Continuar con las reuniones grupales para mostrar avances y destrabar bloqueantes entre todos
+
+
+
+## Dejar de Hacer
+
+*) Dejar de posponer tareas que quedaron pendiente del sprint anterior.
+
+*) Dejar de incumplir los dias acordados para las reuniones.

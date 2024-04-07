@@ -1,22 +1,24 @@
-const fs = require("fs");
-const path = require("path");
 const bcrypt = require("bcryptjs");
 const db = require("../model/database/models"); // Importa el modelo de usuario definido con Sequelize
 
-const usersFilePath = path.join(__dirname, "/users.json");
-
 const usersService = {
-  users: JSON.parse(fs.readFileSync(usersFilePath, "utf-8")),
-
-  getAll: function () {
-    return this.users;
+  getAll: async () => {
+    try {
+      return await db.User.findAll(/* {
+        include: ["role", "addresses", "carts", "purchases"],
+      } */);
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
   },
-  
+
   save: async (userData) => {
     try {
-      userData.id_rol = 1;// Agrega id_rol al objeto userData antes de guardar el usuario
+      userData.id_rol = 2; // Agrega id_rol al objeto userData antes de guardar el usuario
+      //Rol 1 es admin, Rol 2 es usuario invitado
       userData.password = bcrypt.hashSync(userData.password, 10); // Hashear la contraseña
-      const newUser = await db.User.create(userData);// Crea un nuevo usuario en la base de datos utilizando el modelo User
+      const newUser = await db.User.create(userData); // Crea un nuevo usuario en la base de datos utilizando el modelo User
       return newUser; // Devuelve el usuario creado
     } catch (error) {
       throw new Error("Error al guardar el usuario: " + error.message);
@@ -37,15 +39,20 @@ const usersService = {
     try {
       await db.User.update(userData, { where: { id: userId } });
     } catch (error) {
-      throw new Error("Error al actualizar el usuario en la base de datos: " + error.message);
+      throw new Error(
+        "Error al actualizar el usuario en la base de datos: " + error.message
+      );
     }
   },
-  
-  findByField: function (field, text) {
-    let allUsers = this.getAll();
-    let userFound = allUsers.find((oneUser) => oneUser[field] === text);
-    return userFound;
-  }
+
+  findByField: async function (field, email) {
+    try {
+      let userFound = await db.User.findOne({ where: { email } });
+      return userFound;
+    } catch (error) {
+      throw new Error("Error al buscar usuario por campo" + error.message);
+    }
+  },
 };
 
 module.exports = usersService;

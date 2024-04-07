@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+
+    <% if (user) { %>
     <title>Perfil de <%= user.first_name + " " + user.last_name %></title>
+
+    <% } %>
+
     <%- include("../partials/head.ejs") %>
+
     <link rel="stylesheet" href="/css/perfil.css" />
+    
   </head>
 
   <body>
     <header><%- include("../partials/header.ejs") %></header>
 
     <main>
+
+      <% if (user) { %>
+
       <div class="perfil">
         <section class="avatar">
           <img
@@ -28,7 +38,6 @@
             <li>Nombre: <%= user.first_name + " " + user.last_name %></li>
             <li>Email: <%= user.email %></li>
             <li>Teléfono: <%= user.phone %></li>
-            <li>Trato: <%= user.trato %></li>
           </ul>
         </section>
     
@@ -43,6 +52,8 @@
           <button type="submit">Cerrar Sesión</button>
         </form>
       </div>
+
+      <% } %>
     </main>
     
 
