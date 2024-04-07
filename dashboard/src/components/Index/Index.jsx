@@ -6,6 +6,7 @@ import Celulares from "../Celulares/Celulares";
 import Product from "../Products/Products";
 import { Route, Routes } from "react-router-dom";
 import User from "../Users/User";
+import LastUserList from "../LastUsers/LastUserList";
 
 export default function Index() {
   return (
@@ -13,6 +14,7 @@ export default function Index() {
       <main className="content-wrap">
         <Product />
         <User />
+        <LastUserList />
       </main>
     </>
   );
