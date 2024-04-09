@@ -95,6 +95,15 @@ module.exports = {
       return [];
     }
   },
+  // Método para eliminar una imagen de un producto
+  deleteImg: async (req, res) => {
+    try {
+      return await productService.deleteImg(req.params.imgId);
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
+  },
   // Método para modificar el producto
   editUpdate: async (req, res) => {
     try {
@@ -105,7 +114,7 @@ module.exports = {
         req.body.colors = [...req.body.colors];
       }
 
-      await productService.update(req.body, req.params.id, req.files);
+      await productService.update(req.body, req.params.id);
 
       return res.redirect(`/products/detail/${req.params.id}`);
     } catch (error) {
@@ -131,4 +140,18 @@ module.exports = {
       return [];
     }
   },
+
+  filtrarPorMarca: async (req,res) => {
+    try {
+      const marca = req.params.brand;
+      const products = await productService.obtenerProductosPorMarca(marca);
+
+      return res.render("./products/productosFiltrados", {products});
+
+      
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
+  }
 };

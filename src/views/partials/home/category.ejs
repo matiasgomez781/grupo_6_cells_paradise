@@ -12,20 +12,20 @@
         <button type="button" class="btn-Add">AGREGAR</button>
 
         <p class="priceProduct">
-          $<%= Math.floor(product.price - (product.price *
-          (product.discount/100))) %>
+          $<%= product.price - (product.price *
+          (product.discount/100)) %>
         </p>
       </div>
 
       <div class="priceDiscount">
-        <p class="oldPrice">$<%= parseInt(product.price) %></p>
+        <p class="oldPrice">$<%= product.price %></p>
         <p class="discount"><%= product.discount %>% Off</p>
       </div>
       <% } else { %>
       <div class="btn-price">
         <button type="button" class="btn-Add">AGREGAR</button>
 
-        <p class="priceProduct">$<%= parseInt(product.price) %></p>
+        <p class="priceProduct">$<%= product.price %></p>
       </div>
       <% } %>
 

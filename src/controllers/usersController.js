@@ -60,6 +60,7 @@ const usersController = {
   // Método para manejar la actualización del usuario
   update: async (req, res) => {
     try {
+      req.body.avatar = req.file.filename;
       const userId = req.params.id;
       const updatedUserData = req.body;
       await usersService.update(userId, updatedUserData);
@@ -67,6 +68,7 @@ const usersController = {
     } catch (error) {
       console.error("Error al actualizar usuario:", error);
       res.status(500).send("Error al actualizar usuario");
+    
     }
   },
 

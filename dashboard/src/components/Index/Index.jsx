@@ -1,16 +1,10 @@
-import LastUsers from "../LastUsers/LastUsers"
-import Product from "../Products/Products";
-import User from "../Users/User";
-import Brand from "../Brands/Brands"
+import MenuWrap from "../MenuWrap/MenuWrap";
 
 export default function Index() {
   return (
     <>
       <main className="content-wrap">
-        <Product />
-        <User />
-        <Brand />
-        <LastUsers />
+        <MenuWrap />
       </main>
     </>
   );
