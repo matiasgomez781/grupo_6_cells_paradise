@@ -150,6 +150,53 @@ INSERT INTO images
 (id_product, url)
 VALUES(7, "Apple-USB-Power-Adapter-20W.jpg");
 
+INSERT INTO images
+(id_product, url)
+VALUES(8, "Apple Watch Series 8.png");
+
+INSERT INTO images
+(id_product, url)
+VALUES(9, "iPhone 11 PRO.png");
+
+INSERT INTO images
+(id_product, url)
+VALUES(10, "Samsung A54.png");
+
+INSERT INTO images
+(id_product, url)
+VALUES(11, "Samsung A54.png");
+
+INSERT INTO images
+(id_product, url)
+VALUES(12, "Samsung-Galaxy-S23-Ultra-5G-512GB-12GB.png");
+
+INSERT INTO images
+(id_product, url)
+VALUES(13, "Samsung-Galaxy-S24-Plus-5G-256GB.png");
+
+INSERT INTO images
+(id_product, url)
+VALUES(14, "Samsung-Galaxy-Z-Flip5-512GB.png");
+
+INSERT INTO images
+(id_product, url)
+VALUES(15, "motorola-edge-40-pro-256gb.png");
+
+INSERT INTO images
+(id_product, url)
+VALUES(16, "funda-spigen-liquid-crystal-samsung-galaxy-note-8.png");
+
+INSERT INTO images
+(id_product, url)
+VALUES(17, "Funda-Spigen-Ultra-Hybrid-iPhone-11-Pro-Max.png");
+
+INSERT INTO images
+(id_product, url)
+VALUES(18, "Funda-Spigen-Tough-Armor-Apple-iPhone-7.png");
+
+
+
+
 UPDATE images
 SET url = "CARGADOR SAMSUNG.png"
 WHERE id = 4;
