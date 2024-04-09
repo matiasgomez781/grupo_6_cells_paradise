@@ -17,6 +17,9 @@
     <header><%- include("../partials/header.ejs") %></header>
 
     <main>
+
+      <h1>Perfil de: <%= user.first_name + " " + user.last_name %></h1>
+
       <section class="perfil-section">
 
       <% if (user) { %>
