@@ -31,6 +31,10 @@ module.exports = {
     res.render("./main/trabaja");
   },
 
+  contacto: (req, res) => {
+    res.render("./main/contacto");
+  },
+
   search: async (req, res) => {
     try {
       let productSearched = await mainService.search(req.query.keywords);

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/registro.css">    
+</head>
+<body>
+  
+  <header>
+    <%- include('../partials/header.ejs') %>
+  </header>    
+
+  
+<main>
+    <section class="register-section">
+        <h2 class="login-section-title">Formulario de contacto</h2>
+    <form action="enviar.php" method="post">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="email">Correo electrónico:</label><br>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="telefono">Número de teléfono (opcional):</label><br>
+        <input type="tel" id="telefono" name="telefono"><br>
+
+        <label for="asunto">Asunto:</label><br>
+        <input type="text" id="asunto" name="asunto" required><br>
+
+        <label for="mensaje">Mensaje:</label><br>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br>
+
+        <p>¿Cómo prefieres ser contactado?</p>
+        <input type="radio" id="contacto-email" name="contacto" value="email" checked>
+        <label for="contacto-email">Correo electrónico</label><br>
+        <input type="radio" id="contacto-telefono" name="contacto" value="telefono">
+        <label for="contacto-telefono">Teléfono</label><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+    <br>
+    <p class="button">
+        <input class="volver" type="button" value="Volver Atras" onClick="history.go(-1);">
+    </p>
+    <br>
+</main>
+
+<footer>
+    <%- include('../partials/footer.ejs') %>
+  </footer>
+
+</html>
