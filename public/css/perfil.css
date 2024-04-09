@@ -4,7 +4,7 @@
     align-items: center;
     flex-direction: column;
     background-color: #f2f2f2;
-    width: 80%;
+    width: 50%;
     border-radius: 10px;
     margin-top: 20px;
 }
@@ -93,6 +93,28 @@ button:hover{
   text-align: center;
 }
 
+.formularios-editar input{
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.boton-borrar-usuario{
+  background-color: red; /* Color de fondo normal */
+    border: none; /* Quita el borde */
+    padding: 10px 20px;
+    margin-left: 5px;
+}
+
+.boton-borrar-usuario:hover {
+  background-color: darkred;
+}
+
+.contenedor-boton-borrar{
+  align-self: self-end;
+}
+
 /*Media Querys*/
 
 /*Tablets*/
@@ -129,6 +151,7 @@ button:hover{
   .img-editar{
     width: 30%;
     margin-right: 150px;
+    margin-left: 5%;
   }
   
 }
