@@ -250,6 +250,7 @@ select * from roles;
 INSERT INTO users (id_rol, first_name, last_name, email, password, phone, avatar, birth_date, dni)
 VALUES
     (1, 'Admin', 'CellsParadise', 'admin@cellsparadise.com', '$2a$10$hqGZU/qKno/sIpWRDDkD6O.f7n8XJaqgUzIr8C0Xjj4an75cGHyLe', '3855800721', 'logo_cellsparadise.png', '1990-05-15', '12345678A'),
-    (2, 'Invitado', 'CellsParadise', 'invitado@cellsparadise.com', '$2a$10$hqGZU/qKno/sIpWRDDkD6O.f7n8XJaqgUzIr8C0Xjj4an75cGHyLe', '3856970155', 'logo_cellsparadise.png', '1992-08-20', '87654321B');
+    (2, 'Invitado', 'CellsParadise', 'invitado@cellsparadise.com', '$2a$10$hqGZU/qKno/sIpWRDDkD6O.f7n8XJaqgUzIr8C0Xjj4an75cGHyLe', '3856970155', 'logo_cellsparadise.png', '1992-08-20', '87654321B'),
+    (1, 'Matias', 'Gomez', 'matiasgomez@cellsparasdise.com', '$2a$10$wSNMZyfPsM2cXN.pH.VdWON5k4kpjX6RMBlX/8/vTe7BZoJsd9j02', '3855017345', '1712694251662_img_.png', '1992-03-31', '87654321B');
 
 select * from users;
