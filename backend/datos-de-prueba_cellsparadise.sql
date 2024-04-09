@@ -55,6 +55,58 @@ INSERT INTO products
 VALUES(2, 3, 'Apple USB-Power Adapter 20W', 'Adaptador original Apple para iPhone 8 en adelante con carga rápida, no incluye cable USB.', 40000.00, 10);
 
 
+-- Apple Watch Series 8
+INSERT INTO products
+(id_category, id_brand, name, description, price, discount)
+VALUES(2, 3, 'Apple Watch Series 8', 'El Apple Watch Series 8 es la última generación de smartwatches de Apple, con nuevas funciones y un diseño mejorado.', 145000.00, 0));
+
+-- iPhone 11 PRO
+INSERT INTO products
+(id_category, id_brand, name, description, price, discount)
+VALUES(1, 3, 'iPhone 11 PRO', 'El iPhone 11 PRO es un smartphone de gama alta con un potente rendimiento y una excelente calidad de cámara.', 750000.00, 15));
+
+-- Samsung A54
+INSERT INTO products
+(id_category, id_brand, name, description, price, discount)
+VALUES(1, 2, 'Samsung A54', 'El Samsung A54 es un smartphone de gama media con un diseño elegante y características sólidas.', 425000.00, 25));
+
+-- Samsung Galaxy S23 Ultra 5G
+INSERT INTO products
+(id_category, id_brand, name, description, price, discount)
+VALUES(1, 2, 'Samsung Galaxy S23 Ultra 5G', 'El Samsung Galaxy S23 Ultra 5G es un smartphone de alta gama con tecnología 5G y características avanzadas.', 1320000.00, 20));
+
+-- Samsung Galaxy S24 Plus 5G 256GB
+INSERT INTO products
+(id_category, id_brand, name, description, price, discount)
+VALUES(1, 2, 'Samsung Galaxy S24 Plus 5G 256GB', 'El Samsung Galaxy S24 Plus 5G 256GB es un smartphone premium con amplio almacenamiento y conectividad 5G.', 1635000.00, 30));
+
+-- Samsung Galaxy Z Flip5 512GB
+INSERT INTO products
+(id_category, id_brand, name, description, price, discount)
+VALUES(1, 2, 'Samsung Galaxy Z Flip5 512GB', 'El Samsung Galaxy Z Flip5 512GB es un smartphone plegable con gran capacidad de almacenamiento.', 2350000.00, 45));
+
+-- Motorola Edge 40 Pro 256GB
+INSERT INTO products
+(id_category, id_brand, name, description, price, discount)
+VALUES(1, 1, 'Motorola Edge 40 Pro 256GB', 'El Motorola Edge 40 Pro 256GB es un smartphone de alta gama con un potente rendimiento y amplio almacenamiento.', 830000.00, 10));
+
+-- Funda Spigen Liquid Crystal Samsung Galaxy Note 8
+INSERT INTO products
+(id_category, id_brand, name, description, price, discount)
+VALUES(2, 2, 'Funda Spigen Liquid Crystal Samsung Galaxy Note 8', 'La funda Spigen Liquid Crystal proporciona protección y estilo para tu Samsung Galaxy Note 8.', 25000.00, 5));
+
+-- Funda Spigen Ultra Hybrid iPhone 11 Pro Max
+INSERT INTO products
+(id_category, id_brand, name, description, price, discount)
+VALUES(2, 3, 'Funda Spigen Ultra Hybrid iPhone 11 Pro Max', 'La funda Spigen Ultra Hybrid ofrece protección duradera y transparencia para tu iPhone 11 Pro Max.', 18000.00, 5));
+
+-- Funda Spigen Tough Armor Apple iPhone 7
+INSERT INTO products
+(id_category, id_brand, name, description, price, discount)
+VALUES(2, 3, 'Funda Spigen Tough Armor Apple iPhone 7', 'La funda Spigen Tough Armor proporciona una protección extrema para tu iPhone 7 con un diseño resistente.', 12000.00, 0));
+
+
+
 SELECT * FROM categories
 WHERE id = 1;
 
