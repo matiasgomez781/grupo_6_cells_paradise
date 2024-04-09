@@ -9,13 +9,12 @@ function UltimosUsuariosCreados() {
     fetch("http://localhost:3000/api/users")
       .then((response) => response.json())
       .then((users) => {
-        let ultimosUsuarios = [];
-        ultimosUsuarios.push(users.pop())
-        console.log (ultimosUsuarios)
-        return setUltimosUsuarios(ultimosUsuarios);
+        let ultimoUsuario = [];
+        ultimoUsuario.push(users.pop());
+        setUltimosUsuarios(ultimoUsuario);
       });
+  }, []);
 
-    }, []);
   return (
     <>
       <main className="content-wrap">
@@ -31,9 +30,11 @@ function UltimosUsuariosCreados() {
                 <th>Email</th>
               </tr>
             </thead>
-            {ultimosUsuarios.map((ultimoUsuario) => {
-              <LastUserList users={ultimoUsuario} key={ultimoUsuario.id} />;
-            })}
+            <tbody>
+              {ultimosUsuarios.map((ultimoUsuario) => (
+                <LastUserList user={ultimoUsuario} key={ultimoUsuario.id} />
+              ))}
+            </tbody>
           </table>
         </section>
       </main>
