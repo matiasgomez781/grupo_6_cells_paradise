@@ -1,6 +1,7 @@
+import LastUsers from "../LastUsers/LastUsers"
 import Product from "../Products/Products";
 import User from "../Users/User";
-import LastUser from "../LastUsers/LastUser";
+import Brand from "../Brands/Brands"
 
 export default function Index() {
   return (
@@ -9,7 +10,7 @@ export default function Index() {
         <Product />
         <User />
         <Brand />
-        <LastUser />
+        <LastUsers />
       </main>
     </>
   );

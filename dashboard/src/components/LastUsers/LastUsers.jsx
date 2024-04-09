@@ -8,9 +8,14 @@ function UltimosUsuariosCreados() {
   useEffect(() => {
     fetch("http://localhost:3000/api/users")
       .then((response) => response.json())
-      .then((data) => console.log(data.pop()))
-  }, []);
+      .then((users) => {
+        let ultimosUsuarios = [];
+        ultimosUsuarios.push(users.pop())
+        console.log (ultimosUsuarios)
+        return setUltimosUsuarios(ultimosUsuarios);
+      });
 
+    }, []);
   return (
     <>
       <main className="content-wrap">
