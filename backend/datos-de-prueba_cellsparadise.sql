@@ -42,6 +42,19 @@ INSERT INTO products
 (id_category, id_brand, name, description, price, discount)
 VALUES(1, 1, "MOTO EDGE 30 NEO", "El Motorola Edge 30 Neo es un smartphone Android con una pantalla P-OLED de 6.28 pulgadas a resolución FHD+ y tasa de refresco de 120Hz. Potenciando por un procesador Snapdragon 695, el Edge 30 Neo cuenta con 6GB o 8GB de RAM con hasta 256GB de almacenamiento interno no expandible. La cámara trasera es dual, con un sensor principal de 64MP con OIS y una cámara ultrawide de 13MP y su cámara selfie es de 32MP. Una batería de 4020 mAh de carga rápida alimenta al Motorola Edge 30 Neo, que completa sus características con un lector de huellas debajo de la pantalla, parlantes stereo, resistencia al salpicaduras y corre Android 12.", 222000.00, 30);
 
+INSERT INTO products
+(id_category, id_brand, name, description, price, discount)
+VALUES(1, 3, 'Apple iPhone 15 Pro Max', 'El Apple iPhone 15 Pro Max regresa con un mismo diseño pero con chasis de titanio que le otorga mayor resistencia y menor peso. El iPhone 15 Pro Max tiene una pantalla OLED de 6.7 pulgadas con tasa de refresco de 120Hz y está impulsado por un procesador Apple A17 Pro de seis núcleos. La cámara trasera del iPhone 15 Pro Max está liderada por un sensor de 48MP sumando una cámara ultrawide de 12MP y una cámara telefoto periscópica de 12MP con zoom óptico 5x. El iPhone 15 Pro Max reemplaza el puerto Lightning por un puerto USB-C, tiene parlantes estéreo, Face ID, carga inalámbrica, resistencia al polvo y agua y corre iOS 17.', 1500000.00, 40);
+
+INSERT INTO products
+(id_category, id_brand, name, description, price, discount)
+VALUES(2, 3, 'Apple AirPods 3', 'Si hablamos de auriculares, los AirPods son otra historia. Se activan y se conectan solos a tu iPhone, Apple Watch, iPad o Mac en cuanto los sacas del estuche. El audio comienza a sonar cuando te los pones y se detiene cuando te los quitas. Y puedes activar Siri con dos toques para ajustar el volumen, cambiar de canción, obtener indicaciones o hacer una llamada.', 120000.00, 10);
+
+INSERT INTO products
+(id_category, id_brand, name, description, price, discount)
+VALUES(2, 3, 'Apple USB-Power Adapter 20W', 'Adaptador original Apple para iPhone 8 en adelante con carga rápida, no incluye cable USB.', 40000.00, 10);
+
+
 SELECT * FROM categories
 WHERE id = 1;
 
@@ -73,9 +86,23 @@ INSERT INTO images
 (id_product, url)
 VALUES(4, "Reloj inteligente.png");
 
+INSERT INTO images
+(id_product, url)
+VALUES(5, "Apple-iPhone-15-Pro-Max-1TB.jpg");
+
+INSERT INTO images
+(id_product, url)
+VALUES(6, "Apple-AirPods-3-Generacion.jpg");
+
+INSERT INTO images
+(id_product, url)
+VALUES(7, "Apple-USB-Power-Adapter-20W.jpg");
+
 UPDATE images
 SET url = "CARGADOR SAMSUNG.png"
 WHERE id = 4;
+
+
 
 SELECT * FROM images;
 
