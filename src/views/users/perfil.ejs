@@ -18,7 +18,7 @@
 
     <main>
 
-      <h1>Perfil de: <%= user.first_name + " " + user.last_name %></h1>
+      <h1>Perfil de: <span style="color: blue;"><%= user.first_name + " " + user.last_name %></span></h1>
 
       <section class="perfil-section">
 
@@ -39,9 +39,11 @@
         <section class="datos">
           <h4>Datos principales y de contacto</h4>
           <ul class="lista">
+            <span style="font-size:larger">
             <li>Nombre: <%= user.first_name + " " + user.last_name %></li>
             <li>Email: <%= user.email %></li>
             <li>Teléfono: <%= user.phone %></li>
+          </span>
           </ul>
         </section>
       </div>

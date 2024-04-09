@@ -30,6 +30,12 @@ button:hover{
   width: 50%;
 }
 
+.img-editar{
+  border-radius: 150%;
+  width: 50%;
+}
+
+
 .perfil{
   display: flex;
   flex-direction: column;
@@ -42,6 +48,14 @@ button:hover{
   align-items: center;
   padding: 10px;
 }
+
+.avatar-editar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
 .editar-perfil{
   margin-top: 2%;
 }
@@ -69,6 +83,16 @@ button:hover{
   list-style: none;
 }
 
+.formularios-editar{
+  display: flex;
+  flex-direction: column;
+}
+
+.boton-guardar-cambios{
+  margin-top: 10px;
+  text-align: center;
+}
+
 /*Media Querys*/
 
 /*Tablets*/
@@ -92,6 +116,19 @@ button:hover{
   }
   .avatar{
     width: 40%;
+  }
+  .avatar-editar{
+    flex-direction: row;
+  }
+  
+  .boton-guardar-cambios{
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .img-editar{
+    width: 30%;
+    margin-right: 150px;
   }
   
 }
