@@ -154,31 +154,31 @@ VALUES(9, "SamsungA54.png");
 
 INSERT INTO images
 (id_product, url)
-VALUES(10, "Samsung-Galaxy-S23-Ultra-5G-512GB-12GB.png");
+VALUES(10, "Samsung-Galaxy-S23-Ultra-5G-512GB-12GB.jpg");
 
 INSERT INTO images
 (id_product, url)
-VALUES(11, "Samsung-Galaxy-S24-Plus-5G-256GB.png");
+VALUES(11, "Samsung-Galaxy-S24-Plus-5G-256GB.jpg");
 
 INSERT INTO images
 (id_product, url)
-VALUES(12, "Samsung-Galaxy-Z-Flip5-512GB.png");
+VALUES(12, "Samsung-Galaxy-Z-Flip5-512GB.jpg");
 
 INSERT INTO images
 (id_product, url)
-VALUES(13, "motorola-edge-40-pro-256gb.png");
+VALUES(13, "motorola-edge-40-pro-256gb.jpg");
 
 INSERT INTO images
 (id_product, url)
-VALUES(14, "funda-spigen-liquid-crystal-samsung-galaxy-note-8.png");
+VALUES(14, "funda-spigen-liquid-crystal-samsung-galaxy-note-8.jpg");
 
 INSERT INTO images
 (id_product, url)
-VALUES(15, "Funda-Spigen-Ultra-Hybrid-iPhone-11-Pro-Max.png");
+VALUES(15, "Funda-Spigen-Ultra-Hybrid-iPhone-11-Pro-Max.jpg");
 
 INSERT INTO images
 (id_product, url)
-VALUES(16, "Funda-Spigen-Tough-Armor-Apple-iPhone-7.png");
+VALUES(16, "Funda-Spigen-Tough-Armor-Apple-iPhone-7.jpg");
 
 /* Mostrar todas las imágenes */
 SELECT * FROM images;
@@ -230,8 +230,7 @@ SELECT * FROM roles;
 INSERT INTO users (id_rol, first_name, last_name, email, password, phone, avatar, birth_date, dni)
 VALUES
     (1, 'Admin', 'CellsParadise', 'admin@cellsparadise.com', '$2a$10$hqGZU/qKno/sIpWRDDkD6O.f7n8XJaqgUzIr8C0Xjj4an75cGHyLe', '3855800721', 'logo_cellsparadise.png', '1990-05-15', '12345678A'),
-    (2, 'Invitado', 'CellsParadise', 'invitado@cellsparadise.com', '$2a$10$hqGZU/qKno/sIpWRDDkD6O.f7n8XJaqgUzIr8C0Xjj4an75cGHyLe', '3856970155', 'logo_cellsparadise.png', '1992-08-20', '87654321B'),
-    (1, 'Matias', 'Gomez', 'matiasgomez@cellsparasdise.com', '$2a$10$wSNMZyfPsM2cXN.pH.VdWON5k4kpjX6RMBlX/8/vTe7BZoJsd9j02', '3855017345', '1712694251662_img_.png', '1992-03-31', '87654321B');
+    (2, 'Invitado', 'CellsParadise', 'invitado@cellsparadise.com', '$2a$10$hqGZU/qKno/sIpWRDDkD6O.f7n8XJaqgUzIr8C0Xjj4an75cGHyLe', '3856970155', 'logo_cellsparadise.png', '1992-08-20', '87654321B');
 
 /* Mostrar todos los usuarios */
 SELECT * FROM users;
