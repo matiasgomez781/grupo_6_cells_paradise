@@ -1,0 +1,24 @@
+.productImage {
+  width: 30%;
+}
+
+.discount {
+  color: red;
+  font-size: 1.4rem;
+}
+
+.subtitle {
+  color: black;
+}
+
+.contentProducts {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid grey;
+  border-radius: 10px;
+  box-shadow: rgba(9, 30, 66, 0.25) 5px 4px 8px -2px, rgba(9, 30, 66, 0.08) 5px 5px 0px 1px;
+}
+
+.products {
+  width: 50%;
+}

@@ -4,6 +4,7 @@ import Product from "../Products/Products";
 import User from "../Users/User";
 import Brand from "../Brands/Brands";
 import Categories from "../Categories/Categories";
+import OnSale from "../OnSales/OnSale";
 
 export default function MenuWrap() {
   return (
@@ -15,6 +16,7 @@ export default function MenuWrap() {
         <Brand />
         <LastUsers />
         <Categories />
+        <OnSale />
       </main>
     </>
   );
