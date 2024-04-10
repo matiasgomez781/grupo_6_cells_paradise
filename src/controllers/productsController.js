@@ -56,10 +56,10 @@ module.exports = {
       req.body.images = productService.imagesConverter(req.files);
 
       // Manejar errores de validación
-      const errors = validationResult(req);
+      /*const errors = validationResult(req);
       if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
-      }
+      }*/
 
       await productService.save(req.body); //, req.file
       return res.redirect("/products");

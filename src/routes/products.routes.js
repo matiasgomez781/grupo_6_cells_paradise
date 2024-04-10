@@ -15,7 +15,6 @@ router.post(
   adminMid,
   upload.array("images"),
   productValidationMid.createProduct,
-  productValidationMid.validate,
   productsController.store
 );
 
@@ -26,7 +25,6 @@ router.put(
   adminMid,
   upload.array("images"),
   productValidationMid.editProduct,
-  productValidationMid.validate,
   productsController.editUpdate
 );
 
