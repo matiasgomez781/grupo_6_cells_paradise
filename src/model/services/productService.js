@@ -254,12 +254,12 @@ module.exports = {
       const marca = await db.Brand.findOne({
         where: { name: nombreMarca },
       });
-  
+
       const productos = await db.Product.findAll({
         where: { id_brand: marca.id },
         include: ["images", "brand", "colors", "stock"],
       });
-  
+
       return productos;
     } catch (error) {
       console.log(error.message);
@@ -267,7 +267,17 @@ module.exports = {
     }
   },
 
-}
+  similarProducts: async function (product) {
+    try {
+      const products = await this.getAll();
+
+      return products.filter((prod) => (product.brand.id === prod.brand.id) && (prod.id !== product.id));
+    } catch (error) {
+      console.log(error);
+      return [];
+    }
+  },
+};
 
 function Product(name, price, description, discount, id_category, id_brand) {
   this.name = name;

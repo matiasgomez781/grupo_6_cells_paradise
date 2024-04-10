@@ -9,7 +9,7 @@ function OnSale() {
     fetch("http://localhost:3000/api/products")
       .then((response) => response.json())
       .then((products) => {
-        let productsFiltered = products.filter((prod) => prod.discount >= 10);
+        let productsFiltered = products.filter((prod) => prod.discount >= 30);
         return setOnSale(productsFiltered);
       });
   }, []);
