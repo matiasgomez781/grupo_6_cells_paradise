@@ -17,11 +17,9 @@
               <% if (product.images.length) { %>
                 <section class="old-images">
                   <% product.images.forEach(img => { %>
-                    <article class="img">
-                      <form action="/products/delete-img/<%= img.id %>?_method=DELETE" method="POST">
-                        <img class="img-product" src="/images/products/<%= img.url %>" alt="<%= product.name %>">
-                        <button type="submit" class="delete-img-btn">X</button>
-                      </form>
+                    <article class="img" id="image-<%= img.id %>">
+                      <img class="img-product" src="/images/products/<%= img.url %>" alt="<%= product.name %>">
+                      <button onclick="deleteImage('<%= img.id %>')" class="delete-img-btn">X</button>
                     </article>
                   <% }) %>
                 </section>
@@ -127,5 +125,6 @@
     </main>
 
     <footer><%- include('../partials/footer.ejs') %></footer>
+    <script src="/js/editProduct.js"></script>
   </body>
 </html>
