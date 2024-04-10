@@ -78,6 +78,21 @@ module.exports = {
     return images;
   },
 
+  imagesCreate: async function (images, idProduct) {
+    try {
+      for (const img of images) {
+        await db.Image.create({
+          url: img.filename,
+          id_product: idProduct,
+        });
+      }
+      return "Imágenes creadas con éxito";
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
+  },
+
   save: async function ({
     name,
     price,
@@ -95,12 +110,7 @@ module.exports = {
       );
 
       // Por cada imagen que exista, asociarlas con el producto
-      images.forEach(async (img) => {
-        await db.Image.create({
-          url: img.filename,
-          id_product: productCreated.id,
-        });
-      });
+      this.imagesCreate(images, productCreated.id);
 
       // Asociar el o los colores elegidos con el producto
       // Primero identificar si se ha elegido más de un color
@@ -125,19 +135,25 @@ module.exports = {
     }
   },
 
+  deleteImg: async function (imgId) {
+    try {
+      return await db.Image.destroy({
+        where: {
+          id: imgId,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+      return [];
+    }
+  },
+
   update: async function (
     { name, price, description, discount, category, brand, images, colors },
-    idProduct,
-    files
+    idProduct
   ) {
     try {
       if (images.length) {
-        let imagesExists = await db.Image.findAll({
-          where: {
-            id_product: idProduct,
-          },
-        });
-
         // fs.unlinkSync(
         //   path.join(
         //     __dirname,
@@ -146,69 +162,45 @@ module.exports = {
         //   )
         // );
 
-        images.forEach(async (img) => {
-          // await db.Image.create({
-          //   url: img.filename,
-          // });
-
-          for (let i = 0; i < imagesExists.length; i++) {
-            if (!(imagesExists[i].dataValues.url == img.filename)) {
-              await db.Image.update(
-                {
-                  url: img.filename,
-                },
-                {
-                  where: {
-                    id_product: idProduct,
-                  },
-                }
-              );
-            }
-          }
-        });
+        this.imagesCreate(images, idProduct);
       }
 
-      let colorRelated = await db.ProductColor.findAll({
-        where: {
-          id_product: idProduct,
-        },
-      });
+      if (colors.length) {
+        let colorRelated = await db.ProductColor.findAll({
+          where: {
+            id_product: idProduct,
+          },
+        });
 
-      if (colors && colors.length) {
-        colors.map(async (col) => {
-          if (colorRelated.length) {
-            let colorExists = false;
-            for (let i = 0; i < colorRelated.length; i++) {
-              if (colorRelated[i].dataValues.id_color == col) {
-                colorExists = true;
-                break;
-              }
-            }
-            if (!colorExists) {
-              await db.ProductColor.create({
-                id_color: col,
-                id_product: idProduct,
-              });
-            }
-          } else {
-            await db.ProductColor.create({
-              id_color: col,
-              id_product: idProduct,
-            });
+        let colorExists = [];
+
+        colorRelated.forEach((col) =>
+          colorExists.push(col.dataValues.id_color)
+        );
+
+        let colorsToCreate = colors.filter((col) => {
+          if (!colorExists.includes(parseInt(col))) {
+            return col;
           }
         });
 
-        // Eliminar los colores que ya no están asociados
-        colorRelated.map(async (color) => {
-          if (!colors.includes(color.dataValues.id_color)) {
+        for (let i = 0; i < colorExists.length; i++) {
+          if (!colors.includes(colorExists[i].toString())) {
             await db.ProductColor.destroy({
               where: {
-                id_color: color.dataValues.id_color,
+                id_color: colorExists[i],
                 id_product: idProduct,
               },
             });
           }
-        });
+        }
+
+        for (let i = 0; i < colorsToCreate.length; i++) {
+          await db.ProductColor.create({
+            id_color: colorsToCreate[i],
+            id_product: idProduct,
+          });
+        }
       }
 
       return await db.Product.update(
@@ -256,7 +248,26 @@ module.exports = {
       return [];
     }
   },
-};
+
+  obtenerProductosPorMarca: async function (nombreMarca) {
+    try {
+      const marca = await db.Brand.findOne({
+        where: { name: nombreMarca },
+      });
+  
+      const productos = await db.Product.findAll({
+        where: { id_brand: marca.id },
+        include: ["images", "brand", "colors", "stock"],
+      });
+  
+      return productos;
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
+  },
+
+}
 
 function Product(name, price, description, discount, id_category, id_brand) {
   this.name = name;

@@ -1,36 +1,31 @@
-<% products.forEach(product => { %>
-<div class="product-slide">
-  <section class="individualProduct">
-    <a href="/products/detail/<%= product.id %>">
-      <img src="/images/products/<%= product.images[0] ? product.images[0].url : "" %>" alt="<%=
-      product.name %>" />
-    </a>
-
-    <article class="descriptionProduct">
-      <% if(product.discount) { %>
-      <div class="btn-price">
-        <button type="button" class="btn-Add">AGREGAR</button>
-
-        <p class="priceProduct">
-          $<%= Math.floor(product.price - (product.price *
-          (product.discount/100))) %>
-        </p>
-      </div>
-
-      <div class="priceDiscount">
-        <p class="oldPrice">$<%= parseInt(product.price) %></p>
-        <p class="discount"><%= product.discount %>% Off</p>
-      </div>
-      <% } else { %>
-      <div class="btn-price">
-        <button type="button" class="btn-Add">AGREGAR</button>
-
-        <p class="priceProduct">$<%= parseInt(product.price) %></p>
-      </div>
-      <% } %>
-
-      <h4 class="title"><%= product.name %></h4>
-    </article>
-  </section>
-</div>
-<% }) %>
+<% for(let i = 0; i < Math.min(6, products.length); i++) { %>
+  <div class="product-slide">
+    <section class="individualProduct">
+      <a href="/products/detail/<%= products[i].id %>">
+        <img src="/images/products/<%= products[i].images[0] ? products[i].images[0].url : "" %>" alt="<%= products[i].name %>" />
+      </a>
+  
+      <article class="descriptionProduct">
+        <% if(products[i].discount) { %>
+        <div class="btn-price">
+          <button type="button" class="btn-Add">AGREGAR</button>
+          <p class="priceProduct">
+            $<%= products[i].price - (products[i].price * (products[i].discount/100)) %>
+          </p>
+        </div>
+        <div class="priceDiscount">
+          <p class="oldPrice">$<%= products[i].price %></p>
+          <p class="discount"><%= products[i].discount %>% Off</p>
+        </div>
+        <% } else { %>
+        <div class="btn-price">
+          <button type="button" class="btn-Add">AGREGAR</button>
+          <p class="priceProduct">$<%= products[i].price %></p>
+        </div>
+        <% } %>
+        <h4 class="title"><%= products[i].name %></h4>
+      </article>
+    </section>
+  </div>
+  <% } %>
+  

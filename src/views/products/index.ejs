@@ -3,14 +3,62 @@
   <head>
     <%- include("../partials/head.ejs") %>
     <title>Todos nuestros productos</title>
-    <link rel="stylesheet" href="/css/allProducts.css">
+    <link rel="stylesheet" href="/css/allProducts.css" />
   </head>
   <body>
     <header><%- include("../partials/header.ejs") %></header>
 
     <main>
       <section class="products-container">
-          <%- include("../partials/home/category.ejs") %>
+        <% products.forEach(product => { %>
+        <div class="product-slide">
+          <section class="individualProduct">
+            <a href="/products/detail/<%= product.id %>">
+              <img src="/images/products/<%= product.images[0] ?
+              product.images[0].url : "" %>" alt="<%= product.name %>" />
+            </a>
+
+            <article class="descriptionProduct">
+              <% if(product.discount) { %>
+              <div class="btn-price">
+                <p class="priceProduct">
+                  $<%= product.price - (product.price * (product.discount/100))
+                  %>
+                </p>
+              </div>
+
+              <div class="priceDiscount">
+                <p class="oldPrice">$<%= product.price %></p>
+                <p class="discount"><%= product.discount %>% Off</p>
+              </div>
+              <% } else { %>
+              <div class="btn-price">
+                <p class="priceProduct">$<%= product.price %></p>
+              </div>
+              <% } %>
+
+              <h4 class="title"><%= product.name %></h4>
+            </article>
+            <article class="btns">
+              <a class="edit" href="/products/<%= product.id %>/editProduct"
+                ><button><i class="fa-solid fa-pen-to-square"></i></button
+              ></a>
+              <form
+                action="/products/<%=product.id %>?_method=DELETE"
+                method="POST"
+              >
+                <button
+                  class="btn-admin"
+                  type="submit"
+                  onclick="return confirm('¿Estás seguro de querer eliminar este producto?')"
+                >
+                  X
+                </button>
+              </form>
+            </article>
+          </section>
+        </div>
+        <% }) %>
       </section>
     </main>
 

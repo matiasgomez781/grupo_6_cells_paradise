@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const nameInput = document.getElementById('name');
         const descriptionInput = document.getElementById('description');
         const imageInput = document.getElementById('image');
+        const priceInput = document.getElementById('price');
 
         function validateName() {
             const nameValue = nameInput.value.trim();
@@ -13,6 +14,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 return false;
             } else {
                 clearErrorMessages(nameInput);
+            }
+            return true;
+        }
+
+        function validatePrice() {
+            const priceValue = priceInput.value.trim();
+            if (!priceValue.length) {
+                displayErrorMessage(priceInput, 'Debes poner un precio al producto');
+                return false;
+            } else {
+                clearErrorMessages(priceInput);
             }
             return true;
         }
@@ -48,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         function handleFormSubmit(event) {
-            if (!validateName() || !validateDescription() || !validateImage()) {
+            if (!validateName() || !validateDescription() || !validateImage() || !validatePrice() ) {
                 event.preventDefault();
                 alert('Debes corregir los campos con errores antes de enviar el formulario.');
             }
@@ -56,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         nameInput.addEventListener('blur', validateName);
         descriptionInput.addEventListener('blur', validateDescription);
+        priceInput.addEventListener('blur', validatePrice);
         imageInput.addEventListener('change', validateImage);
 
         productForm.addEventListener('submit', handleFormSubmit);

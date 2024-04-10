@@ -11,6 +11,8 @@ router.get("/about", mainController.about);
 
 router.get("/trabaja", mainController.trabaja);
 
+router.get("/contacto", mainController.contacto);
+
 router.get("/search", mainController.search);
 
 module.exports = router;

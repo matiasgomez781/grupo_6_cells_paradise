@@ -45,4 +45,26 @@ module.exports = {
       return [];
     }
   },
+
+  brands: async (req, res) => {
+    try {
+      let brands = await productService.getBrands();
+
+      res.status(200).json(brands);
+    } catch (error) {
+      console.log(error);
+      return [];
+    }
+  },
+
+  categories: async (req, res) => {
+    try {
+      let categories = await productService.getCategories();
+
+      res.status(200).json(categories);
+    } catch (error) {
+      console.log(error);
+      return [];
+    }
+  },
 };

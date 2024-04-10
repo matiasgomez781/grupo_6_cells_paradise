@@ -27,6 +27,8 @@ router.post(
 );
 
 router.get("/edit/:id", usersController.edit);
-router.post("/update/:id", usersController.update);
+router.put("/update/:id",upload.single("avatar"), userValidationMid.registerUser, userValidationMid.validate , usersController.update);
+
+router.delete("/profile/:id", usersController.deleteUser);
 
 module.exports = router;

@@ -21,17 +21,12 @@ module.exports = {
 
       let products = await productService.getAll();
 
-      let user = await usersService.getById(
-        req.session.userLogged ? req.session.userLogged.id : null
-      );
-
       return res.render("./products/productDetail", {
         product,
         products,
-        user,
       });
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
       return [];
     }
   },
@@ -61,10 +56,10 @@ module.exports = {
       req.body.images = productService.imagesConverter(req.files);
 
       // Manejar errores de validación
-      const errors = validationResult(req);
+      /*const errors = validationResult(req);
       if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
-      }
+      }*/
 
       await productService.save(req.body); //, req.file
       return res.redirect("/products");
@@ -95,6 +90,15 @@ module.exports = {
       return [];
     }
   },
+  // Método para eliminar una imagen de un producto
+  deleteImg: async (req, res) => {
+    try {
+      return await productService.deleteImg(req.params.imgId);
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
+  },
   // Método para modificar el producto
   editUpdate: async (req, res) => {
     try {
@@ -105,7 +109,7 @@ module.exports = {
         req.body.colors = [...req.body.colors];
       }
 
-      await productService.update(req.body, req.params.id, req.files);
+      await productService.update(req.body, req.params.id);
 
       return res.redirect(`/products/detail/${req.params.id}`);
     } catch (error) {
@@ -131,4 +135,18 @@ module.exports = {
       return [];
     }
   },
+
+  filtrarPorMarca: async (req,res) => {
+    try {
+      const marca = req.params.brand;
+      const products = await productService.obtenerProductosPorMarca(marca);
+
+      return res.render("./products/productosFiltrados", {products});
+
+      
+    } catch (error) {
+      console.log(error.message);
+      return [];
+    }
+  }
 };

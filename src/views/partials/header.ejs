@@ -7,12 +7,34 @@
 
   <form action="/search" method="GET" class="header-main searchBar">
     <input type="text" name="keywords" placeholder="Buscar artículos..." />
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
   </form>
 
+  <% if (locals.userLogged && locals.userLogged.id_rol === 1) { %>
+  <article class="admin-add">
+    <a href="/products/createProduct">AGREGAR PRODUCTOS</a>
+    <br />
+    
+  </article>
+  <% } %>
+
   <div class="header-main account-cart">
-    <a class="regicon" href="/users/login"> <i class="fa-solid fa-user"></i> MI CUENTA </a>
-    <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i> MI CARRITO </a>
+    <a class="regicon" href="/users/login">
+      <i class="fa-solid fa-user"></i> MI CUENTA
+    </a>
+
+    <a href="/productCart"
+      ><i class="fa-solid fa-cart-shopping"></i> MI CARRITO
+    </a>
+
+    <!--Boton de cerrar sesion, solo si el usuario esta logeado-->
+    <% if (locals.userLogged) { %>
+    <form action="/users/logout" method="post">
+      <button type="submit">
+        <i class="fa-solid fa-right-from-bracket"></i>
+      </button>
+    </form>
+    <% } %>
   </div>
 </section>
 
@@ -20,21 +42,28 @@
   <i class="fa-solid fa-bars"></i>
   <nav class="header-navBar">
     <ul class="menu-list">
-      <li><a href="/products">TODOS NUESTROS PRODUCTOS</a></li>
-      <li><a href="#celulares">SAMSUNG</a></li>
-      <li><a href="#celulares">IPHONE</a></li>
-      <li><a href="#celulares">MOTOROLA</a></li>
-      <li><a href="#accesorios">ACCESORIOS</a></li>
+      <% locals.marcas.forEach(marca => { %>
+      <li>
+        <a href="/products/<%= marca.name %>"
+          ><%= marca.name.toUpperCase() %></a
+        >
+      </li>
+      <% }) %> <% if (locals.userLogged && locals.userLogged.id_rol === 1) { %>
+      <li><a href="/products">PRODUCTOS</a></li>
+      <li><a href="#">USUARIOS</a></li>
+      <% } %>
     </ul>
   </nav>
 </nav>
 
 <nav class="header-navBar">
   <ul class="menu-list">
-    <li><a href="/products">TODOS NUESTROS PRODUCTOS</a></li>
-    <li><a href="#celulares">SAMSUNG</a></li>
-    <li><a href="#celulares">IPHONE</a></li>
-    <li><a href="#celulares">MOTOROLA</a></li>
-    <li><a href="#accesorios">ACCESORIOS</a></li>
+    <% locals.marcas.forEach(marca => { %>
+    <li>
+      <a href="/products/<%= marca.name %>"><%= marca.name.toUpperCase() %></a>
+    </li>
+    <% }) %> <% if (locals.userLogged && locals.userLogged.id_rol === 1) { %>
+    <li><a href="/products">TODOS LOS PRODUCTOS</a></li>
+    <% } %>
   </ul>
 </nav>
