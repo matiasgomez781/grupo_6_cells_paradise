@@ -64,6 +64,7 @@ const usersController = {
       const userId = req.params.id;
       const updatedUserData = req.body;
       await usersService.update(userId, updatedUserData);
+      res.clearCookie("rememberMe");
       res.redirect(`/users/profile/${userId}`);
     } catch (error) {
       console.error("Error al actualizar usuario:", error);
