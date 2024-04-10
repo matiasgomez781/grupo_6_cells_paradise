@@ -19,11 +19,11 @@ module.exports = {
     try {
       let product = await productService.getOne(req.params.id);
 
-      let products = await productService.getAll();
+      let similarProducts = await productService.similarProducts(product);
 
       return res.render("./products/productDetail", {
         product,
-        products,
+        similarProducts,
       });
     } catch (error) {
       console.log(error);
