@@ -40,23 +40,6 @@
       </section>
 
       <section class="buttons">
-        <% if (user && user.id_rol == 1) { %>
-        <article class="btns-temp">
-          <a href="/products/<%= product.id %>/editProduct" class="btn-admin"
-            ><button class="btn-admin">Editar producto</button></a
-          >
-          <a href="/products/createProduct" class="btn-admin"
-            ><button class="btn-admin">Crear producto</button></a
-          >
-          <form
-            action="/products/<%=product.id %>?_method=DELETE"
-            method="POST"
-          >
-            <button class="btn-admin" type="submit" onclick="return confirm('¿Estás seguro de querer eliminar este producto?')">Borrar producto</button>
-          </form>
-        </article>
-        <% } %>
-
         <article>
           <button class="btn-addToCart">Agregar al carrito</button>
           <button class="btn-buy">Comprar</button>

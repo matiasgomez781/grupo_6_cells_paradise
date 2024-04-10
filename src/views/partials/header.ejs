@@ -7,8 +7,16 @@
 
   <form action="/search" method="GET" class="header-main searchBar">
     <input type="text" name="keywords" placeholder="Buscar artículos..." />
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
   </form>
+
+  <% if (locals.userLogged && locals.userLogged.id_rol === 1) { %>
+  <article class="admin-add">
+    <a href="/products/createProduct">AGREGAR PRODUCTOS</a>
+    <br />
+    <a href="#">AGREGAR USUARIOS</a>
+  </article>
+  <% } %>
 
   <div class="header-main account-cart">
     <a class="regicon" href="/users/login">
@@ -27,8 +35,6 @@
       </button>
     </form>
     <% } %>
-
-
   </div>
 </section>
 
@@ -36,19 +42,29 @@
   <i class="fa-solid fa-bars"></i>
   <nav class="header-navBar">
     <ul class="menu-list">
-      <li><a href="/products">TODOS NUESTROS PRODUCTOS</a></li>
       <% locals.marcas.forEach(marca => { %>
-        <li><a href="/products/<%= marca.name %>"><%= marca.name.toUpperCase() %></a></li>
-        <%}) %>
+      <li>
+        <a href="/products/<%= marca.name %>"
+          ><%= marca.name.toUpperCase() %></a
+        >
+      </li>
+      <% }) %> <% if (locals.userLogged && locals.userLogged.id_rol === 1) { %>
+      <li><a href="/products">PRODUCTOS</a></li>
+      <li><a href="#">USUARIOS</a></li>
+      <% } %>
     </ul>
   </nav>
 </nav>
 
 <nav class="header-navBar">
   <ul class="menu-list">
-    <li><a href="/products">TODOS NUESTROS PRODUCTOS</a></li>
     <% locals.marcas.forEach(marca => { %>
-    <li><a href="/products/<%= marca.name %>"><%= marca.name.toUpperCase() %></a></li>
-    <%}) %>
+    <li>
+      <a href="/products/<%= marca.name %>"><%= marca.name.toUpperCase() %></a>
+    </li>
+    <% }) %> <% if (locals.userLogged && locals.userLogged.id_rol === 1) { %>
+    <li><a href="/products">PRODUCTOS</a></li>
+    <li><a href="#">USUARIOS</a></li>
+    <% } %>
   </ul>
 </nav>

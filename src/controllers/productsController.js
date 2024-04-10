@@ -21,17 +21,12 @@ module.exports = {
 
       let products = await productService.getAll();
 
-      let user = await usersService.getById(
-        req.session.userLogged ? req.session.userLogged.id : null
-      );
-
       return res.render("./products/productDetail", {
         product,
         products,
-        user,
       });
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
       return [];
     }
   },
