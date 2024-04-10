@@ -118,15 +118,15 @@ SELECT * FROM products;
 /* INSERT de imágenes */
 INSERT INTO images
 (id_product, url)
-VALUES(1, "MotorolaE22.png");
+VALUES(1, "Motorola E22.png");
 
 INSERT INTO images
 (id_product, url)
-VALUES(2, "SAMSUNGS21.png");
+VALUES(2, "SAMSUNG S21.png");
 
 INSERT INTO images
 (id_product, url)
-VALUES(3, "MOTOEDGE30NEO.png");
+VALUES(3, "MOTO EDGE 30 NEO.png");
 
 INSERT INTO images
 (id_product, url)
@@ -146,11 +146,11 @@ VALUES(7, "Apple Watch Series 8.png");
 
 INSERT INTO images
 (id_product, url)
-VALUES(8, "iPhone11PRO.png");
+VALUES(8, "iPhone 11PRO.png");
 
 INSERT INTO images
 (id_product, url)
-VALUES(9, "SamsungA54.png");
+VALUES(9, "Samsung A54.png");
 
 INSERT INTO images
 (id_product, url)
