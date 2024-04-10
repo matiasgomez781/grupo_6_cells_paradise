@@ -4,7 +4,7 @@
     align-items: center;
     flex-direction: column;
     background-color: #f2f2f2;
-    width: 80%;
+    width: 50%;
     border-radius: 10px;
     margin-top: 20px;
 }
@@ -30,6 +30,12 @@ button:hover{
   width: 50%;
 }
 
+.img-editar{
+  border-radius: 150%;
+  width: 50%;
+}
+
+
 .perfil{
   display: flex;
   flex-direction: column;
@@ -42,6 +48,14 @@ button:hover{
   align-items: center;
   padding: 10px;
 }
+
+.avatar-editar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
 .editar-perfil{
   margin-top: 2%;
 }
@@ -69,6 +83,38 @@ button:hover{
   list-style: none;
 }
 
+.formularios-editar{
+  display: flex;
+  flex-direction: column;
+}
+
+.boton-guardar-cambios{
+  margin-top: 10px;
+  text-align: center;
+}
+
+.formularios-editar input{
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.boton-borrar-usuario{
+  background-color: red; /* Color de fondo normal */
+    border: none; /* Quita el borde */
+    padding: 10px 20px;
+    margin-left: 5px;
+}
+
+.boton-borrar-usuario:hover {
+  background-color: darkred;
+}
+
+.contenedor-boton-borrar{
+  align-self: self-end;
+}
+
 /*Media Querys*/
 
 /*Tablets*/
@@ -92,6 +138,20 @@ button:hover{
   }
   .avatar{
     width: 40%;
+  }
+  .avatar-editar{
+    flex-direction: row;
+  }
+  
+  .boton-guardar-cambios{
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .img-editar{
+    width: 30%;
+    margin-right: 150px;
+    margin-left: 5%;
   }
   
 }
