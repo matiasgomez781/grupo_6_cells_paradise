@@ -37,6 +37,7 @@ const usersService = {
 
   update: async (userId, userData) => {
     try {
+      userData.password = bcrypt.hashSync(userData.password, 10); // Hashear la contraseña
       await db.User.update(userData, { where: { id: userId } });
     } catch (error) {
       throw new Error(
