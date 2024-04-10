@@ -1,57 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-
     <% if (user) { %>
     <title>Perfil de <%= user.first_name + " " + user.last_name %></title>
 
-    <% } %>
-
-    <%- include("../partials/head.ejs") %>
+    <% } %> <%- include("../partials/head.ejs") %>
 
     <link rel="stylesheet" href="/css/perfil.css" />
-    
   </head>
 
   <body>
     <header><%- include("../partials/header.ejs") %></header>
 
     <main>
-
-      <h1>Perfil de: <span style="color: blue;"><%= user.first_name + " " + user.last_name %></span></h1>
+      <h1>
+        Perfil de:
+        <span style="color: blue"
+          ><%= user.first_name + " " + user.last_name %></span
+        >
+      </h1>
 
       <section class="perfil-section">
+        <% if (user) { %>
 
-      <% if (user) { %>
+        <div class="perfil">
+          <section class="avatar">
+            <img
+              class="img"
+              src="/images/users/<%= user.avatar%>"
+              alt="<%= user.first_name%>"
+            />
+            <div class="editar-perfil">
+              <% if (locals.userLogged && locals.userLogged.id === user.id) { %>
+              <a href="/users/edit/<%= user.id %>">Editar Perfil</a>
+              <% } %>
+            </div>
+          </section>
 
-      <div class="perfil">
-        <section class="avatar">
-          <img
-            class="img"
-            src="/images/users/<%= user.avatar%>"
-            alt="<%= user.first_name%>"
-          />
-          <div class="editar-perfil">
-          <a href="/users/edit/<%= user.id %>">Editar Perfil</a>
+          <section class="datos">
+            <h4>Datos principales y de contacto</h4>
+            <ul class="lista">
+              <span style="font-size: larger">
+                <li>Nombre: <%= user.first_name + " " + user.last_name %></li>
+                <li>Email: <%= user.email %></li>
+                <li>Teléfono: <%= user.phone %></li>
+              </span>
+            </ul>
+          </section>
         </div>
-        </section>
-    
-        <section class="datos">
-          <h4>Datos principales y de contacto</h4>
-          <ul class="lista">
-            <span style="font-size:larger">
-            <li>Nombre: <%= user.first_name + " " + user.last_name %></li>
-            <li>Email: <%= user.email %></li>
-            <li>Teléfono: <%= user.phone %></li>
-          </span>
-          </ul>
-        </section>
-      </div>
 
-      <% } %>
-    </section>
+        <% } %>
+      </section>
     </main>
-    
 
     <footer><%- include("../partials/footer.ejs") %></footer>
   </body>

@@ -10,3 +10,51 @@
   margin-top: 20px;
   width: 25%;
 }
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.buttons a {
+  color: #000000;
+  text-decoration: none;
+  padding: 0;
+}
+
+.buttons a button {
+  margin: 0;
+}
+
+.buttons button {
+  margin: 0 30px;
+}
+
+.btns {
+  position: absolute;
+}
+
+.edit button {
+  background-color: #fff;
+  color: #000000;
+}
+
+.edit button:hover {
+  color: #fff;
+  background-color: #000000bd;
+}
+
+.btns form {
+  display: inline;
+}
+
+.btn-admin {
+  cursor: pointer;
+  background-color: #fff;
+  color: red;
+}
+
+.btn-admin:hover {
+  background-color: red;
+  color: #fff;
+}

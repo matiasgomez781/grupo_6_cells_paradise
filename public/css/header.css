@@ -27,21 +27,28 @@
     border: 1px solid lightblue;
   }
   
+  .searchBar button {
+    position: absolute;
+    right: 7%;
+    padding: 0;
+    border-radius: 0;
+    background-color: #fff;
+  }
+
+  .searchBar button:hover {
+    background-color: #fff;
+  }
+
   .fa-magnifying-glass {
     font-size: 20px;
-    position: absolute;
-    right: 8%;
     color: #333;
-    transform: scale(1); /* Escala normal */
-    transition: transform 0.3s ease; /* Transición suave */
+    transition: transform 0.4s ease; /* Transición suave */
   }
 
   .fa-magnifying-glass:hover {
     color: #028886;
-    transform: scale(1.1); /* Escala aumentada al pasar el cursor */
+    transform: scale(1.2); /* Escala aumentada al pasar el cursor */
   }
-  
-  
 
   .account-cart {
     width: 13%;
@@ -145,6 +152,11 @@
     font-size: 0.9em; 
     margin-top: 5px; 
     font-weight: bold;
+}
+
+.admin-add a {
+  text-decoration: none;
+  color:blue;
 }
   
 

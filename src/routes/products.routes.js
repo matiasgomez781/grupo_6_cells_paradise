@@ -5,7 +5,7 @@ const productsController = require("../controllers/productsController");
 const productValidationMid = require("../middlewares/productValidationMid");
 const adminMid = require("../middlewares/adminMid");
 
-router.get("/", productsController.all);
+router.get("/", adminMid, productsController.all);
 
 router.get("/detail/:id", productsController.detail);
 
