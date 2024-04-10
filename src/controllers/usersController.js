@@ -114,6 +114,21 @@ const usersController = {
     res.clearCookie("rememberMe");
     return res.redirect("/");
   },
+
+  deleteUser: async (req, res) => {
+    try {
+      const userId = req.params.id;
+
+      res.clearCookie("rememberMe");
+      req.session.destroy();
+      const userDeleted = await usersService.deleteById(userId);
+      await res.redirect('/');
+    } catch (error) {
+      console.error("Error al eliminar usuario:", error);
+      res.status(500).send("Error al eliminar usuario");
+    }
+  },
+  
 };
 
 module.exports = usersController;

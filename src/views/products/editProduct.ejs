@@ -9,9 +9,8 @@
     <header><%- include('../partials/header.ejs') %></header>
 
     <main>
+      <h2 class="login-section-title">Editar Producto</h2>
       <section class="register-section">
-        <h2 class="login-section-title">Editar Producto</h2>
-        
         <section>
           <h3>Imágenes del producto</h3>
               <% if (product.images.length) { %>
@@ -31,13 +30,13 @@
           method="POST"
           enctype="multipart/form-data"
         >
-          <section class="first">
+          <section class="formularios-editar">
             <p class="clave2">
-              <label for="images">Agregar otra imagen</label>
+              <label for="images"><p class="titulo-form">Agregar otra imagen</p></label>
               <input type="file" name="images" id="images" multiple accept="image/*" />
             </p>
             <p class="email">
-              <label for="name">Nombre</label>
+              <label for="name"><p class="titulo-form">Nombre</p></label>
               <input
                 type="name"
                 name="name"
@@ -47,7 +46,7 @@
               />
             </p>
             <p class="clave">
-              <label for="price">Precio</label>
+              <label for="price"><p class="titulo-form">Precio</p></label>
               <input
                 type="number"
                 name="price"
@@ -57,7 +56,7 @@
               />
             </p>
             <p class="clave2">
-              <label for="discount">Descuento</label>
+              <label for="discount"><p class="titulo-form">Descuento</p></label>
               <input
                 type="number"
                 name="discount"
@@ -67,7 +66,8 @@
               />
             </p>
             <p class="clave2">
-              <label>Elije el o los colores</label>
+              <label><p class="titulo-form">Elije los colores disponibles para este producto</p></label>
+              <div class="input-colores-cajita">
               <% colors.forEach(color => { %>
               <label for="<%= color.name %>"><%= color.name %></label>
               <input
@@ -80,9 +80,10 @@
                 <% }) %>
               />
               <% }) %>
+            </div>
             </p>
             <p class="email">
-              <label for="brand">Marca</label>
+              <label for="brand"><p class="titulo-form">Marca</p></label>
               <select name="brand" id="brand" required>
                   <option>Elije la marca</option>
                   <% brands.forEach(brand => { %>
@@ -90,7 +91,7 @@
                   <% }) %>
               </select>
           </p>
-          <p> <label>Categoría</label>
+          <p> <label><p class="titulo-form">Categoría</p></label>
             <select class="trato" name="category" id="category" required>
                 <option>Elije la categoría</option>
                 <% categories.forEach(category => { %>
@@ -101,7 +102,7 @@
           </section>
           <section class="second">
             <p class="about">
-              <label for="description">Descripción</label>
+              <label for="description"><p class="titulo-form">Descripción</p></label>
               <textarea
                 name="description"
                 id="description"

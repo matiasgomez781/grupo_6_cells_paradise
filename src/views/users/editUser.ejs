@@ -1,47 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <title>Editar usuario></title>
+    <title>Editar usuario</title>
     <%- include("../partials/head.ejs") %>
     <link rel="stylesheet" href="/css/perfil.css" />
+    >
   </head>
 
   <body>
     <header><%- include("../partials/header.ejs") %></header>
 
     <main>
-        <h1>Editar Usuario</h1>
-        <form action="/users/update/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+      <h1>Editar Usuario</h1>
 
-        
-      <section class="avatar">
-        <img
-          class="img"
-          src="/images/users/<%= user.avatar%>"
-          alt="<%= user.first_name%>"
-        />
-        
-        <label for="first_name">Nombre:</label>
-        <input type="text" id="first_name" name="first_name" value="<%= user.first_name %>">
+      <section class="perfil-section">
+        <div class="perfil">
+          <form
+            action="/users/update/<%= user.id %>?_method=PUT"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <section class="avatar-editar">
+              <img
+                class="img-editar"
+                src="/images/users/<%= user.avatar%>"
+                alt="<%= user.first_name%>"
+              />
 
-        <label for="last_name">Apellido:</label>
-        <input type="text" id="last_name" name="last_name" value="<%= user.last_name %>">
+              <article class="formularios-editar">
+                <label for="first_name">Nombre:</label>
+                <input
+                  type="text"
+                  id="first_name"
+                  name="first_name"
+                  value="<%= user.first_name %>"
+                />
 
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" value="<%= user.email %>">
+                <label for="last_name">Apellido:</label>
+                <input
+                  type="text"
+                  id="last_name"
+                  name="last_name"
+                  value="<%= user.last_name %>"
+                />
 
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password">
-        
-        <label for="imagen">Imagen de perfil</label>
-        <input type="file" name="avatar" id="imagen" accept="image/*">
+                <label for="email">Correo electrónico:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value="<%= user.email %>"
+                />
+
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" />
+
+                <label for="imagen">Imagen de perfil</label>
+                <input type="file" name="avatar" id="imagen" accept="image/*" />
+              </article>
+            </section>
+            <div class="boton-guardar-cambios">
+            <button type="submit">Guardar Cambios</button>
+          </div>
+          </form>
+          <figure class="contenedor-boton-borrar">
+          <form action="/users/profile/<%= user.id %>?_method=DELETE" method="post">	
+            <button class="boton-borrar-usuario" type="submit"><i class="fa-solid fa-trash-can" style="font-size: large"></i></button>
+          </form>
+        </figure>
         </div>
-        </section>
-        
-        <button type="submit">Guardar Cambios</button>
-    </form>
+      </section>
     </main>
 
     <footer><%- include("../partials/footer.ejs") %></footer>
+
+    <script src="/js/editUserValidations.js"></script>
   </body>
 </html>

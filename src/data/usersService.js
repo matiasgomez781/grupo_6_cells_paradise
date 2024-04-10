@@ -53,6 +53,16 @@ const usersService = {
       throw new Error("Error al buscar usuario por campo" + error.message);
     }
   },
+
+  deleteById: async (userId) => {
+    try {
+      const deletedUser = await db.User.destroy({ where: { id: userId } });
+      return deletedUser === 1;
+    } catch (error) {
+      throw new Error("Error al eliminar el usuario: " + error.message);
+    }
+  },
+  
 };
 
 module.exports = usersService;
