@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import ProductList from "./ProductList";
-import style from "./product.module.css"
-
-
+import style from "./product.module.css";
 
 export default function Product() {
   const [products, setProduct] = useState([]);
@@ -18,7 +16,7 @@ export default function Product() {
       <main className="content-wrap">
         <section className="content">
           <h2 className="mt-3">Todos los Productos en nuestra base de datos</h2>
-          <table   className={style.table}>
+          <table className={style.table}>
             <thead>
               <tr>
                 <th>Nombre</th>
